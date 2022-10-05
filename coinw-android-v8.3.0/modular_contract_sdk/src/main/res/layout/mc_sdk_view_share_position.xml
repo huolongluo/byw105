@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.PositionWrap" />
+        <import type="android.view.View"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="375dp"
+        android:layout_height="667dp"
+        android:background="@drawable/mc_sdk_position_share_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_logo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mc_sdk_share_logo_title"
+                android:layout_margin="23dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_"
+                android:layout_width="324dp"
+                android:layout_height="249dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="42dp"
+                android:visibility="@{position.isHaveProfit ? View.VISIBLE : View.GONE}"
+                android:src="@drawable/mc_sdk_share_profit_header"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="325dp"
+                android:layout_height="564dp"
+                android:layout_marginLeft="33dp"
+                android:layout_marginTop="71dp"
+                android:scaleType="fitXY"
+                android:src="@{position.isHaveProfit ? @drawable/mc_sdk_share_profit : @drawable/mc_sdk_share_loss}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/mc_sdk_share_profit" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="213dp"
+                android:text="@{position.isHaveProfit ? @string/mc_sdk_share_desc_profit : @string/mc_sdk_share_desc_loss}"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_dialog_title"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_bg"
+                tools:text="@string/mc_sdk_share_desc_loss" />
+
+            <TextView
+                android:id="@+id/tv_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                android:layout_marginRight="3dp"
+                android:text="@string/mc_sdk_share_profit_rate"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+                app:layout_constraintRight_toLeftOf="@id/tv_direction"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:background="@{position.isHaveProfit?@drawable/mc_sdk_bg_btn_buy_r3 : @drawable/mc_sdk_bg_btn_sell_r3,default=@drawable/mc_sdk_bg_btn_buy_r3}"
+                android:drawableRight="@{position.directionIsLong ? @drawable/mc_sdk_ic_arrow_long : @drawable/mc_sdk_ic_arrow_short}"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="@{position.directionShare}"
+                android:textColor="@color/mc_sdk_txt_title"
+                app:layout_constraintLeft_toRightOf="@id/tv_rate"
+                app:layout_constraintRight_toRightOf="@id/iv_bg"
+                app:layout_constraintTop_toTopOf="@id/tv_rate"
+                tools:background="@drawable/mc_sdk_bg_btn_sell_r3"
+                tools:drawableRight="@drawable/mc_sdk_ic_arrow_long"
+                tools:text="@string/mc_sdk_contract_long" />
+
+            <TextView
+                android:id="@+id/tv_rate_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="3dp"
+                android:text="@{position.profitRate}"
+                android:textColor="?attr/mc_sdk_drop_color"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:is_up="@{position.isHaveProfit}"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+                app:layout_constraintRight_toRightOf="@id/iv_bg"
+                app:layout_constraintTop_toBottomOf="@id/tv_rate"
+                tools:text="999%" />
+
+            <TextView
+                android:id="@+id/tv_position_info1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/mc_sdk_share_swap_contract"
+                android:textColor="@color/mc_sdk_txt_ABACB7"
+                android:textSize="@dimen/mc_sdk_txt_sub_title"
+                android:layout_marginLeft="18dp"
+                app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+                app:layout_constraintTop_toBottomOf="@id/tv_rate_value" />
+
+            <TextView
+                android:id="@+id/tv_position_info2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:text="@string/mc_sdk_contract_position_open_price"
+                android:textColor="@color/mc_sdk_txt_ABACB7"
+                android:textSize="@dimen/mc_sdk_txt_sub_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_position_info1" />
+
+            <TextView
+                android:id="@+id/tv_position_info3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_share_last_price"
+                android:textColor="@color/mc_sdk_txt_ABACB7"
+                android:textSize="@dimen/mc_sdk_txt_sub_title"
+                app:layout_constraintLeft_toRightOf="@id/tv_position_info2"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintTop_toTopOf="@id/tv_position_info1" />
+
+            <TextView
+                android:id="@+id/tv_position_value1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{position.contractName}"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="@id/tv_position_info1"
+                app:layout_constraintTop_toBottomOf="@id/tv_position_info1"
+                tools:text="BTC/USDT" />
+
+            <TextView
+                android:id="@+id/tv_position_value2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{'$'+position.open}"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:layout_constraintLeft_toLeftOf="@id/tv_position_info2"
+                app:layout_constraintTop_toTopOf="@id/tv_position_value1"
+                tools:text="54319.98" />
+
+            <TextView
+                android:id="@+id/tv_position_value3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{'$'+position.markPrice.toString()}"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:layout_constraintLeft_toLeftOf="@id/tv_position_info3"
+                app:layout_constraintTop_toTopOf="@id/tv_position_value1"
+                tools:text="54319.98" />
+
+            <View
+                android:id="@+id/view_download"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/mc_sdk_bg_eee9f6_r3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+                app:layout_constraintRight_toRightOf="@id/iv_bg"
+                app:layout_constraintTop_toBottomOf="@id/tv_position_value1" />
+
+            <ImageView
+                android:id="@+id/iv_logo2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/mc_sdk_share_logo"
+                app:layout_constraintBottom_toBottomOf="@id/view_download"
+                app:layout_constraintLeft_toLeftOf="@id/view_download"
+                app:layout_constraintTop_toTopOf="@id/view_download" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_share_desc1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_share_desc1"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_position_title"
+                app:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="9sp"
+                android:maxLines="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintRight_toLeftOf="@id/iv_qrcode"
+                app:layout_constraintBottom_toTopOf="@id/tv_share_desc2"
+                app:layout_constraintLeft_toRightOf="@id/iv_logo2"
+                app:layout_constraintTop_toTopOf="@id/view_download" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_share_desc2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:text="@string/mc_sdk_share_desc2"
+                android:textColor="@color/mc_sdk_txt_ABACB7"
+                android:textSize="8sp"
+                android:maxLines="2"
+                app:layout_constraintRight_toLeftOf="@id/iv_qrcode"
+                app:layout_constraintBottom_toBottomOf="@id/view_download"
+                app:layout_constraintLeft_toRightOf="@id/iv_logo2"
+                app:layout_constraintTop_toBottomOf="@id/tv_share_desc1" />
+
+            <ImageView
+                android:id="@+id/iv_qrcode"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/mc_sdk_white"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@id/view_download"
+                app:layout_constraintRight_toRightOf="@id/view_download"
+                app:layout_constraintTop_toTopOf="@id/view_download" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

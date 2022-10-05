@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dp_16"
+    android:layout_marginTop="@dimen/dp_8"
+    android:background="@drawable/bg_cor8_background_main"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvMyTitle"
+            android:layout_width="@dimen/dp_size_210"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="新手认证任务" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_size_10">
+
+            <TextView
+                android:id="@+id/ivTaskMyProgress"
+                android:layout_width="@dimen/dp_size_16"
+                android:layout_height="@dimen/dp_size_16"
+                android:layout_marginEnd="@dimen/dp_size_5"
+                android:layout_toLeftOf="@+id/tvTaskStatus"
+                android:background="@mipmap/ic_task_progress"
+                android:paddingStart="@dimen/dp_size_10"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvTaskStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_8F72FB"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="进行中" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <com.legend.common.view.textview.DinproBoldTextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_12"
+        android:background="@drawable/bg_task_num"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingStart="@dimen/dp_size_8"
+        android:paddingTop="@dimen/dp_size_3"
+        android:paddingEnd="@dimen/dp_size_8"
+        android:paddingBottom="@dimen/dp_size_3"
+        android:text="@string/contract_cash"
+        android:textColor="@color/color_FF7500"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/pbTaskProgressbar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_12"
+        android:max="100"
+        android:progress="20"
+        android:progressDrawable="@drawable/my_task_progress" />
+
+    <com.legend.common.view.textview.DinproMediumTextView
+        android:id="@+id/tvTaskProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_2"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/color_8085889B"
+        android:textSize="12sp"
+        tools:text="500/1000" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_12">
+
+        <TextView
+            android:id="@+id/tvTaskMyDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@mipmap/ic_des"
+            android:drawablePadding="@dimen/dp_size_5"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="12sp"
+            tools:text="任务标任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题题" />
+
+        <ImageView
+            android:id="@+id/ivShowDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="@dimen/dp_9"
+            android:paddingTop="@dimen/dp_9"
+            android:src="@mipmap/ic_des"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_6"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/due_time"
+            android:textColor="@color/color_8085889B"
+            android:textSize="10sp"
+         />
+
+        <com.legend.common.view.textview.DinproMediumTextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_8085889B"
+            android:textSize="10sp"
+            tools:text=": 2021-01-01 12:12:12" />
+    </LinearLayout>
+
+</LinearLayout>

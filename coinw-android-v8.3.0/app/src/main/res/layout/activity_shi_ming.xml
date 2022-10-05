@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/EEEFF1"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableLeft="@mipmap/certificate_access"
+        android:padding="15dp"
+        android:text="@string/c36"
+        android:textColor="#30A54E"
+        android:textSize="@dimen/text_size34"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="@string/c37"
+        android:textColor="@color/A1A6AC"
+        android:textSize="@dimen/text_size30"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/c38"
+        android:textColor="@color/A1A6AC"
+        android:textSize="@dimen/text_size30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/c39"
+        android:textColor="@color/A1A6AC"
+        android:textSize="@dimen/text_size30"/>
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/c40"
+        android:textColor="@color/A1A6AC"
+        android:textSize="@dimen/text_size30"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/c41"
+        android:textColor="@color/A1A6AC"
+        android:textSize="@dimen/text_size30"/>
+
+</LinearLayout>

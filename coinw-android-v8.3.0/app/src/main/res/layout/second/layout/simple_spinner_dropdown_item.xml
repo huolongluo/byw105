@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:singleLine="true"
+    android:textColor="#3C3C3C"
+    android:background="@drawable/background_selector"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:ellipsize="marquee" />

@@ -1,0 +1,407 @@
+<resources>
+    <!--&lt;!&ndash; Base application theme. &ndash;&gt;-->
+    <style name="mAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_col</item>
+        <item name="colorPrimaryDark">@color/base_col</item>
+        <item name="colorAccent">@color/base_col</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="mAppTheme_c" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_col</item>
+        <item name="colorPrimaryDark">@color/base_col</item>
+        <item name="colorAccent">@color/base_col</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="mAppTran_Theme" parent="Theme.Design.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_col</item>
+        <item name="colorPrimaryDark">@color/base_col</item>
+        <item name="colorAccent">@color/base_col</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="mAppTran_BaseTheme" parent="Theme.Design.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ff1a1a2e</item>
+        <item name="colorPrimaryDark">@color/ff1a1a2e</item>
+        <item name="colorAccent">@color/ff1a1a2e</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="mAppTran_Theme1" parent="Theme.Design.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_col</item>
+        <item name="colorPrimaryDark">@color/base_col</item>
+        <item name="colorAccent">#74CD8F</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="mAppTran_Themeo" parent="Theme.AppCompat.Dialog">
+        <!-- Customize your theme here. -->
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">false</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--设置动画，在这里使用让它继承系统的Animation.Dialog-->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!-- Application theme. -->
+    <!-- Base application theme. -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="NoBackGroundDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="AnimBottomIn" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="MyAlertDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 背景色 -->
+    </style>
+
+    <style name="dialog_animation2" parent="@android:style/Animation.Dialog">
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景色 -->
+        <item name="android:background">#55FFFFFF</item>
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <!-- 自定义 PopUp提示框 -->
+    <style name="pop_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+
+    <style name="commonDialog" parent="@android:style/Theme.Dialog">
+        <item name="colorPrimary">@color/text_414577</item>
+        <item name="colorPrimaryDark">@color/text_414577</item>
+        <item name="colorAccent">@color/text_414577</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <!--设置状态栏颜色-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 透明背景颜色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否浮动内容在activity之上 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">false</item>
+        <!-- 是否允许全屏 -->
+        <item name="android:windowFullscreen">false</item>
+        <!-- 是否允许背景灰暗 -->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="progress_bar">
+        <item name="android:indeterminateDrawable">@drawable/progress_large</item>
+        <item name="android:minWidth">22dip</item>
+        <item name="android:maxWidth">22dip</item>
+        <item name="android:minHeight">22dip</item>
+        <item name="android:maxHeight">22dip</item>
+    </style>
+
+    <style name="dialog_lever_trade_style" parent="android:Animation">
+<!--        <item name="android:windowEnterAnimation">@anim/top_in</item>-->
+        //进入时的动画
+        <item name="android:windowExitAnimation">@anim/top_out</item>
+        //退出时的动画
+    </style>
+
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+
+    <style name="LaunchTheme" parent="mAppTheme">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowBackground">@color/white</item>
+        <!-- 会影响启动的速度（ms）,慎用-->
+        <!--item name="android:windowIsTranslucent">true</-item-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+    </style>
+
+    <style name="main_tab">
+        <item name="android:textColor">@color/sl_color_normal_main2_checked_accent</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_size22</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="coinDetail_tab">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_size22</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 遮罩层 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <style name="CustomProgressStyle" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:minWidth">20dip</item>
+        <item name="android:maxWidth">20dip</item>
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/switch_btn_colors</item>
+        <item name="colorControlActivated">@color/switch_btn_colors</item>
+    </style>
+    
+    <!--  TextView  -->
+    <style name="BaseTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextView_9_white_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_9</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_10_white" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextView_10_aba8d3" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/aba8d3</item>
+    </style>
+    <style name="TextView_10_6F698B" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/ff6F698B</item>
+    </style>
+    <style name="TextView_10_44BE9B" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/FF44BE9B</item>
+    </style>
+    <style name="TextView_10_44BE9B_bold" parent="TextView_10_44BE9B">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_10_FF5763" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/FF5763</item>
+    </style>
+    <style name="TextView_10_FF5763_bold" parent="TextView_10_FF5763">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_10_f6767f" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/f6767f</item>
+    </style>
+    <style name="TextView_11_A5A2BE" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/color_a5a2be</item>
+    </style>
+    <style name="TextView_11_B3B3B3" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/color_b3b3b3</item>
+    </style>
+    <style name="TextView_11_686868_linespace6" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/FF686868</item>
+        <item name="android:lineSpacingExtra">@dimen/dp_6</item>
+    </style>
+    <style name="TextView_12_white" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextView_12_A5A2BE" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/color_a5a2be</item>
+    </style>
+    <style name="TextView_12_B7B4CC" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/ffB7B4CC</item>
+    </style>
+    <style name="TextView_12_white_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_12_6F698B" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/ff6F698B</item>
+    </style>
+    <style name="TextView_13_B7B7C2" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/FFB7B7C2</item>
+    </style>
+    <style name="TextView_13_A5A2BE" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/color_a5a2be</item>
+    </style>
+    <style name="TextView_13_white" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextView_13_484C9B_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/FF484C9B</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_13_3C3C3C_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/FF3C3C3C</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_14_white" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+    <style name="TextView_14_333" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/FF333333</item>
+    </style>
+    <style name="TextView_14_B0ADC2" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/B0ADC2</item>
+    </style>
+    <style name="TextView_14_44BE9B" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/FF44BE9B</item>
+    </style>
+    <style name="TextView_14_6f6699" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/ff6f6699</item>
+    </style>
+    <style name="TextView_15_white_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_16_white" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+    <style name="TextView_18_white_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_18_000" parent="BaseTextView">
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/FF000000</item>
+    </style>
+    <style name="TextView_20_white" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_20</item>
+    </style>
+    <style name="TextView_20_white_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <!--  ImageView  -->
+    <style name="BaseImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ImageView_w12_h12" parent="BaseImageView">
+        <item name="android:layout_width">@dimen/dp_size_12</item>
+        <item name="android:layout_height">@dimen/dp_size_12</item>
+    </style>
+    
+    <!--  LinearLayout  -->
+    <style name="BaseLinearLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="BaseLinearLayoutVertical" parent="BaseLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="BaseLinearLayoutHorizontal" parent="BaseLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="LinearLayoutHorizontal_cenvertical" parent="BaseLinearLayoutHorizontal">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+</resources>

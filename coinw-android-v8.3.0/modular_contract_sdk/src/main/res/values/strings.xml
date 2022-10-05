@@ -1,0 +1,385 @@
+<resources>
+    <string name="mc_sdk_app_name">LegendExchanger</string>
+
+    <string name="mc_sdk_confirm">确认</string>
+    <string name="mc_sdk_cancel">取消</string>
+    <string name="mc_sdk_know">我知道了</string>
+    <string name="mc_sdk_usdt">USDT</string>
+    <string name="mc_sdk_contract">合约</string>
+    <string name="mc_sdk_all">全部</string>
+
+    <string name="mc_sdk_mark">标记</string>
+    <string name="mc_sdk__24h_high">24H高</string>
+    <string name="mc_sdk__24h_low">24H低</string>
+    <string name="mc_sdk_hold_position">持仓量</string>
+    <string name="mc_sdk_depth">盘口深度</string>
+    <string name="mc_sdk_last_deal">最新成交</string>
+    <string name="mc_sdk_contract_desc">合约简介</string>
+    <string name="mc_sdk_status">状态</string>
+    <string name="mc_sdk_action_success">操作成功</string>
+    <string name="mc_sdk_more">更多</string>
+    <string name="mc_sdk_indicator">+指标</string>
+    <string name="mc_sdk_empty"> </string>
+
+    <string name="mc_sdk_4h">4小时</string>
+    <string name="mc_sdk_1day">1天</string>
+    <string name="mc_sdk_1week">1周</string>
+    <string name="mc_sdk_5m">5分</string>
+    <string name="mc_sdk_1h">1小时</string>
+    <string name="mc_sdk_15m">15分</string>
+    <string name="mc_sdk_1m">1分</string>
+    <string name="mc_sdk_polyline">分时</string>
+    <string name="mc_sdk_buy_bookmaker">买盘</string>
+    <string name="mc_sdk_sell_bookmaker">卖盘</string>
+    <string name="mc_sdk_price_usdt">价格（USDT）</string>
+    <string name="mc_sdk_price">价格</string>
+    <string name="mc_sdk_amount_bookmaker">数量（张）</string>
+    <string name="mc_sdk_price_depth_title">价格(%s)</string>
+    <string name="mc_sdk_amount_depth_title">数量(%s)</string>
+    <string name="mc_sdk_buy">买入</string>
+    <string name="mc_sdk_sell">卖出</string>
+    <string name="mc_sdk_settlement">USDT结算</string>
+
+    <!--    合约交易      -->
+    <string name="mc_sdk_contract_settle_by_usdt">USDT结算</string>
+    <string name="mc_sdk_contract_asset">账户权益</string>
+    <string name="mc_sdk_contract_position_margin">持仓保证金</string>
+    <string name="mc_sdk_contract_positions_risk">全仓风险率</string>
+    <string name="mc_sdk_contract_positions_risk_tip">全仓风险度说明</string>
+    <string name="mc_sdk_contract_positions_risk_desc">风险度为全仓模式下衡量账户风险的指标，当用户风险度小于等于10%时触发强平机制（爆仓），系统强制按市价平掉用户当前所有持仓，强平后剩余资金用户可继续使用，如果发生穿仓，由平台承担损失。\n风险度：=(账户余额 + SUM(浮动盈亏-手续费-过夜费))/ SUM已用保证金</string>
+    <string name="mc_sdk_contract_margin_available">可用保证金</string>
+    <string name="mc_sdk_contract_unrealized">未实现盈亏</string>
+    <string name="mc_sdk_contract_limit_order">限价委托</string>
+    <string name="mc_sdk_contract_market_order">市价委托</string>
+    <string name="mc_sdk_contract_plan_order">计划委托</string>
+    <string name="mc_sdk_position_type">仓位模式</string>
+    <string name="mc_sdk_position_merge_type">仓位合并</string>
+    <string name="mc_sdk_position_merge_type_merge">合仓</string>
+    <string name="mc_sdk_position_merge_type_partition">分仓</string>
+    <string name="mc_sdk_contract_order_type_full">全仓</string>
+    <string name="mc_sdk_contract_order_type_full_and_leverage">全仓%s</string>
+    <string name="mc_sdk_contract_order_type_part">逐仓</string>
+    <string name="mc_sdk_contract_order_type_part_and_leverage">逐仓%s</string>
+    <string name="mc_sdk_contract_limit_price">限价</string>
+    <string name="mc_sdk_contract_market_price">市价</string>
+    <string name="mc_sdk_contract_trigger_price">触发价</string>
+    <string name="mc_sdk_contract_number">数量</string>
+    <string name="mc_sdk_contract_number_with_unit">数量(张)</string>
+    <string name="mc_sdk_contract_unit">张</string>
+    <string name="mc_sdk_contract_max_open_title">可做多/做空</string>
+    <string name="mc_sdk_contract_max_open_long">可做多(%s)</string>
+    <string name="mc_sdk_contract_max_open_short">可做空(%s)</string>
+    <string name="mc_sdk_contract_max_open_number">%d张/%d张</string>
+    <string name="mc_sdk_contract_target_set">止盈止损设置</string>
+    <string name="mc_sdk_contract_target_set_tip">止盈止损说明</string>
+    <string name="mc_sdk_contract_target_set_desc">预设止盈止损需要委托成交后才生效，默认按照您的持仓数量全部挂止盈止损单。如果您撤销挂单委托，预设止盈止损将同时失效。\n做多，当最新价≥触发价时，触发止盈；\n做多，当最新价≤触发价时，触发止损；做空反之。\n止盈止损触发后将以市价成交，成交价格可能与设置的价格有偏差。</string>
+    <string name="mc_sdk_contract_target_change">止盈/止损修改</string>
+    <string name="mc_sdk_contract_target_set_by_percent">按比例设置</string>
+    <string name="mc_sdk_contract_target_set_by_price">按价格设置</string>
+    <string name="mc_sdk_contract_profit_with_number">收益%s</string>
+    <string name="mc_sdk_contract_loss_with_number">亏损%s</string>
+    <string name="mc_sdk_contract_buy_long">买入/做多</string>
+    <string name="mc_sdk_contract_sell_short">卖出/做空</string>
+    <string name="mc_sdk_contract_long">做多</string>
+    <string name="mc_sdk_contract_short">做空</string>
+    <string name="mc_sdk_contract_order_margin">委托保证金</string>
+    <string name="mc_sdk_contract_order_margin_tip">委托保证金说明</string>
+    <string name="mc_sdk_contract_order_margin_desc">提交此委托所需要的的保证金，与仓位实际占用保证金不同。全仓模式下，相同价格的委托所需的保证金不同，是由于委托价格与标记价之间有差异，需提前预留这部分资金，避免出现开仓之后立即被强平。\n举例说明：若当前最新价为10000，当用户挂9000，开多委托保证金是正常的，开空需加上预留资金；如果挂11000，那么开多委托保证金需加上预留资金，开空是正常计算的。</string>
+    <string name="mc_sdk_contract_available_margin">可用保证金</string>
+    <string name="mc_sdk_contract_cur_position">持仓</string>
+    <string name="mc_sdk_contract_cur_order">当前委托</string>
+    <string name="mc_sdk_contract_cur_plan_order">当前计划</string>
+    <string name="mc_sdk_contract_position_info">仓位信息</string>
+    <string name="mc_sdk_contract_position_close_all">全部平仓</string>
+    <string name="mc_sdk_contract_floating_profit_and_loss">浮动盈亏</string>
+    <string name="mc_sdk_contract_margin">保证金</string>
+    <string name="mc_sdk_contract_position_open_price_hint">开仓价</string>
+    <string name="mc_sdk_contract_position_open_price">开仓价格</string>
+    <string name="mc_sdk_contract_liquidation_price">预估强平价</string>
+    <string name="mc_sdk_contract_position_quantity">持仓数</string>
+    <string name="mc_sdk_contract_position_risk">风险率</string>
+    <string name="mc_sdk_contract_predict_target">预计止盈亏</string>
+    <string name="mc_sdk_contract_position_close">平仓</string>
+    <string name="mc_sdk_contract_position_close_reverse">反向平仓</string>
+    <string name="mc_sdk_contract_position_close_tip">确认要平仓吗?</string>
+    <string name="mc_sdk_contract_all_position_close_tip">确认要全部平仓吗?</string>
+    <string name="mc_sdk_contract_position_close_reverse_tip">将先平掉当前仓位，再开同等数量的反向仓位，确定要反向开仓吗？</string>
+    <string name="mc_sdk_contract_create_time">创建时间</string>
+    <string name="mc_sdk_position_close_time">平仓时间</string>
+    <string name="mc_sdk_contract_index_price">指数</string>
+    <string name="mc_sdk_contract_mark_price">标记</string>
+    <string name="mc_sdk_contract_depth_side">方向</string>
+    <string name="mc_sdk_contract_depth_side_buy">买盘</string>
+    <string name="mc_sdk_contract_depth_side_sell">卖盘</string>
+    <string name="mc_sdk_contract_funding_rate">资金费率</string>
+    <string name="mc_sdk_contract_funding_rate_countdown">距结算时间</string>
+    <string name="mc_sdk_contract_place_order_tip_input_price">请输入开仓价格</string>
+    <string name="mc_sdk_contract_place_order_tip_input_quantity">请输入开仓数量</string>
+    <string name="mc_sdk_contract_place_order_tip_input_trigger_price">请输入触发价格</string>
+    <string name="mc_sdk_contract_place_order_tip_input_execute_price">请输入执行价格</string>
+    <string name="mc_sdk_contract_place_order_tip_input_trigger_quantity">请输入开仓数量</string>
+    <string name="mc_sdk_contract_place_order_dialog_confirm_title">确定要下单吗?</string>
+    <string name="mc_sdk_contract_funding_rate_desc_title">资金费率说明</string>
+    <string name="mc_sdk_contract_funding_rate_desc_content">CoinW资金费用每8小时计算一次，结算时间为UTC时间00:00点、08:00点和16:00点。只有当交易者在收取时刻时在任意方向拥有持仓的情况下，才会被收取或被支付相应的资金费用。全仓在账户余额中扣除或者增加相应的资金费用，逐仓在仓位保证金中扣除或者增加相应的资金费用。\n\n结算资金计算公式：\n结算资金= 持仓名义价值* x 资金费率\n仓位名义价值 = 标记价格 x 持有合约数量</string>
+    <string name="mc_sdk_contract_leverage_warn">当前杠杆倍数较高，请注意风险</string>
+    <string name="mc_sdk_contract_leverage_max_open">当前杠杆倍数最大可开：</string>
+    <string name="mc_sdk_contract_index_price_tip_title">指数价格说明</string>
+    <string name="mc_sdk_contract_index_price_tip">该合约的实时指数价格。此价格将参与用户持仓的预估爆仓价计算，可能与合约最新成交价格有所偏差，以避免价格操纵。</string>
+
+
+    <!--仓位-->
+    <string name="mc_sdk_position_info">仓位信息</string>
+    <string name="mc_sdk_close_all_position">全部平仓</string>
+    <string name="mc_sdk_margin_usdt">保证金（USDT）</string>
+    <string name="mc_sdk_open_position_price">开仓价格(USDT)</string>
+    <string name="mc_sdk_open_position_average_price">开仓均价 (USDT)</string>
+    <string name="mc_sdk_close_price_usdt">平仓价格(USDT)</string>
+    <string name="mc_sdk_force_close_price">预估爆仓价(USDT)</string>
+    <string name="mc_sdk_hold_position_unit">持仓数量(%s)</string>
+    <string name="mc_sdk_risk">风险率</string>
+    <string name="mc_sdk_estimate_take_profit_price">预计止盈价</string>
+    <string name="mc_sdk_estimate_stop_loss_price">预计止损价</string>
+    <string name="mc_sdk_p_l">止盈/止损</string>
+    <string name="mc_sdk_p_l2">止盈止损</string>
+    <string name="mc_sdk_one_key_close_position">一键平仓</string>
+    <string name="mc_sdk_position_profit">收益(USDT)</string>
+    <string name="mc_sdk_can_close_count">可平量:</string>
+    <string name="mc_sdk_close_position">平仓</string>
+    <string name="mc_sdk_close_position_success">平仓成功</string>
+    <string name="mc_sdk_close_position_failure">平仓失败</string>
+    <string name="mc_sdk_close_all_position_success">全部平仓成功</string>
+    <string name="mc_sdk_close_part_position">部分平仓</string>
+    <string name="mc_sdk_close_part_position_success">部分平仓成功</string>
+    <string name="mc_sdk_close_part_position_failure">部分平仓失败</string>
+    <string name="mc_sdk_close_part_position_confirm">确认平仓</string>
+    <string name="mc_sdk_close_part_position_confirm_switch">平仓确认</string>
+    <string name="mc_sdk_add_position">加仓</string>
+    <string name="mc_sdk_add_position_input_tip">请输入加仓数值</string>
+    <string name="mc_sdk_add_position_success">加仓成功</string>
+    <string name="mc_sdk_add_position_failure">加仓失败</string>
+    <string name="mc_sdk_change_take_profit_stop_loss">止盈/止损修改</string>
+    <string name="mc_sdk_reverse_open_position">反向开仓</string>
+    <string name="mc_sdk_reverse_open_position_success">反向开仓成功</string>
+    <string name="mc_sdk_reverse_open_position_failure">反向开仓失败</string>
+    <string name="mc_sdk_contract_name">%s 永续</string>
+    <string name="mc_sdk_leverage">%d 倍杠杆</string>
+    <string name="mc_sdk_full_long">全仓做多</string>
+    <string name="mc_sdk_full_short">全仓做空</string>
+    <string name="mc_sdk_part_long">逐仓做多</string>
+    <string name="mc_sdk_part_short">逐仓做空</string>
+    <string name="mc_sdk_create_date">创建时间 %s</string>
+    <string name="mc_sdk_profit_rate">浮动盈亏 %s</string>
+    <string name="mc_sdk_net_error">网络错误</string>
+    <string name="mc_sdk_contract_execute_price">执行价</string>
+    <string name="mc_sdk_contract_order_num">委托量(%s)</string>
+    <string name="mc_sdk_contract_margin_usdt">保证金(USDT)</string>
+    <string name="mc_sdk_contract_deal_price_usdt">成交价(USDT)</string>
+    <string name="mc_sdk_contract_stop_loss_price">止损价</string>
+    <string name="mc_sdk_contract_stop_profit_price">止盈价</string>
+    <string name="mc_sdk_contract_cancel_order">撤单</string>
+    <string name="mc_sdk_contract_warehouse_info">仓位信息</string>
+    <string name="mc_sdk_contract_load_empty">暂无数据</string>
+    <string name="mc_sdk_contract_login_can_see">登录后可查看</string>
+    <string name="mc_sdk_contract_order_info">委托信息</string>
+    <string name="mc_sdk_contract_cancel_all">全部撤单</string>
+    <string name="mc_sdk_contract_permanent">永续</string>
+    <string name="mc_sdk_contract_leverage_unit">%1$s 倍杠杆  %2$s %3$s</string>
+    <string name="mc_sdk_contract_trigger_condition">触发条件</string>
+    <string name="mc_sdk_contract_order_price">委托价格</string>
+    <string name="mc_sdk_contract_latest_price">最新价</string>
+    <string name="mc_sdk_contract_order_amount">委托金额</string>
+    <string name="mc_sdk_contract_str_follow_up">跟单</string>
+    <string name="mc_sdk_contract_fee">手续费</string>
+    <string name="mc_sdk_contract_liquidation_type">平仓类型</string>
+    <string name="mc_sdk_contract_share">分享</string>
+    <string name="mc_sdk_contract_gross_pnl">平仓盈亏</string>
+    <string name="mc_sdk_contract_manual_close">手动平仓</string>
+    <string name="mc_sdk_contract_market_close">市价平仓</string>
+    <string name="mc_sdk_contract_limit_close">限价平仓</string>
+    <string name="mc_sdk_contract_stop_profit">止盈</string>
+    <string name="mc_sdk_contract_stop_loss">止损</string>
+    <string name="mc_sdk_contract_manual_cancle">手动撤销</string>
+    <string name="mc_sdk_contract_manager_close">自动减仓</string>
+    <string name="mc_sdk_contract_coerce_close">强制平仓</string>
+    <string name="mc_sdk_contract_sys_cancle">资金不足系统撤单</string>
+    <string name="mc_sdk_contract_over_cancle">资金超限系统撤单</string>
+    <string name="mc_sdk_contract_sys_gold_close">24小时平仓</string>
+    <string name="mc_sdk_contract_gold_expire">过期撤单</string>
+    <string name="mc_sdk_contract_history_order">历史仓位</string>
+    <string name="mc_sdk_contract_sure_cancel_all">确定全部撤单吗？</string>
+    <string name="mc_sdk_contract_sure_cancel_order">确定撤单吗？</string>
+    <string name="mc_sdk_hint_take_profit_price">止盈价</string>
+    <string name="mc_sdk_hint_take_profit_rate">止盈率</string>
+    <string name="mc_sdk_hint_stop_loss_price">止损价</string>
+    <string name="mc_sdk_hint_stop_loss_rate">止损率</string>
+
+    <!-- 部分平仓 dialog -->
+    <string name="mc_sdk_by_percent">按比例</string>
+    <string name="mc_sdk_by_count">按张数</string>
+    <string name="mc_sdk_by_amount">按金额</string>
+    <string name="mc_sdk_input_close_percent">请输入平仓比例</string>
+    <string name="mc_sdk_input_close_count">请输入平仓数量</string>
+
+    <string name="mc_sdk_percent">%</string>
+    <string name="mc_sdk_count">张</string>
+    <string name="mc_sdk_estimate_close_count">预计平仓金额：%d 张</string>
+    <string name="mc_sdk_estimate_close_percent">预计平仓比例：%s %%</string>
+
+    <string name="mc_sdk_modify_lever">调整仓位模式和杠杆</string>
+    <string name="mc_sdk_lever_num">杠杆倍数</string>
+    <string name="mc_sdk_lever_max">最高%d X</string>
+
+    <!-- 修改止盈止损 dialog-->
+    <string name="mc_sdk_modify_profit_loss_title">止盈止损修改</string>
+    <string name="mc_sdk_stop_profit">设置止盈</string>
+    <string name="mc_sdk_stop_loss">设置止损</string>
+    <string name="mc_sdk_proportionally">按比例</string>
+    <string name="mc_sdk_by_price">按价格</string>
+    <string name="mc_sdk_stop_profit_proportion">止盈比例</string>
+    <string name="mc_sdk_stop_profit_price">止盈价格</string>
+    <string name="mc_sdk_stop_profit_predict">预估止盈价 %1$s，收益 %2$s</string>
+    <string name="mc_sdk_stop_loss_predict">预估止损价 %1$s，亏损 %2$s</string>
+    <string name="mc_sdk_current_stop_profit_price">当前止盈价</string>
+    <string name="mc_sdk_current_stop_profit_scale">当前止盈比例</string>
+    <string name="mc_sdk_current_stop_loss_price">当前止损价</string>
+    <string name="mc_sdk_current_stop_loss_scale">当前止损比例</string>
+    <string name="mc_sdk_stop_loss_proportion">止损比例</string>
+    <string name="mc_sdk_stop_loss_price">止损价格</string>
+    <string name="mc_sdk_estimate_profit">预计盈利:</string>
+    <string name="mc_sdk_estimate_loss">预计亏损:</string>
+
+    <!-- 移动止盈止损 dialog-->
+    <string name="mc_sdk_modify_position_tp_sl">仓位止盈止损</string>
+    <string name="mc_sdk_modify_move_tp_sl">移动止盈止损</string>
+    <string name="mc_sdk_modify_move_tp_sl_desc">移动止盈止损用于仓位平仓，指的是当行情往利好的方向推进，为了保障交易者的收益，当行情在回调的情况下，将交易者设定好的委托提交至市场的策略委托。当市场的最新价格到达设置的激活价格时，订单被激活；当市场价格到达交易者设定该策略后最高（最低）价格的（1±回调幅度）后，即会触发委托成交，执行价格为最高（最低）价格的（1±回调幅度）。</string>
+    <string name="mc_sdk_modify_move_tp_sl_activation_price">激活价格</string>
+    <string name="mc_sdk_modify_move_tp_sl_trigger_price">激活价格(USDT)</string>
+    <string name="mc_sdk_modify_move_tp_sl_callback_rate">回调率</string>
+    <string name="mc_sdk_last_price">最新成交价</string>
+    <string name="mc_sdk_position_amount">仓位数量</string>
+    <string name="mc_sdk_modify_move_tp_sl_status_activated">已激活</string>
+    <string name="mc_sdk_modify_move_tp_sl_status_inactivated">未激活</string>
+    <string name="mc_sdk_modify_move_tp_sl_tips_input_trigger_price">请输入激活价</string>
+    <string name="mc_sdk_modify_move_tp_sl_tips_input_callback_rate">请输入回调率</string>
+    <string name="mc_sdk_modify_move_tp_sl_tips_input_trigger_price_higher_than">做多方向需高于最新成交价</string>
+    <string name="mc_sdk_modify_move_tp_sl_tips_input_trigger_price_lower_than">做空方向需低于最新成交价</string>
+
+
+    <!--  coinw接入后  -->
+    <string name="mc_sdk_stop_service">系统维护升级中</string>
+    <string name="mc_sdk_usdt_contract">USDT合约</string>
+    <string name="mc_sdk_mark_price">标记价格</string>
+    <string name="mc_sdk_wechat_friend">微信好友</string>
+    <string name="mc_sdk_pyq">朋友圈</string>
+    <string name="mc_sdk_short_msg">短信</string>
+    <string name="mc_sdk_save_png">保存图片</string>
+    <string name="mc_sdk_save_success">保存成功</string>
+    <string name="mc_sdk_save_failed">保存失败，请稍后再试</string>
+    <string name="mc_sdk_time">时间</string>
+    <string name="mc_sdk_kpj">开盘</string>
+    <string name="mc_sdk_max">最高</string>
+    <string name="mc_sdk_min">最低</string>
+    <string name="mc_sdk_spj">收盘</string>
+    <string name="mc_sdk_whole_warehouse_tips">全仓模式下所有仓位将共享合约账户的可用保证金，若发生强平，可能损失所有仓位和可用保证金。请注意仓位风险！</string>
+    <!--图表-->
+    <string name="mc_sdk_chart_main_index">主图</string>
+    <string name="mc_sdk_chart_sub_index">副图</string>
+    <string name="mc_sdk_chart_change_rate">涨跌幅</string>
+    <string name="mc_sdk_change_amount">涨跌额</string>
+    <string name="mc_sdk_change_volume">成交量</string>
+    <!--图表 end-->
+    <string name="mc_sdk_change_success">修改成功</string>
+
+    <!-- 体验金 -->
+    <string name="mc_sdk_contract_experience_gold">超级赠金</string>
+    <string name="mc_sdk_contract_experience_gold_title">超级赠金</string>
+    <string name="mc_sdk_contract_swap_contract">U本位合约</string>
+    <string name="mc_sdk_contract_experience_gold_desc1">限 USDT 合约</string>
+    <string name="mc_sdk_contract_experience_gold_limit_coin">限 %s</string>
+    <string name="mc_sdk_contract_experience_gold_desc2">最高支持%dX杠杆</string>
+    <string name="mc_sdk_to_use">去使用</string>
+    <string name="mc_sdk_not_use">不使用</string>
+    <string name="mc_sdk_use_now">立即使用</string>
+    <string name="mc_sdk_to_activate">去激活</string>
+    <string name="mc_sdk_select_experience_gold">选择体验金</string>
+    <string name="mc_sdk_all_type">全部类型</string>
+    <string name="mc_sdk_wait_use">待使用</string>
+    <string name="mc_sdk_not_activate">待激活</string>
+    <string name="mc_sdk_default_sort">默认排序</string>
+    <string name="mc_sdk_big_to_small">面额大到小</string>
+    <string name="mc_sdk_about_to_expire">即将失效优先</string>
+    <string name="mc_sdk_experience_gold_history">体验金历史</string>
+    <string name="mc_sdk_used">已使用</string>
+    <string name="mc_sdk_expired">已过期</string>
+    <string name="mc_sdk_congratulation">恭喜您获得</string>
+    <string name="mc_sdk_activation_condition">划转至合约账户≥%sUSDT激活</string>
+    <string name="mc_sdk_activation_progress">当前划转量：%s</string>
+    <string name="mc_sdk_expire_time">到期时间：%s</string>
+    <string name="mc_sdk_please_choice_experience_gold"></string>
+
+
+    <!-- 分享 -->
+    <string name="mc_sdk_share">分享</string>
+    <string name="mc_sdk_share_desc_profit">运气不错，今天小赚一笔</string>
+    <string name="mc_sdk_share_desc_loss">运气不佳，下次再战</string>
+    <string name="mc_sdk_share_profit_rate">收益率</string>
+    <string name="mc_sdk_share_swap_contract">永续合约</string>
+    <string name="mc_sdk_share_last_price">当前价格</string>
+    <string name="mc_sdk_share_desc1">下载币赢APP</string>
+    <string name="mc_sdk_share_desc2">流畅体验 秒速充提</string>
+    <string name="mc_sdk_share_desc3">做合约 上币赢</string>
+    <string name="mc_sdk_share_close_price">平仓价格</string>
+
+    <!-- 历史仓位 -->
+<!--    <string name="mc_sdk_history_entrust_count">委托量(张)</string>-->
+    <string name="mc_sdk_history_entrust_price">委托价(USDT)</string>
+    <string name="mc_sdk_history_entrust_type">委托类型</string>
+    <string name="mc_sdk_history_deal_count">成交量(%s)</string>
+    <string name="mc_sdk_history_deal_count_usdt">成交额(USDT)</string>
+    <string name="mc_sdk_history_deal_price">成交价(USDT)</string>
+
+    <string name="mc_sdk_history_open_long">开多</string>
+    <string name="mc_sdk_history_open_short">开空</string>
+    <string name="mc_sdk_history_close_long">平多</string>
+    <string name="mc_sdk_history_close_short">平空</string>
+
+
+    <string name="d5">保存成功</string>
+    <string name="d6">保存失败，请稍后再试</string>
+    <string name="short_msg">短信</string>
+
+
+    <string name="mc_sdk_preferences_setting">偏好设置</string>
+    <string name="mc_sdk_order_confirm">下单确认</string>
+    <string name="mc_sdk_order_confirm_not_show">不再提示(您可在“偏好设置”中重新启动)</string>
+    <string name="mc_sdk_order_confirm_open_long">买入开多</string>
+    <string name="mc_sdk_order_confirm_open_short">卖出开空</string>
+
+    <string name="mc_sdk_switch_trade_unit">切换交易单位</string>
+    <string name="mc_sdk_trade_unit_coin">币</string>
+    <string name="mc_sdk_trade_unit_desc">每一张合约代表 1张=%s</string>
+    <string name="mc_sdk_trade_unit_convert">%s≈%s</string>
+
+    <string name="mc_sdk_position_id">仓位ID %d</string>
+    <string name="mc_sdk_copy_success">复制成功</string>
+
+    <string name="mc_sdk_modify_position_margin">调整保证金</string>
+    <string name="mc_sdk_current_position_margin">当前仓位保证金</string>
+    <string name="mc_sdk_max_add_position_margin">最大可增加</string>
+    <string name="mc_sdk_max_minus_position_margin">最大可减少</string>
+    <string name="mc_sdk_max2">最大</string>
+    <string name="mc_sdk_modify_liquidation_price">调整后参考强平价</string>
+
+    <string name="mc_sdk_add">增加</string>
+    <string name="mc_sdk_minus">减少</string>
+
+    <string name="mc_sdk_calculator">计算器</string>
+    <string name="mc_sdk_calc">计算</string>
+    <string name="mc_sdk_calculator_open_quantity">开仓数量</string>
+    <string name="mc_sdk_calculator_profit">收益</string>
+    <string name="mc_sdk_calculator_liquidation_price">强平价格</string>
+    <string name="mc_sdk_calculator_maker_fee">Maker 手续费</string>
+    <string name="mc_sdk_calculator_taker_fee">Taker 手续费</string>
+    <string name="mc_sdk_calculator_tips">*计算结果仅供参考</string>
+
+</resources>

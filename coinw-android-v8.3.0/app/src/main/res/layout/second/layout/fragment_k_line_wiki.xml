@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ff1e1b33"
+    android:paddingBottom="@dimen/dp_size_20">
+    <LinearLayout
+        style="@style/BaseLinearLayoutVertical"
+        android:paddingLeft="@dimen/dp_14"
+        android:paddingRight="@dimen/dp_14"
+        tools:context=".reform.home.activity.kline2.KLineWikiFragment">
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/TextView_15_white_bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            tools:text="比特币 (Bitcoin)" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.33dp"
+            android:background="#343148" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+            <TextView
+                style="@style/TextView_12_6F698B"
+                android:text="@string/faxd" />
+            <TextView
+                android:id="@+id/tvTime"
+                style="@style/TextView_12_B7B4CC"
+                android:layout_alignParentRight="true"
+                tools:text="2008/11/1" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.33dp"
+            android:background="#343148" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+            <TextView
+                style="@style/TextView_12_6F698B"
+                android:text="@string/fxmax" />
+            <TextView
+                android:id="@+id/tvIssueTotal"
+                style="@style/TextView_12_B7B4CC"
+                android:layout_alignParentRight="true"
+                tools:text="21000000" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.33dp"
+            android:background="#343148" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+            <TextView
+                style="@style/TextView_12_6F698B"
+                android:text="@string/ltmax" />
+            <TextView
+                android:id="@+id/tvUseTotal"
+                style="@style/TextView_12_B7B4CC"
+                android:layout_alignParentRight="true"
+                tools:text="193758489" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.33dp"
+            android:background="#343148" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextView_12_6F698B"
+                android:layout_centerVertical="true"
+                android:text="@string/str_website" />
+            <TextView
+                android:id="@+id/tvWebsite"
+                style="@style/TextView_12_white"
+                android:layout_alignParentRight="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                tools:text="https://baidu.com" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.33dp"
+            android:background="#343148" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView android:id="@+id/tvAreaTitle"
+                style="@style/TextView_12_6F698B"
+                android:layout_centerVertical="true"
+                android:text="@string/kline_area" />
+            <TextView
+                android:id="@+id/tvArea"
+                style="@style/TextView_12_white"
+                android:layout_alignParentRight="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/tvAreaTitle"
+                android:gravity="right"
+                tools:text="https://baidu.comt" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.33dp"
+            android:background="#343148" />
+        <TextView
+            style="@style/TextView_14_white"
+            android:layout_marginTop="@dimen/dp_size_30"
+            android:text="@string/str_coin_introduce" />
+        <TextView
+            android:id="@+id/tvIntroduce"
+            style="@style/TextView_13_white"
+            android:layout_marginTop="@dimen/dp_size_22"
+            android:lineHeight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_size_80"
+            tools:text="比特币（Bitcoin）的概念最初由中本聪在2008年11月1日提出并于2009年1月3日正式诞生。根据中本聪的思路设计发布的开源软
+        件以及建构其上的P2P网络。比特币是一种P2P形式的虚拟的加密数字货币。点对点的传输意味着一个去中心化的支付" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

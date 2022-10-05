@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_size_80">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            style="@style/TextView_10_6F698B"
+            android:layout_marginLeft="14dp"
+            android:layout_centerVertical="true"
+            android:text="@string/time"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/TextView_10_6F698B"
+                android:gravity="center_vertical"
+                android:text="@string/price"/>
+            <TextView
+                android:id="@+id/cny_tv"
+                style="@style/TextView_10_6F698B"
+                android:gravity="center_vertical"
+                android:text="(--)" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/TextView_10_6F698B"
+                android:gravity="center_vertical"
+                android:text="@string/number"/>
+            <TextView
+                android:id="@+id/coinName_tv"
+                style="@style/TextView_10_6F698B"
+                android:gravity="center_vertical"
+                android:text="(--)" />
+        </LinearLayout>
+    </RelativeLayout>
+    <huolongluo.byw.widget.pulltorefresh.PullToRefreshListViewScroll
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/w_0.1"
+        android:layout_marginBottom="10dp"
+        android:divider="#11FFFFFF"
+        android:dividerHeight="1px"
+        android:visibility="gone"></huolongluo.byw.widget.pulltorefresh.PullToRefreshListViewScroll>
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:divider="#11FFFFFF"
+        android:dividerHeight="1px"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp" />
+</LinearLayout>

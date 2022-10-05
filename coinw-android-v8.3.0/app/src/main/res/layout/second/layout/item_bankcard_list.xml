@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bank_list_back">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:text="-- --"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="11dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="16dp"
+            android:src="@drawable/delete1" />
+
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="22dp"
+            android:layout_marginLeft="16dp"
+            android:text="0000 0000"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

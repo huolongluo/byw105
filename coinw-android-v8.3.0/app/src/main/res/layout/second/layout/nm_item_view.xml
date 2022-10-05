@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:layout_margin="10dp"
+    android:background="@mipmap/fram1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <TextView
+        android:id="@+id/title_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minLines="4"
+        android:text="-- --"
+        android:textColor="#8D8FB9"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="--"
+        android:textColor="#BF9F72"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_money_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USDT 泥码"
+        android:textColor="#BF9F72"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:src="@mipmap/yuan2" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="--"
+        android:textColor="#999999"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+</LinearLayout>

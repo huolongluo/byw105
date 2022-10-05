@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isUseExperienceGold"
+            type="androidx.databinding.ObservableField&lt;Boolean>" />
+
+        <variable
+            name="isTickerUp"
+            type="androidx.databinding.ObservableField&lt;Boolean>" />
+
+        <import type="com.legend.modular_contract_sdk.utils.McTypefaceUtil" />
+
+        <import type="com.legend.modular_contract_sdk.R" />
+
+        <import type="com.legend.common.util.ThemeUtil" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:theme_background="@{R.attr.window_background}"
+        tools:background="?window_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/mc_sdk_usdt_contract"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?col_text_title"
+                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:theme_textColor="@{R.attr.col_text_title}" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_experience_gold"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/mc_sdk_ic_experience_gold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <RelativeLayout
+                android:id="@+id/llTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivLeftIcon"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/mc_sdk_common_margin"
+                    app:theme_src="@{R.attr.ic_trade_products}"
+                    tools:src="?ic_trade_products" />
+
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ivLeftIcon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/ivLeftIcon"
+                    android:includeFontPadding="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                    app:theme_textColor="@{R.attr.col_text_title}"
+                    tools:text="BTC/USDT"
+                    tools:textColor="?col_text_title" />
+
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tvTitle1"
+                    android:text="@string/mc_sdk_contract_permanent"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                    app:theme_textColor="@{R.attr.col_text_title}"
+                    tools:textColor="?col_text_title" />
+
+                <TextView
+                    android:id="@+id/tvChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tvTitle2"
+                    android:textSize="12sp"
+                    android:padding="2dp"
+                    app:is_up="@{isTickerUp}"
+                    app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                    app:theme_backgroundColor="@{isTickerUp?R.attr.up_depth_color:R.attr.drop_depth_color}"
+                    tools:background="?up_depth_color"
+                    tools:textColor="?up_color"
+                    tools:text="12.5%"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivRightIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_toLeftOf="@id/ivMenuIcon"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                app:theme_src="@{R.attr.ic_trade_candles}"
+                tools:src="?ic_trade_candles" />
+
+            <ImageView
+                android:id="@+id/ivMenuIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/mc_sdk_common_margin"
+                android:padding="5dp"
+                app:theme_src="@{R.attr.ic_trade_menu}"
+                tools:src="?ic_trade_menu" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_asset_full"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:theme_background="@{R.attr.bg_edit}"
+            tools:background="?bg_edit">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_contract_asset"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_content}"
+                        tools:textColor="?col_text_content" />
+
+                    <TextView
+                        android:id="@+id/view_asset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_title}"
+                        tools:text="0.0000"
+                        tools:textColor="?col_text_title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.legend.common.view.textview.DashTextView
+                        android:id="@+id/view_asset_risk_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="4dp"
+                        android:text="@string/mc_sdk_contract_positions_risk"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_content}"
+                        tools:textColor="?col_text_content" />
+
+                    <TextView
+                        android:id="@+id/view_asset_risk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_title}"
+                        tools:text="0.0000"
+                        tools:textColor="?col_text_title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_contract_unrealized"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_content}"
+                        tools:textColor="?col_text_content" />
+
+                    <TextView
+                        android:id="@+id/view_unrealized"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_title}"
+                        tools:text="0.0000"
+                        tools:textColor="?col_text_title" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_asset_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:theme_background="@{R.attr.bg_edit}"
+            tools:background="?bg_edit">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_contract_position_margin"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_content}"
+                        tools:textColor="?col_text_content" />
+
+                    <TextView
+                        android:id="@+id/view_position_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_title}"
+                        tools:text="0.0000"
+                        tools:textColor="?col_text_title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_contract_unrealized"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_content}"
+                        tools:textColor="?col_text_content" />
+
+                    <TextView
+                        android:id="@+id/view_unrealized_part"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="11sp"
+                        app:theme_textColor="@{R.attr.col_text_title}"
+                        tools:text="0.0000"
+                        tools:textColor="?col_text_title" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:elevation="0dp"
+                app:theme_background="@{R.attr.window_background}"
+                tools:background="?window_background">
+                <!--app:layout_scrollFlags相当于设置观察者，当被观察者改变时，观察者也随着而变-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_scrollFlags="scroll">
+
+                    <LinearLayout
+                        android:id="@+id/layout_trade"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical"
+                        android:paddingLeft="12dp"
+                        android:paddingBottom="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:id="@+id/layout_position_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:layout_weight="1.0"
+                                app:theme_background="@{R.attr.bg_edit}"
+                                tools:background="?bg_edit">
+
+                                <TextView
+                                    android:id="@+id/view_position_type"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:paddingLeft="8dp"
+                                    android:text="@string/mc_sdk_contract_limit_order"
+                                    android:textSize="12sp"
+                                    app:theme_textColor="@{R.attr.col_text_title}"
+                                    tools:textColor="?col_text_title" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:layout_marginRight="12dp"
+                                    app:theme_src="@{R.attr.ic_arrow_down}"
+                                    tools:src="?ic_arrow_down" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/view_leverage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="1.0"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                app:theme_background="@{R.attr.bg_edit}"
+                                app:theme_textColor="@{R.attr.col_text_title}"
+                                tools:background="?bg_edit"
+                                tools:text="@string/mc_sdk_contract_order_type_full"
+                                tools:textColor="?col_text_title" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutLimitPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:theme_background="@{R.attr.bg_edit}"
+                            tools:background="?bg_edit">
+
+                            <ImageView
+                                android:id="@+id/view_price_decrease"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_minus"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/mc_sdk_txt_accent"
+                                android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                            <EditText
+                                android:id="@+id/view_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.0"
+                                android:background="@null"
+                                android:hint="@string/mc_sdk_contract_position_open_price_hint"
+                                android:inputType="numberDecimal"
+                                android:gravity="center"
+                                android:textCursorDrawable="@drawable/mc_sdk_cursor"
+                                android:textSize="12sp"
+                                app:theme_textColor="@{R.attr.col_text_title}"
+                                tools:textColor="?col_text_title" />
+
+                            <ImageView
+                                android:id="@+id/view_price_increase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_plus"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/mc_sdk_txt_accent"
+                                android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutMarketPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:theme_background="@{R.attr.bg_edit}"
+                            tools:background="?bg_edit">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:background="@null"
+                                android:paddingLeft="8dp"
+                                android:text="@string/mc_sdk_contract_market_price"
+                                android:textSize="12sp"
+                                app:theme_textColor="@{R.attr.col_text_title}"
+                                tools:textColor="?col_text_title" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_plan_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                app:theme_background="@{R.attr.bg_edit}"
+                                tools:background="?bg_edit">
+
+                                <ImageView
+                                    android:id="@+id/view_trigger_price_decrease"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_minus"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/mc_sdk_txt_accent"
+                                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                                <EditText
+                                    android:id="@+id/view_trigger_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.0"
+                                    android:background="@null"
+                                    android:hint="@string/mc_sdk_contract_trigger_price"
+                                    android:inputType="numberDecimal"
+                                    android:gravity="center"
+                                    android:textCursorDrawable="@drawable/mc_sdk_cursor"
+                                    android:textSize="12sp"
+                                    app:theme_textColor="@{R.attr.col_text_title}"
+                                    tools:textColor="?col_text_title" />
+
+                                <ImageView
+                                    android:id="@+id/view_trigger_price_increase"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_plus"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/mc_sdk_txt_accent"
+                                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                app:theme_background="@{R.attr.bg_edit}"
+                                tools:background="?bg_edit">
+
+                                <EditText
+                                    android:id="@+id/view_trigger_execute_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:background="@null"
+                                    android:inputType="numberDecimal"
+                                    android:paddingLeft="8dp"
+                                    android:textColorHint="@color/mc_sdk_txt_label"
+                                    android:textCursorDrawable="@drawable/mc_sdk_cursor"
+                                    android:textSize="12sp"
+                                    tools:hint="@string/mc_sdk_contract_market_price"
+                                    app:theme_hintColor="@{R.attr.col_text_hint}"
+                                    app:theme_textColor="@{R.attr.col_text_title}"
+                                    tools:textColor="?col_text_title" />
+
+                                <TextView
+                                    android:id="@+id/view_trigger_price_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="8dp"
+                                    android:text="@string/mc_sdk_contract_market_price"
+                                    app:theme_textColor="@{R.attr.col_text_title}"
+                                    tools:textColor="?col_text_title" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:theme_background="@{R.attr.bg_edit}"
+                            tools:background="?bg_edit"
+                            android:visibility="@{isUseExperienceGold? View.GONE : View.VISIBLE}"
+                            >
+
+                            <EditText
+                                android:id="@+id/view_quantity"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.0"
+                                android:background="@null"
+                                android:enabled="@{!isUseExperienceGold}"
+                                android:hint="@string/mc_sdk_contract_number"
+                                android:inputType="numberDecimal"
+                                android:paddingLeft="8dp"
+                                android:text='@{isUseExperienceGold ? "" : ""}'
+                                android:textCursorDrawable="@drawable/mc_sdk_cursor"
+                                android:textSize="12sp"
+                                app:theme_textColor="@{R.attr.col_text_title}"
+
+                                android:layout_marginRight="5dp"
+                                tools:textColor="?col_text_title" />
+
+                            <TextView
+                                android:id="@+id/view_quantity_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginRight="8dp"
+                                android:clickable="@{!isUseExperienceGold}"
+                                tools:text="XXXXXXXUSDDDTTT"
+                                android:textSize="12sp"
+                                android:textColor="?col_text_content" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_experience_gold"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="@{isUseExperienceGold?View.VISIBLE:View.GONE}"
+                            app:theme_background="@{R.attr.bg_edit}"
+                            tools:background="?bg_edit">
+
+                            <TextView
+                                android:id="@+id/tv_experience_gold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:background="@null"
+                                android:paddingLeft="8dp"
+                                android:text="@string/mc_sdk_contract_experience_gold"
+                                android:textSize="12sp"
+                                app:theme_textColor="@{R.attr.col_text_title}"
+                                tools:textColor="?col_text_title" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="12dp"
+                                app:theme_src="@{R.attr.ic_arrow_down}"
+                                tools:src="?ic_arrow_down" />
+                        </LinearLayout>
+
+                        <SeekBar
+                            android:id="@+id/layout_progress"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="12dp"
+                            android:max="100"
+                            android:maxHeight="100dp"
+                            android:minHeight="30dp"
+                            android:paddingStart="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingRight="8dp"
+                            android:splitTrack="false"
+                            android:thumb="?ic_seek_thumb_buy"
+                            android:thumbOffset="0dp"
+                            android:visibility="@{isUseExperienceGold?View.GONE:View.VISIBLE}"/>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_available"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mc_sdk_contract_margin_available"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0" />
+
+                            <TextView
+                                android:id="@+id/tv_asset_available_margin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.0000 USDT"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:src="?ic_trade_transfer"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_trigger_set_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/view_trigger_set_switch"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:button="@drawable/mc_sdk_bg_cb"
+                                android:gravity="center"
+                                android:text="" />
+
+                            <com.legend.common.view.textview.DashTextView
+                                android:id="@+id/view_trigger_set"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:drawablePadding="4dp"
+                                android:text="@string/mc_sdk_contract_target_set"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_trigger_set"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                app:theme_background="@{R.attr.bg_edit}"
+                                tools:background="?bg_edit">
+
+                                <EditText
+                                    android:id="@+id/view_stop_profit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.0"
+                                    android:background="@null"
+                                    android:hint="@string/mc_sdk_hint_take_profit_price"
+                                    android:inputType="numberDecimal"
+                                    android:paddingLeft="8dp"
+                                    android:textCursorDrawable="@drawable/mc_sdk_cursor"
+                                    android:textSize="12sp"
+                                    app:theme_textColor="@{R.attr.col_text_title}"
+                                    tools:textColor="?col_text_title" />
+
+                                <TextView
+                                    android:id="@+id/view_profit_trigger_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="8dp"
+                                    android:text="USDT"
+                                    android:visibility="gone"
+                                    app:theme_textColor="@{R.attr.col_text_title}" />
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="6dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- 按比例设置止盈止损先隐藏掉 代码先不删除 有可能以后会用到-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/view_profit_set_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableLeft="@drawable/mc_sdk_ic_exchange"
+                                    android:drawablePadding="4dp"
+                                    android:text="@string/mc_sdk_contract_target_set_by_percent"
+                                    android:visibility="gone"
+                                    android:textColor="@color/mc_sdk_txt_accent"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                app:theme_background="@{R.attr.bg_edit}"
+                                tools:background="?bg_edit">
+
+                                <EditText
+                                    android:id="@+id/view_stop_loss"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.0"
+                                    android:background="@null"
+                                    android:hint="@string/mc_sdk_hint_stop_loss_price"
+                                    android:inputType="numberDecimal"
+                                    android:paddingLeft="8dp"
+                                    android:textCursorDrawable="@drawable/mc_sdk_cursor"
+                                    android:textSize="12sp"
+                                    app:theme_textColor="@{R.attr.col_text_title}"
+                                    tools:textColor="?col_text_title" />
+
+                                <TextView
+                                    android:id="@+id/view_loss_trigger_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="8dp"
+                                    android:text="USDT"
+                                    android:visibility="gone"
+                                    app:theme_textColor="@{R.attr.col_text_title}" />
+                            </LinearLayout>
+
+                            <!-- 按比例设置止盈止损先隐藏掉 代码先不删除 有可能以后会用到-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/view_loss_set_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableLeft="@drawable/mc_sdk_ic_exchange"
+                                    android:drawablePadding="4dp"
+                                    android:text="@string/mc_sdk_contract_target_set_by_percent"
+                                    android:visibility="gone"
+                                    android:textColor="@color/mc_sdk_txt_accent"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_max_open_size_long"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/view_can_open_long_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:text="@string/mc_sdk_contract_max_open_long"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+
+                            <TextView
+                                android:id="@+id/view_can_open_long"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                tools:text="-- 张"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <com.legend.common.view.textview.DashTextView
+                                android:id="@+id/view_long_order_margin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="4dp"
+                                android:text="@string/mc_sdk_contract_order_margin"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0" />
+
+                            <TextView
+                                android:id="@+id/tv_long_margin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.0000 USDT"
+                                android:textSize="11sp"
+                                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/view_long"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/mc_sdk_contract_buy_long"
+                            android:textColor="?col_text_on_button"
+                            android:textSize="15sp"
+                            app:theme_background="@{R.attr.bg_buy_btn}"
+                            tools:background="?bg_buy_btn" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_max_open_size_short"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/view_can_open_short_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:text="@string/mc_sdk_contract_max_open_short"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+
+                            <TextView
+                                android:id="@+id/view_can_open_short"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                tools:text="-- 张"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <com.legend.common.view.textview.DashTextView
+                                android:id="@+id/view_short_order_margin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="4dp"
+                                android:text="@string/mc_sdk_contract_order_margin"
+                                android:textSize="11sp"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0" />
+
+                            <TextView
+                                android:id="@+id/tv_short_margin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.0000 USDT"
+                                android:textSize="11sp"
+                                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                                app:theme_textColor="@{R.attr.col_text_content}"
+                                tools:textColor="?col_text_content" />
+                        </LinearLayout>
+
+
+
+                        <TextView
+                            android:id="@+id/view_short"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/mc_sdk_contract_sell_short"
+                            android:textColor="?col_text_on_button"
+                            android:textSize="15sp"
+                            app:theme_background="@{R.attr.bg_sell_btn}"
+                            tools:background="?bg_sell_btn" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_depth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_weight="0.9"
+                        android:orientation="vertical">
+
+                        <com.legend.modular_contract_sdk.widget.depthview.DepthFutureView
+                            android:id="@+id/view_depth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:drawablePadding="4dp"
+                                    android:text="@string/mc_sdk_contract_mark_price"
+                                    android:textSize="11sp"
+                                    app:theme_textColor="@{R.attr.col_text_content}"
+                                    tools:textColor="?col_text_content" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0" />
+
+                                <TextView
+                                    android:id="@+id/tv_mark_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="8dp"
+                                    android:textSize="11sp"
+                                    app:theme_textColor="@{R.attr.col_text_content}"
+                                    tools:text="0.00015"
+                                    tools:textColor="?col_text_content" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_funding_rate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="7dp"
+                                android:orientation="horizontal">
+
+                                <com.legend.common.view.textview.DashTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:drawablePadding="4dp"
+                                    android:text="@string/mc_sdk_contract_funding_rate"
+                                    android:textSize="11sp"
+                                    app:theme_textColor="@{R.attr.col_text_content}"
+                                    tools:textColor="?col_text_content" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0" />
+
+                                <TextView
+                                    android:id="@+id/view_funding_rate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="8dp"
+                                    android:textSize="11sp"
+                                    app:theme_textColor="@{R.attr.col_text_content}"
+                                    tools:text="0.00015%"
+                                    tools:textColor="?col_text_content" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_funding_rate_countdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="8dp"
+                                android:visibility="visible"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:drawablePadding="4dp"
+                                    android:text="@string/mc_sdk_contract_funding_rate_countdown"
+                                    android:textSize="11sp"
+                                    app:theme_textColor="@{R.attr.col_text_content}"
+                                    tools:textColor="?col_text_content" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0" />
+
+                                <TextView
+                                    android:id="@+id/tv_funding_rate_countdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="8dp"
+                                    android:textSize="11sp"
+                                    app:theme_textColor="@{R.attr.col_text_content}"
+                                    tools:text="07:59:59"
+                                    tools:textColor="?col_text_content" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!--TabLayout没有设置app:layout_scrollFlags，则会固定在顶部-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="-7dp"
+                        android:layout_marginRight="10dp"
+                        android:background="?window_background"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="?colorAccent"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabMode="scrollable"
+                        app:tabRippleColor="@color/mc_sdk_transparent"
+                        app:tabSelectedTextColor="?col_text_title"
+                        app:tabTextColor="?col_text_content" />
+
+                    <TextView
+                        android:id="@+id/ivHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/mc_sdk_margin_horizontal_trade_list"
+                        android:paddingTop="8dp"
+                        android:paddingRight="@dimen/mc_sdk_margin_horizontal_trade_list"
+                        android:paddingBottom="8dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/mc_sdk_all"
+                        android:drawableLeft="@drawable/mc_sdk_ic_order_history" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="?divider_line" />
+                </RelativeLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>

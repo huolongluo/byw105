@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginTop="23dp"
+            android:background="@drawable/regist_dialog_shap"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="52dp"
+                android:text="@string/download_hpy"
+                android:textColor="@color/ff222222"
+                android:textSize="19sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/ff8881a6"
+                android:layout_marginLeft="40dp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginRight="40dp"
+                android:text="@string/bind_hpy1"
+                />
+
+
+
+            <LinearLayout
+                android:id="@+id/know_tv"
+                android:layout_width="100dp"
+                android:layout_height="36.5dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/hpy_bg3"
+                android:gravity="center"
+                >
+
+             <ImageView
+                 android:layout_width="21dp"
+                 android:layout_height="24dp"
+                 android:src="@mipmap/android_logo"
+                 android:visibility="gone"
+                 />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textColor="@color/fff8f9fc"
+                     android:textSize="13sp"
+                     android:text="@string/androidd"
+                     android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/hyp_logo"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/cancle_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="20dp"
+            android:padding="2.5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guanbi"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

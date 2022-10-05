@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+
+            <item android:left="10dp" android:right="10dp">
+                <shape>
+                    <solid android:color="?attr/mc_sdk_accent_color" />
+                </shape>
+            </item>
+
+            <item android:bottom="2dp">
+                <shape>
+                    <solid android:color="?attr/mc_sdk_window_background" />
+                </shape>
+            </item>
+
+        </layer-list>
+    </item>
+    <item android:state_checked="false">
+        <shape>
+            <solid android:color="?attr/mc_sdk_window_background" />
+        </shape>
+    </item>
+</selector>

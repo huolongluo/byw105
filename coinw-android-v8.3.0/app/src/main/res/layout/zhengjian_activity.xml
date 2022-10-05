@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/ll_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/FF888888"/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/FF333333"
+            android:textSize="14sp"
+            android:text="@string/sfz"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/FF888888"/>
+        <TextView
+            android:id="@+id/tv_name1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/FF333333"
+            android:textSize="14sp"
+            android:text="@string/hz"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/FF888888"/>
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/FF333333"
+            android:textSize="14sp"
+            android:text="@string/gat"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/FF888888"/>
+</LinearLayout>

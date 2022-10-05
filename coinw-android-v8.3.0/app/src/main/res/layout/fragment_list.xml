@@ -1,0 +1,52 @@
+<!--这里嵌套一层为了方便fragment添加固定的header和footer-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/load_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="100dp">
+
+                <include
+                    android:id="@+id/errorPanel"
+                    layout="@layout/view_error"
+                    android:visibility="gone" />
+
+                <huolongluo.byw.view.LoadingView
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
+

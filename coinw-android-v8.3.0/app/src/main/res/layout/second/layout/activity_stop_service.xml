@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/stop_bg"
+    tools:context=".byw.ui.activity.stop_service.StopServiceActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_size_70"
+        android:text="@string/stop_1"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/des"
+        android:layout_width="@dimen/dp_size_290"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_size_26"
+        android:text="@string/stop_2"
+        android:textColor="#BEBFE0"
+        android:textSize="12sp" />
+
+    <TextView android:id="@+id/tv_hy_des"
+        style="@style/TextView_14_44BE9B"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_centerHorizontal="true"
+        tools:text="系统升级期间，合约交易功能可以正常使用。"
+        android:layout_marginLeft="@dimen/dp_size_30"
+        android:layout_marginRight="@dimen/dp_size_30"
+        android:layout_below="@id/des"/>
+
+    <TextView android:id="@+id/tv_hy_go_trade"
+        style="@style/TextView_13_white"
+        android:paddingLeft="@dimen/dp_size_30"
+        android:paddingRight="@dimen/dp_size_30"
+        android:paddingTop="@dimen/dp_size_12"
+        android:paddingBottom="@dimen/dp_size_12"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_hy_des"
+        android:layout_marginTop="@dimen/dp_size_38"
+        android:text="@string/stop_hy_go_trade"
+        android:background="@drawable/bg_cor1_sol31a97d"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_hy_go_trade"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dp_size_100"
+        android:gravity="center"
+        android:text="00:00:00"
+        android:textColor="#F5F4FF"
+        android:textSize="46.67sp" />
+
+    <TextView
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/stop_3"
+        android:textColor="#ABA8D3"
+        android:textSize="12.47sp" />
+
+    <LinearLayout style="@style/LinearLayoutHorizontal_cenvertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp">
+        <ImageView
+            android:id="@+id/code_img"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginLeft="35dp"
+            android:src="@mipmap/code_img" />
+
+        <LinearLayout
+            style="@style/BaseLinearLayoutVertical"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@+id/wx_des"
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="@string/stop_4"
+                android:textColor="#ABA8D3"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                style="@style/LinearLayoutHorizontal_cenvertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    style="@style/TextView_12_white"
+                    android:text="@string/stop_5"/>
+
+                <TextView
+                    android:id="@+id/tv_weChat"
+                    style="@style/TextView_12_white"/>
+
+                <TextView
+                    android:id="@+id/tv_wx_copy"
+                    style="@style/TextView_10_aba8d3"
+                    android:text="@string/stop_wx_copy"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:paddingTop="@dimen/dp_2"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:background="@drawable/bg_rect_cor2_434378"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

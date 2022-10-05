@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.legend.modular_contract_sdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity
+            android:name=".ui.contract.history.McHistoryOrderActivity"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.chart.McKLineActivity"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.chart.McKLineFullScreenActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name=".ui.experience_gold.ExperienceGoldActivity"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.experience_gold.history.HistoryExperienceGoldActivity"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.contract.settings.PreferencesSettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.contract.settings.TradeUnitSettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.contract.calc.ContractCalculatorActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

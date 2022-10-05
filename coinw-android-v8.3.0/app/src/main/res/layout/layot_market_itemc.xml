@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_nologin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        >
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/y30"
+            android:src="@mipmap/coinw_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="29dp"
+            android:text="@string/logined"
+            android:gravity="center"
+            android:textColor="@color/F666666"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/btn_bus_login"
+            android:layout_width="@dimen/x360"
+            android:layout_height="@dimen/y84"
+            android:layout_gravity="center"
+            android:layout_marginTop="53dp"
+            android:background="@drawable/text_submit"
+            android:gravity="center"
+            android:text="@string/loginnow"
+            android:textColor="@color/FFFFFF"
+            android:textSize="@dimen/text_size36"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_zixuan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/y30"
+            android:src="@mipmap/coinw_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="29dp"
+            android:text="@string/nosel"
+            android:gravity="center"
+            android:textColor="@color/F666666"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+</LinearLayout>

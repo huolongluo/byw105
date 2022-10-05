@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <com.github.onlynight.noswipeviewpager.library.NoSwipeViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <huolongluo.byw.byw.ui.redEnvelope.DragFloatActionButton
+                    android:id="@+id/fb"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone" />
+<!--                android:src="@drawable/ic_redenvelope"-->
+                <RelativeLayout
+                    android:id="@+id/pay_order"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="-25dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/shape_white"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/coin_logo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:id="@+id/pay_des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@id/coin_logo"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/pay_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pay_des"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/coin_logo"
+                        android:textColor="#AFADC2"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_above="@id/view1"
+                    android:background="@color/ffe1eaf6" />
+
+                <include
+                    android:id="@+id/view2"
+                    layout="@layout/activity_main_bottom_1" />
+
+                <View
+                    android:id="@+id/obscuration_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/view1"
+                    android:layout_alignBottom="@+id/view2"
+                    android:background="#99000000"
+                    android:clickable="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/trade_explain_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/main_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/cancle_iv1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="17dp"
+                    android:padding="5dp"
+                    android:src="@drawable/guanbi" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="#ff68608b"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/area_name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="37dp"
+                            android:lines="1"
+                            android:text="@string/cancle"
+                            android:textColor="@color/white"
+                            android:textSize="21sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="37dp"
+                            android:lines="1"
+                            android:text="@string/qklsm"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="45dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/trade_explain1"
+                        android:textColor="@color/ff68608b"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/trade_explain_tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="45dp"
+                        android:text="@string/cxq"
+                        android:textColor="@color/ff262046"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/trade_explain_tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="45dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/trade_explain2"
+                        android:textColor="@color/ff262046"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/trade_explain_tv3_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="45dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="13dp"
+                            android:src="@mipmap/tisk_tip" />
+
+                        <TextView
+                            android:id="@+id/trade_explain_tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/dansge_tip"
+                            android:textColor="@color/ff262046"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/trade_explain_tv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="45dp"
+                        android:layout_marginBottom="35dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/trade_explain3"
+                        android:textColor="@color/ff262046"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/xianzhi_explain_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:id="@+id/xianshi_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/xianshiWarn_cloasetv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="17dp"
+                    android:padding="5dp"
+                    android:src="@drawable/guanbi" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:background="#ffFAEEF0"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:layout_marginLeft="26dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/xswraning" />
+
+                        <TextView android:id="@+id/tv_dialog_risk_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/risk"
+                            android:textColor="#EC4A4A"
+                            android:textSize="21sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/showWarnView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginRight="45dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/xianshi_wran1"
+                        android:textColor="@color/ff0e0e0e"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="33dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="25dp"
+                        android:background="@drawable/otcorder_bg1"
+                        android:gravity="center"
+                        android:text="我知道了"
+                        android:textColor="@color/ff6f6699"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        tools:visibility="gone"
+        android:choiceMode="singleChoice">
+
+        <FrameLayout
+            android:id="@+id/sidesLip_frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
+

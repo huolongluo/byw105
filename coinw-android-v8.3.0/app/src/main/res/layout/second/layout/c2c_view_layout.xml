@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/c2cTrade"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="-10dp"
+    android:background="@drawable/text_bg"
+    android:paddingLeft="10dp"
+    android:paddingRight="15dp"
+    android:text="c2c交易"
+    android:textColor="@color/white"
+    tools:showIn="@layout/fragment_otc" />

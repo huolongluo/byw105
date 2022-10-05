@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<!--        <import type="com.legend.modular_contract_sdk.utils.TypefaceUtil" />-->
+<!--        <variable-->
+<!--            name="depth"-->
+<!--            type="com.legend.modular_contract_sdk.repository.model.wrap.DepthWrap" />-->
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="?mc_sdk_window_background">
+
+        <com.legend.modular_contract_sdk.widget.depthview.DepthHorizontalView
+            android:id="@+id/view_depth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <View
+        android:id="@+id/v_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:alpha="0.5"/>
+
+    <RelativeLayout
+        android:layout_width="293.3dp"
+        android:layout_height="180dp"
+        android:background="@drawable/real_name_bg"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/real_name1_bg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="56dp"
+                android:layout_marginLeft="56dp"
+                android:textSize="14sp"
+                android:textColor="@color/F666666"
+                android:text="@string/gjrz"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/ll_title">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="40.3dp"
+                android:layout_marginRight="40.3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rean"
+                android:textSize="12sp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+           android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/tv_dialog_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:text="@string/cancle"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/gray_bn_bg"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                />
+
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tv_ok"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="@string/ok"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:background="@drawable/text_submit"
+
+
+                android:gravity="center"
+
+
+
+               />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

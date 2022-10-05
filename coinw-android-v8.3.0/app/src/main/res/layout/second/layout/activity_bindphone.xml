@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_title"></include>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="21dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_bg">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="13.5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="22.5dp"
+                        android:text="@string/phone1"
+                        android:textColor="@color/ff222222"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+
+                            android:id="@+id/areaCode_ll1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/areaCode_tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:lines="1"
+                                android:text="+86"
+                                android:textColor="@color/ff8881a6"
+                                android:textSize="13sp" />
+
+                            <ImageView
+                                android:layout_width="8dp"
+                                android:layout_height="4dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/areaCode_tv"
+                                android:src="@drawable/xljt" />
+
+                            <View
+                                android:layout_width="1px"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="8dp"
+                                android:background="@color/ffb7b2c8"></View>
+                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:layout_marginLeft="16.5dp"
+                            android:layout_marginRight="16.5dp"
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="@string/cur_phone"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="20"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/msg_code"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_get_code"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:background="@drawable/safe_bg"
+                            android:gravity="center"
+                            android:text="@string/send"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_phone_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="16.5dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/tv_get_code"
+                            android:background="@drawable/set_trade_psw_"
+                            android:hint="@string/pen_inmsg_code"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="13sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/rl_now_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/new_phone"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.5dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+
+                                android:id="@+id/areaCode_ll"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/areaCode_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="8dp"
+                                    android:lines="1"
+                                    android:text="+86"
+                                    android:textColor="@color/ff8881a6"
+                                    android:textSize="13sp" />
+
+                                <ImageView
+                                    android:layout_width="8dp"
+                                    android:layout_height="4dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@+id/areaCode_tv"
+                                    android:src="@drawable/xljt" />
+
+                                <View
+                                    android:layout_width="1px"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:background="@color/ffb7b2c8"></View>
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/phone_new"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+
+                                android:layout_marginRight="16.5dp"
+                                android:background="@drawable/set_trade_psw_"
+                                android:gravity="bottom"
+                                android:hint="@string/innew_phone"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLength="20"
+                                android:paddingBottom="4dp"
+                                android:paddingLeft="4.5dp"
+                                android:text=""
+                                android:textColor="@color/ff222222"
+                                android:textColorHint="@color/ffb5b2c7"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="22.5dp"
+                                android:text="@string/msg_code"
+                                android:textColor="@color/ff222222"
+                                android:textSize="13sp" />
+
+
+                            <TextView
+                                android:id="@+id/getconde_new"
+                                android:layout_width="66.5dp"
+                                android:layout_height="26.5dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="17dp"
+                                android:background="@drawable/safe_bg"
+                                android:gravity="center"
+                                android:text="@string/send"
+                                android:textColor="@color/ff8881a6"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/code_new"
+                                android:layout_width="match_parent"
+                                android:layout_height="22dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginLeft="16.5dp"
+                                android:layout_marginRight="9dp"
+                                android:layout_toLeftOf="@+id/getconde_new"
+                                android:background="@drawable/set_trade_psw_"
+                                android:hint="@string/pen_inmsg_code"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLength="10"
+                                android:paddingLeft="4.5dp"
+                                android:text=""
+                                android:textColor="@color/ff222222"
+                                android:textColorHint="@color/ffb5b2c7"
+                                android:textSize="13sp" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/google_codes"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/googleCode"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:background="@drawable/safe_bg"
+                            android:gravity="center"
+                            android:text="@string/poste"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_google_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="16.5dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/googleCode"
+                            android:background="@drawable/set_trade_psw_"
+                            android:hint="@string/please_inphogoogle_code"
+                            android:lines="1"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/btn_to_sure"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/login_bn_bg"
+                        android:gravity="center"
+                        android:text="@string/confirm"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

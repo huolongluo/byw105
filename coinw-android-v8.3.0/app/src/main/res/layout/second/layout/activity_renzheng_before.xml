@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_title"></include>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_bg"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="@string/sel_you_area"
+                android:textColor="@color/ff222222"
+                android:textSize="13sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="158dp"
+                android:layout_marginLeft="24.5dp"
+                android:layout_marginRight="24.5dp"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/renzheng_bg1">
+
+                    <ImageView
+                        android:id="@+id/iv_1"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="9dp"
+                        android:src="@mipmap/yuan1" />
+
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="51dp"
+                        android:lines="1"
+                        android:text="@string/chinada"
+                        android:textColor="@color/ff222222"
+                        android:textSize="17sp" />
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="20dp"
+                        android:layout_above="@+id/tv1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="13dp"
+                        android:src="@mipmap/dalu" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/renzheng_bg2">
+
+                    <ImageView
+                        android:id="@+id/iv_2"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="9dp"
+                        android:src="@mipmap/yuan1"
+                        android:visibility="gone"/>
+
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="51dp"
+                        android:lines="1"
+                        android:text="@string/other_area"
+                        android:textColor="@color/ff222222"
+                        android:textSize="17sp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="13dp"
+                        android:src="@mipmap/qguowai" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/next_bn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/confirm_jb_bg"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

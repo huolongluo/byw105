@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_tab_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <RelativeLayout
+            android:id="@+id/tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6.5dp">
+            <TextView
+                android:id="@+id/tv11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="1dp"
+                android:text="@string/zxcj"
+                android:textColor="@color/ff8881a6"
+                android:textSize="12.5sp" />
+            <ImageView
+                android:id="@+id/tab1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@+id/tv11"
+                android:layout_alignRight="@+id/tv11"
+                android:src="@drawable/trade_line" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/tab1">
+            <TextView
+                android:id="@+id/tv12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="1dp"
+                android:text="@string/dqwt"
+                android:textColor="@color/ff8881a6"
+                android:textSize="12.5sp" />
+            <ImageView
+                android:id="@+id/tab2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@+id/tv12"
+                android:layout_alignRight="@+id/tv12"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/trade_line"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+    <huolongluo.byw.view.NoScrollViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="300dp" />
+</LinearLayout>

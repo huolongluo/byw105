@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_main"
+    tools:context="com.android.legend.ui.home.newCoin.NewCoinsActivity">
+    <include layout="@layout/inc_toolbar"
+        android:id="@+id/toolbar"/>
+    <TextView android:id="@+id/tvAll"
+        style="@style/TextView_14_main"
+        android:text="@string/all_project"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:paddingStart="@dimen/dp_4"
+        android:paddingEnd="@dimen/dp_4"
+        android:textColor="@color/sl_color_normal_main2_selected_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvIncrease"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+    <TextView android:id="@+id/tvIncrease"
+        style="@style/TextView_14_main2"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:paddingStart="@dimen/dp_4"
+        android:paddingEnd="@dimen/dp_4"
+        android:textColor="@color/sl_color_normal_main2_selected_main"
+        android:text="@string/increase_list"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toEndOf="@+id/tvAll"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_new_coin_hot"
+        app:layout_constraintTop_toTopOf="@+id/tvIncrease"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIncrease"
+        app:layout_constraintEnd_toStartOf="@+id/tvIncrease"/>
+    <View android:id="@+id/vAll"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_3"
+        android:background="@drawable/bg_cor3_accent"
+        android:layout_marginTop="@dimen/dp_2"
+        app:layout_constraintStart_toStartOf="@+id/tvAll"
+        app:layout_constraintEnd_toEndOf="@+id/tvAll"
+        app:layout_constraintTop_toBottomOf="@+id/tvAll"/>
+    <View android:id="@+id/vIncrease"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_3"
+        android:background="@drawable/bg_cor3_accent"
+        android:layout_marginTop="@dimen/dp_2"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/tvIncrease"
+        app:layout_constraintEnd_toEndOf="@+id/tvIncrease"
+        app:layout_constraintTop_toBottomOf="@+id/tvIncrease"/>
+    <RelativeLayout android:id="@+id/rltAllProject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vAll"
+        android:layout_marginTop="@dimen/dp_4"
+        android:padding="@dimen/margin_horizontal"
+        android:visibility="visible">
+        <TextView android:id="@+id/tvComingSoon"
+            style="@style/TextView_12_accent"
+            android:textStyle="bold"
+            android:background="@drawable/bg_cor3_background_tab"
+            android:textColor="@color/sl_color_normal_main_selected_accent"
+            android:paddingTop="@dimen/dp_4"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:text="@string/coming_soon"/>
+        <TextView android:id="@+id/tvAlreadyOnline"
+            style="@style/TextView_12_accent"
+            android:textStyle="bold"
+            android:background="@drawable/bg_cor3_background_tab"
+            android:textColor="@color/sl_color_normal_main_selected_accent"
+            android:paddingTop="@dimen/dp_4"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:text="@string/already_online"
+            android:layout_toEndOf="@+id/tvComingSoon"
+            android:layout_marginStart="@dimen/dp_8"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvComingSoon"
+            android:layout_marginTop="@dimen/dp_4"/>
+    </RelativeLayout>
+    <LinearLayout android:id="@+id/llIncrease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vAll"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <View style="@style/Space"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+            <TextView style="@style/TextView_12_main2"
+                android:text="@string/ranking"
+                android:layout_marginStart="@dimen/margin_horizontal"/>
+    
+            <TextView style="@style/TextView_12_main2"
+                android:text="@string/project_name"
+                android:layout_marginStart="@dimen/dp_52"/>
+    
+            <TextView style="@style/TextView_12_main2"
+                android:text="@string/opening_price"
+                android:layout_marginStart="@dimen/dp_120"/>
+    
+            <TextView style="@style/TextView_12_main2"
+                android:text="@string/highest_price"
+                android:layout_marginStart="@dimen/dp_200"/>
+    
+            <TextView style="@style/TextView_12_main2"
+                android:layout_width="@dimen/dp_80"
+                android:gravity="center"
+                android:text="@string/highest_increase"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/margin_horizontal"/>
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvIncrease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

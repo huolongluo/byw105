@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="type"
+            type="androidx.databinding.ObservableInt" />
+
+        <variable
+            name="amount"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="maxModifyMargin"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="liquidationPrice"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+
+        <variable
+            name="position"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.PositionWrap" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mc_sdk_bg_bottom_dialog_r7"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/mc_sdk_modify_position_margin"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_close" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="?bg_edit"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="8dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="?ic_switch"
+                android:drawablePadding="5dp"
+                android:text="@{type == 1 ? @string/mc_sdk_add : @string/mc_sdk_minus}"
+                android:textColor="?col_text_content"
+                android:textSize="14sp"
+                tools:text="@string/mc_sdk_add" />
+
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:paddingLeft="5dp"
+                android:textSize="12sp"
+                android:text="@={amount}" />
+
+            <TextView
+                android:id="@+id/tv_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_max2"
+                android:textColor="?col_text_accent"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="4dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_usdt"
+                android:textColor="?col_text_title"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_current_position_margin"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{position.margin}"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                tools:text="100" />
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_usdt"
+                android:textColor="?col_text_title"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{type == 1 ? @string/mc_sdk_max_add_position_margin : @string/mc_sdk_max_minus_position_margin}"
+                android:textColor="?col_text_content"
+                android:textSize="12sp"
+                tools:text="@string/mc_sdk_max_add_position_margin" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{maxModifyMargin}"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                tools:text="100" />
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_usdt"
+                android:textColor="?col_text_title"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_modify_liquidation_price"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_liquidation_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                android:text="@{liquidationPrice}"
+                tools:text="100USDT" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="?bg_action_btn_accent"
+            android:text="@string/mc_sdk_confirm"
+            android:textColor="?col_text_on_button" />
+
+    </LinearLayout>
+</layout>

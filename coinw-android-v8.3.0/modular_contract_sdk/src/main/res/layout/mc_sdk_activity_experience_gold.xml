@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showTypeFilter"
+            type="androidx.databinding.ObservableField&lt;Boolean>" />
+
+        <variable
+            name="showSortFilter"
+            type="androidx.databinding.ObservableField&lt;Boolean>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mc_sdk_white">
+
+        <include
+            android:id="@+id/toolBar"
+            layout="@layout/mc_sdk_view_tool_bar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="14dp"
+            android:paddingTop="7dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="7dp"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <TextView
+                android:id="@+id/tv_filter_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:drawableRight="@drawable/mc_sdk_ic_arrow_down_black"
+                android:drawablePadding="10dp"
+                android:text="@string/mc_sdk_all_type"
+                android:textColor="@color/mc_sdk_txt_label"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+            <TextView
+                android:id="@+id/tv_filter_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/mc_sdk_ic_arrow_down_black"
+                android:drawablePadding="10dp"
+                android:text="@string/mc_sdk_default_sort"
+                android:textColor="@color/mc_sdk_txt_label"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_history"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:src="@drawable/mc_sdk_ic_history" />
+
+        </LinearLayout>
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/ref_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/mc_sdk_dialog_bg"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/mc_sdk_item_experience_gold" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+        <ImageView
+            android:id="@+id/view_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#80000000"
+            android:visibility="@{showTypeFilter || showSortFilter ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter" />
+
+        <RadioGroup
+            android:id="@+id/ll_filter_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mc_sdk_bg_dialog_white_bottom_r7"
+            android:orientation="horizontal"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="7dp"
+            android:visibility="@{showTypeFilter ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter">
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexDirection="row"
+                app:flexWrap="wrap">
+                <RadioButton
+                    android:id="@+id/tv_all_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/mc_sdk_bg_selector_filter_radio"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/mc_sdk_all_type"
+                    android:textColor="@color/mc_sdk_txt_label"
+                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/tv_wait_use"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/mc_sdk_bg_selector_filter_radio"
+                    android:button="@null"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/mc_sdk_wait_use"
+                    android:textColor="@color/mc_sdk_txt_label"
+                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/tv_not_activate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/mc_sdk_bg_selector_filter_radio"
+                    android:layout_marginTop="7dp"
+                    android:button="@null"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/mc_sdk_not_activate"
+                    android:textColor="@color/mc_sdk_txt_label"
+                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/ll_filter_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mc_sdk_bg_dialog_white_bottom_r7"
+            android:orientation="horizontal"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="7dp"
+            tools:visibility="gone"
+            android:visibility="@{showSortFilter ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/ll_filter">
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexDirection="row"
+                app:flexWrap="wrap">
+
+                <RadioButton
+                    android:id="@+id/tv_default_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/mc_sdk_bg_selector_filter_radio"
+                    android:button="@null"
+                    android:checked="true"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/mc_sdk_default_sort"
+                    android:textColor="@color/mc_sdk_txt_label"
+                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/tv_big_to_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/mc_sdk_bg_selector_filter_radio"
+                    android:button="@null"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/mc_sdk_big_to_small"
+                    android:textColor="@color/mc_sdk_txt_label"
+                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/tv_bout_to_expire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/mc_sdk_bg_selector_filter_radio"
+                    android:button="@null"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/mc_sdk_about_to_expire"
+                    android:textColor="@color/mc_sdk_txt_label"
+                    android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+        </RadioGroup>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

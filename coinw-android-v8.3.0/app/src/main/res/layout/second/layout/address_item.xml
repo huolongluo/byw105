@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_size_16">
+        <com.legend.common.view.textview.DinproMediumTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BC"
+            android:textColor="@color/light_text_title"
+            android:textSize="16sp" />
+        <com.legend.common.view.textview.DinproMediumTextView
+            android:id="@+id/num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_size_27"
+            android:background="@drawable/address_bg2"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_size_4"
+            android:paddingTop="@dimen/dp_size_2"
+            android:paddingEnd="@dimen/dp_size_4"
+            android:paddingBottom="@dimen/dp_size_2"
+            android:text="10"
+            android:textColor="@color/light_text_accent"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_address_allow" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="@dimen/dp_size_16"
+        android:layout_marginEnd="@dimen/dp_size_16"
+        android:background="@color/color_20979797" />
+</LinearLayout>

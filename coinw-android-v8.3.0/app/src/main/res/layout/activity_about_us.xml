@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/EEEFF1">
+
+    <include layout="@layout/toolbar"/>
+
+    <ImageView
+        android:id="@+id/iv_app_icon"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y280"
+        android:layout_below="@+id/lin1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y100"
+        android:src="@mipmap/app_ic_launcher"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:layout_below="@+id/iv_app_icon"
+        android:layout_marginTop="@dimen/y100"
+        android:background="@color/FFFFFF"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x20"
+        android:text="官网：web1.coinw.com"
+        android:textSize="@dimen/text_size30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/y28"
+        android:text="@string/banq"
+        android:textSize="@dimen/text_size23"/>
+
+</RelativeLayout>

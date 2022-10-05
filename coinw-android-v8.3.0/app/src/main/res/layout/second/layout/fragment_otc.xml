@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/pub_bg"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <TextView
+            android:id="@+id/otc_title"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:maxEms="8"
+            android:text="@string/fbjy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/back"/>
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <LinearLayout
+                android:layout_width="148dp"
+                android:layout_height="31dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/otcc2c_bg3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/otc_select_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/otcc2c_bg1"
+                    android:gravity="center"
+                    android:text="@string/trade_title1"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/c2c_select_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/trade_title2"
+                    android:textColor="@color/ff918BAE"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include
+            layout="@layout/c2c_view_layout"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginLeft="17dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/buy_tv"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/market_custom_bg1"
+                android:gravity="center"
+                android:text="@string/buy_otc"
+                android:textColor="@color/white"
+                android:textSize="13.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sell_tv"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/sell_otc"
+                android:textColor="@color/ffa9a4c0"
+                android:textSize="13.5sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/filtrate_iv"
+                android:layout_width="17dp"
+                android:layout_height="19dp"
+                android:src="@drawable/sxb" />
+
+            <ImageView
+                android:id="@+id/menu_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="13dp"
+                android:paddingTop="5dp"
+                android:paddingRight="17dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/three_dot" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/base_bg_white"></FrameLayout>
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_search"
+            android:visibility="invisible" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_toStartOf="@+id/ivSearch" />
+    </RelativeLayout>
+    <View
+        style="@style/Line_main"
+        android:layout_below="@+id/rv" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_42"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:isScrollContainer="false"
+        android:measureAllChildren="true"
+        app:tabBackground="@android:color/transparent"
+        app:tabIndicatorHeight="0dp"
+        app:tabMaxWidth="@dimen/dp_200"
+        app:tabMinWidth="@dimen/dp_20"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="@dimen/dp_6"
+        app:tabPaddingStart="@dimen/dp_6"
+        app:tabRippleColor="@color/transparent" />
+    <include
+        android:id="@+id/riskWarning"
+        layout="@layout/inc_risk_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/margin_horizontal"
+        android:visibility="gone" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

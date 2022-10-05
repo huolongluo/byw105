@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <import type="huolongluo.byw.R" />
+
+        <variable
+            name="tickerIsUp"
+            type="androidx.databinding.ObservableField&lt;Boolean>" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:theme_src="@{R.attr.ic_trade_products}"
+                    tools:src="?attr/ic_trade_products" />
+
+                <TextView
+                    android:id="@+id/tv_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:includeFontPadding="false"
+                    android:lineSpacingMultiplier="1"
+                    android:text="CWT"
+                    android:textSize="18sp"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                    app:theme_textColor="@{R.attr.col_text_title}"
+                    tools:textColor="?attr/col_text_title" />
+
+                <TextView
+                    android:id="@+id/tv_separate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginBottom="-1.5dp"
+                    android:includeFontPadding="false"
+                    android:text="/"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                    app:theme_textColor="@{R.attr.col_text_title}"
+                    tools:textColor="?attr/col_text_title" />
+
+                <TextView
+                    android:id="@+id/tv_cny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_separate"
+                    android:includeFontPadding="false"
+                    android:text="/USDT"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                    app:theme_textColor="@{R.attr.col_text_title}"
+                    tools:textColor="?attr/col_text_title" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_etf_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    app:theme_background="@{R.attr.ic_trade_question}"
+                    tools:background="?attr/ic_trade_question" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_cny_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="bottom"
+                android:minWidth="35dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="5dp"
+                android:text="--"
+                android:textSize="15sp"
+                app:is_up="@{tickerIsUp}"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                tools:textColor="?up_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_star"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="centerInside"
+                    app:theme_src="@{R.attr.ic_trade_collect}"
+                    tools:src="?attr/ic_trade_collect" />
+
+                <ImageView
+                    android:id="@+id/iv_kline"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerInside"
+                    app:theme_src="@{R.attr.ic_trade_candles}"
+                    tools:src="?attr/ic_trade_candles" />
+
+                <ImageView
+                    android:id="@+id/iv_more"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="centerInside"
+                    app:theme_src="@{R.attr.ic_trade_menu}"
+                    tools:src="?attr/ic_trade_menu" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

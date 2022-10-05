@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/base_title"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_col">
+
+        <com.google.android.material.tabs.TabLayout
+            android:paddingLeft="7dp"
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="36.7dp"
+            android:background="@color/base_col"
+            android:gravity="center_vertical"
+            android:isScrollContainer="false"
+            android:measureAllChildren="true"
+            app:tabBackground="@android:color/transparent"
+
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="5dp"
+            app:tabPaddingStart="5dp"
+
+
+            />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+
+</LinearLayout>

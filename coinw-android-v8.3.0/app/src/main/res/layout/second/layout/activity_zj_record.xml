@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_main"
+    tools:context="com.android.legend.ui.finance.ZjRecordActivity">
+    <include layout="@layout/inc_toolbar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tvAllZj"
+            style="@style/TextView_12_main2"
+            android:text="@string/all_zj"
+            android:drawableEnd="@mipmap/ic_triangle_down_gray2"
+            android:drawablePadding="@dimen/dp_8"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_14"
+            android:paddingBottom="@dimen/dp_14"/>
+        <TextView android:id="@+id/tvAllType"
+            style="@style/TextView_12_main2"
+            android:text="@string/all_type"
+            android:layout_toEndOf="@+id/tvAllZj"
+            android:drawableEnd="@mipmap/ic_triangle_down_gray2"
+            android:drawablePadding="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_32"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_14"
+            android:paddingBottom="@dimen/dp_14"/>
+    </RelativeLayout>
+    <View style="@style/Line_main"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:layout_marginEnd="@dimen/margin_horizontal"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/imgViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btnShare"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="156dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/btn_yellow_selector"
+        android:text="@string/hbt_share_friends"
+        android:textAllCaps="false"
+        android:textColor="@color/color_ff655A26"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgViewPager"
+        tools:visibility="visible" />
+
+    <huolongluo.byw.view.LoadingView
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

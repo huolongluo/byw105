@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/dialog_shap_etf"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_close_etf"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/tv_showdialog_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill_vertical"
+            android:lineSpacingExtra="1dp"
+            android:lineSpacingMultiplier='1.2'
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="@string/str_etf_coin_desc"
+            android:textColor="#AAA4CB"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

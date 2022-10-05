@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ll_home_dynamic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dynamic_entrance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_gray"
+            android:paddingStart="@dimen/margin_horizontal"
+            android:paddingEnd="@dimen/margin_horizontal"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10">
+            <RelativeLayout android:id="@+id/rltLeft"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/bg_cor5_background_main"
+                android:padding="@dimen/dp_10">
+                <TextView android:id="@+id/tvLeft1"
+                    style="@style/TextView_14_main_bold"
+                    android:text="@string/home_step2"/>
+                <TextView android:id="@+id/tvLeft2"
+                    style="@style/TextView_12_main2"
+                    android:text="@string/str_digital_currencies"
+                    android:layout_below="@+id/tvLeft1"
+                    android:layout_marginTop="@dimen/dp_2"/>
+                <ImageView android:id="@+id/ivLeft1"
+                    android:layout_width="@dimen/dp_38"
+                    android:layout_height="@dimen/dp_38"
+                    android:src="@mipmap/ic_home_fastbuy"
+                    android:layout_below="@+id/tvLeft2"
+                    android:layout_marginTop="@dimen/dp_6"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/ic_home_go_gray"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvLeft2"
+                    android:layout_marginTop="@dimen/dp_18"/>
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rltRight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/bg_cor5_background_main"
+                android:padding="@dimen/dp_10"
+                android:layout_marginStart="@dimen/margin_horizontal">
+                <TextView android:id="@+id/tvRight1"
+                    style="@style/TextView_14_main_bold"
+                    tools:text="@string/coin_choice"/>
+                <TextView android:id="@+id/tvRight2"
+                    style="@style/TextView_12_main2"
+                    tools:text="@string/institute_project"
+                    android:layout_below="@+id/tvRight1"
+                    android:layout_marginTop="@dimen/dp_2"/>
+                <ImageView android:id="@+id/ivRight1"
+                    android:layout_width="@dimen/dp_38"
+                    android:layout_height="@dimen/dp_38"
+                    tools:src="@mipmap/ic_home_new_coin"
+                    android:layout_below="@+id/tvRight2"
+                    android:layout_marginTop="@dimen/dp_6"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/ic_home_go_gray"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvRight2"
+                    android:layout_marginTop="@dimen/dp_18"/>
+            </RelativeLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/ll_dynamic_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/margin_horizontal"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <com.beiing.roundimage.RoundImageView
+                android:id="@+id/iv_dynamic_banner_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:src="@drawable/ic_home_invite"
+                app:riv_leftBottomRadius="@dimen/dp_6"
+                app:riv_leftTopRadius="@dimen/dp_6"
+                app:riv_rightBottomRadius="@dimen/dp_6"
+                app:riv_rightTopRadius="@dimen/dp_6" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

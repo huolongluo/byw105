@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="wrap_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="match_match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- text <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <!--  白字  wrap wrap -->
+    <!--  白字  match match -->
+    <!--  白字  match wrap -->
+    <!--  白字  match wrap -->
+    <!--  白字  wrap match-->
+    <!--  白字 36大小 wrap wrap -->
+    <!--  白字 24大小 wrap wrap -->
+    <!--  白字 30大小 wrap wrap -->
+    <!--  白字 36大小 match wrap -->
+    <!--  白字 36大小 match match -->
+    <!--  白字 30大小 wrap match -->
+    <!--  白字 36大小 wrap match -->
+    <!--  黄字ff9213  wrap wrap -->
+    <!--  黄字ff9213 30大小 wrap wrap -->
+    <!--  黄字ff9213 36大小 wrap wrap -->
+    <!--  红字f74d47  wrap wrap -->
+    <!--  红字f74d47 24大小  wrap wrap -->
+    <!--  红字f74d47 30大小  wrap wrap -->
+    <!--  红字ff9213 36大小 wrap wrap -->
+    <!--  红字ff9213 46大小 wrap wrap -->
+    <!--  灰字bbbbbb wrap wrap  -->
+    <!--  灰字bbbbbb wrap wrap  -->
+    <!--  灰字bbbbbb wrap wrap  -->
+    <!--  灰字bbbbbb match wrap  -->
+    <!--  灰字bbbbbb 24大小 wrap wrap -->
+    <!--  灰字bbbbbb 24大小 match wrap -->
+    <!--  灰字bbbbbb 30大小 match wrap -->
+    <!--  灰字999999 24大小 wrap wrap -->
+    <!--  灰字999999 30大小 wrap wrap -->
+    <!--  灰字a7a7a7 30大小 wrap wrap -->
+    <!--  黑字  wrap wrap -->
+    <!--  浅红色  wrap wrap -->
+    <!--  浅红色  wrap wrap -->
+    <!--  黑字  wrap wrap -->
+    <!--  黑字  wrap wrap -->
+    <!--  红色  wrap wrap -->
+    <!--  黑字  wrap wrap -->
+    <!--  黑字  wrap match -->
+    <!--  黑字  wrap match -->
+    <!--  黑字  match wrap -->
+    <!--  黑字  match wrap -->
+    <!--  黑字333333 24大小 wrap wrap -->
+    <!--  红色333333 24大小 wrap wrap -->
+    <!--  黑字333333 28大小 wrap wrap -->
+    <!--  黑字333333 36大小 wrap wrap -->
+    <!--  黑字333333 30大小 wrap wrap -->
+    <!--  黑字333333 30大小 match wrap -->
+    <!--  黑字333333 30大小 match wrap center_vertical -->
+    <!--  黑字333333 30大小 wrap match -->
+    <!--  黑字333333 36大小 match wrap -->
+    <!--  浅红色E39F72 36大小 wrap wrap -->
+    <!--  浅红色E39F72 36大小 wrap wrap -->
+    <!-- divider <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <!-- 竖直分割线 1px -->
+    <!-- 水平分割线 1px -->
+    <!-- 水平分割线 20px -->
+    <!-- 水平分割线 20px 灰色f1f1f1 -->
+    <!-- 水平分割线 1px 灰色e0e0e0 -->
+    <!-- 竖直分割线 1px 灰色e0e0e0 -->
+    <!-- 水平分割线 1px 灰色e0e0e0 -->
+    <!-- RoundTextView <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <!--  白字ffffff  match y88 -->
+    <!--  白字ffffff 36大小  match y88 -->
+    <!--  白字ffffff  wrap y106 -->
+    <!--  白字ffffff 36大小  wrap y106 -->
+    <!--&lt;!&ndash; 白字ffffff 36大小  wrap y106 黄底&ndash;&gt;-->
+    <!--<style name="rtext_wy106_ffffff_36_ff9213" parent="rtext_wy106_ffffff_36">-->
+    <!--<item name="rv_backgroundColor">@color/FF9213</item>-->
+    <!--<item name="rv_backgroundPressColor">@color/F8A848</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 白字ffffff 36大小  match y88 黄底&ndash;&gt;-->
+    <!--<style name="rtext_my88_ffffff_36_ff9213" parent="rtext_my88_ffffff_36">-->
+    <!--<item name="rv_backgroundColor">@color/FF9213</item>-->
+    <!--<item name="rv_backgroundPressColor">@color/F8A848</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 白字ffffff 36大小  match y88 灰底&ndash;&gt;-->
+    <!--<style name="rtext_my88_ffffff_36_d1d1d1" parent="rtext_my88_ffffff_36">-->
+    <!--<item name="rv_backgroundColor">@color/D1D1D1</item>-->
+    <!--<item name="rv_backgroundPressColor">@color/A2A2A2</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 白字ffffff 36大小  match y88 黄底 圆角8px&ndash;&gt;-->
+    <!--<style name="rtext_my88_ffffff_36_ff9213_8" parent="rtext_my88_ffffff_36_ff9213">-->
+    <!--<item name="rv_cornerRadius">@dimen/x8</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 白字ffffff 36大小  match y88 灰底 圆角8px&ndash;&gt;-->
+    <!--<style name="rtext_my88_ffffff_36_d1d1d1_8" parent="rtext_my88_ffffff_36_d1d1d1">-->
+    <!--<item name="rv_cornerRadius">@dimen/x8</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;  黑字  match y88 &ndash;&gt;-->
+    <!--<style name="rtext_my88_333333" parent="match_y88">-->
+    <!--<item name="android:gravity">center</item>-->
+    <!--<item name="android:textColor">@color/FF333333</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;  黑字  match y106 &ndash;&gt;-->
+    <!--<style name="rtext_my106_333333" parent="match_y106">-->
+    <!--<item name="android:gravity">center</item>-->
+    <!--<item name="android:textColor">@color/FF333333</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;  黑字  x160 y60 &ndash;&gt;-->
+    <!--<style name="rtext_x160y60_333333" parent="x160_y60">-->
+    <!--<item name="android:gravity">center</item>-->
+    <!--<item name="android:textColor">@color/FF333333</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;  黑字333333 36大小  match y88 &ndash;&gt;-->
+    <!--<style name="rtext_my88_333333_36" parent="rtext_my88_333333">-->
+    <!--<item name="android:textSize">@dimen/text_size36</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;  黑字333333 36大小  match y106 &ndash;&gt;-->
+    <!--<style name="rtext_my106_333333_36" parent="rtext_my106_333333">-->
+    <!--<item name="android:textSize">@dimen/text_size36</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;  黑字333333 36大小  x160 y60 &ndash;&gt;-->
+    <!--<style name="rtext_x160y60_333333_36" parent="rtext_x160y60_333333">-->
+    <!--<item name="android:textSize">@dimen/text_size36</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 黑字333333 36大小  match y88 灰底&ndash;&gt;-->
+    <!--<style name="rtext_my88_333333_36_ff9213" parent="rtext_my88_333333_36">-->
+    <!--<item name="rv_backgroundColor">@color/E0E0E0</item>-->
+    <!--<item name="rv_backgroundPressColor">@color/AEA9A9</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 黑字333333 36大小  match y106 灰底&ndash;&gt;-->
+    <!--<style name="rtext_my106_333333_36_ff9213" parent="rtext_my106_333333_36">-->
+    <!--<item name="rv_backgroundColor">@color/E0E0E0</item>-->
+    <!--<item name="rv_backgroundPressColor">@color/AEA9A9</item>-->
+    <!--</style>-->
+    <!-- EditText <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <!--  黑字333333  match y50 -->
+    <!--  黑字333333  match y50 -->
+    <!--  黑字333333  match y80 -->
+    <!--  黑字333333 字号30 match y80 -->
+    <!--  黑字333333 字号30 match y50 -->
+    <!--  黑字333333 字号30 match y50 无背景-->
+    <!--  黑字333333 字号30 match y50 无背景-->
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/margin_horizontal"
+    android:paddingEnd="@dimen/margin_horizontal"
+    android:background="@color/background_main">
+    
+    <ImageView android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_back"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView android:id="@+id/tvGoogle"
+        style="@style/TextView_22_main"
+        android:textColor="@color/sl_color_normal_main3_selected_main"
+        app:layout_constraintTop_toBottomOf="@+id/ivBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvCode"
+        android:text="@string/google_code"
+        android:layout_marginTop="@dimen/dp_12"/>
+    <TextView android:id="@+id/tvCode"
+        style="@style/TextView_22_main"
+        android:textColor="@color/sl_color_normal_main3_selected_main"
+        app:layout_constraintTop_toBottomOf="@+id/ivBack"
+        app:layout_constraintStart_toEndOf="@+id/tvGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="短信验证"
+        android:layout_marginTop="@dimen/dp_12"/>
+    <View android:id="@+id/vGoogle"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_1"
+        app:layout_constraintTop_toBottomOf="@+id/tvGoogle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vCode"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@drawable/bg_cor3_accent"/>
+    <View android:id="@+id/vCode"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_1"
+        app:layout_constraintTop_toBottomOf="@+id/tvGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vGoogle"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@drawable/bg_cor3_accent"
+        android:visibility="invisible"/>
+    
+    <EditText
+        android:id="@+id/etGoogle"
+        style="@style/TextView_14_main"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/dp_size_32"
+        android:background="@drawable/bg_edit_selector"
+        android:hint="@string/plea_code"
+        android:inputType="number"
+        android:maxLength="6"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:textColorHint="@color/text_main2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vGoogle"/>
+    
+    <TextView
+        android:id="@+id/tvPaste"
+        style="@style/TextView_14_accent"
+        android:paddingLeft="@dimen/dp_size_18"
+        android:paddingTop="@dimen/dp_size_4"
+        android:paddingBottom="@dimen/dp_size_4"
+        android:text="@string/poste"
+        app:layout_constraintBottom_toBottomOf="@+id/etGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etGoogle" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vGoogle"
+        android:visibility="gone">
+        <TextView android:id="@+id/tvCodeTips"
+            style="@style/TextView_14_main2"
+            android:drawableStart="@mipmap/ic_login_code_tips"
+            android:drawablePadding="@dimen/dp_10"
+            tools:text="请输入您在手机 +86 15001356665 收到的6位验证码"
+            android:layout_marginTop="@dimen/dp_32"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/etCode"
+            style="@style/TextView_14_main"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dp_size_32"
+            android:background="@drawable/bg_edit_selector"
+            android:hint="@string/plea_code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:textColorHint="@color/text_main2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCodeTips"/>
+    
+        <TextView
+            android:id="@+id/tvSend"
+            style="@style/TextView_14_accent"
+            android:paddingLeft="@dimen/dp_size_18"
+            android:paddingTop="@dimen/dp_size_4"
+            android:paddingBottom="@dimen/dp_size_4"
+            android:text="@string/send_code"
+            app:layout_constraintBottom_toBottomOf="@+id/etCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etCode" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

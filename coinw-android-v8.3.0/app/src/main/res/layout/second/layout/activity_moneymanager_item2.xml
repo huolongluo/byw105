@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/money_manager_bg1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/huodong_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/hyper_bg4"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="11sp"
+
+            />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="7dp"
+
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/logo_iv1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@mipmap/default_coin" />
+
+                <TextView
+                    android:id="@+id/coin_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+
+                    android:layout_marginTop="8dp"
+
+                    android:lines="1"
+                    android:text="--"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/miaoshu_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+
+                        android:layout_marginBottom="-2dp"
+                        android:lines="1"
+                        android:text="--"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/baifenbi_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8.5dp"
+                        android:text="--"
+                        android:textColor="@color/F2C8FF7"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="12dp"
+                    android:lines="1"
+                    android:text="--"
+                    android:textColor="@color/ff938cc1"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

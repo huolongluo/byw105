@@ -1,0 +1,127 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+    
+        <FrameLayout
+            android:id="@+id/root_vol_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_chart_height"
+            android:orientation="vertical">
+        
+        
+            <huolongluo.byw.view.kline.AppCombinedChart
+                android:id="@+id/vol_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+    
+            <TextView
+                android:id="@+id/tv_vol_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:includeFontPadding="false"
+                android:layout_marginEnd="20dp"
+                android:textSize="8dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/root_index_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_chart_height"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+
+            <huolongluo.byw.view.kline.AppCombinedChart
+                android:id="@+id/index_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+    
+            <TextView
+                android:id="@+id/tv_sub_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:includeFontPadding="false"
+                android:layout_marginEnd="20dp"
+                android:textSize="8dp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    
+        <ImageView
+            android:id="@+id/iv_water_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:scaleType="centerInside"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:src="@mipmap/kline_watermark"/>
+        
+        <huolongluo.byw.view.kline.AppCombinedChart
+            android:id="@+id/line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <huolongluo.byw.view.kline.RippleBackground
+            android:id="@+id/ripple_bg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"/>
+    
+        <TextView
+            android:id="@+id/tv_main_index"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="8dp" />
+        
+        <huolongluo.byw.view.kline.KLineChartInfoView
+            android:id="@+id/k_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="23dp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+    
+    
+    <FrameLayout
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+        
+        <huolongluo.byw.view.LoadingView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</FrameLayout>

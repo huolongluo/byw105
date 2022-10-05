@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="9dp">
+
+    <TextView
+        android:id="@+id/tv_preferences_setting"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawableLeft="?ic_preferences_setting"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:text="@string/mc_sdk_preferences_setting"
+        android:textColor="?col_text_title"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawableLeft="?ic_calculator"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:text="@string/mc_sdk_calculator"
+        android:textColor="?col_text_title"
+        android:textSize="16sp" />
+
+</LinearLayout>

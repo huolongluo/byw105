@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_gravity="bottom"
+    android:background="@color/background_main">
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/v"
+        />
+
+    <View android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/background_gray"
+        android:layout_above="@id/tvCancel"/>
+    
+    <TextView
+        android:id="@+id/tvCancel"
+        style="@style/TextView_14_main2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="@string/cancle"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

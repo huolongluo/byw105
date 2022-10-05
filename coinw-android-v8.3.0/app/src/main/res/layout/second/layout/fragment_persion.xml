@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fff8f9fc"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/close_iv"
+            android:layout_width="33.5dp"
+            android:layout_height="34.5dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="6dp"
+            android:padding="9dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/person_close" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/head_person"
+
+            />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="13dp"
+            android:lines="1"
+            android:text="@string/welcom"
+            android:textColor="@color/ff8881a6"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="49dp"
+            android:background="@color/ffdee2ee"></View>
+
+
+        <RelativeLayout
+            android:id="@+id/totalAsset_rl"
+            android:layout_width="match_parent"
+            android:layout_height="86dp">
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="24.5dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/asseat" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="24dp"
+                android:layout_toRightOf="@+id/iv1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allmon"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/totalAsset_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="¥--"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/ffdee2ee"></View>
+
+        <RelativeLayout
+            android:id="@+id/dailyAmount_rl"
+            android:layout_width="match_parent"
+            android:layout_height="86dp">
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ketixian" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="24dp"
+                android:layout_toRightOf="@+id/iv2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ketixiane"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/dailyAmount_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="¥--"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/ffdee2ee"></View>
+
+        <RelativeLayout
+            android:id="@+id/entrustNumber_rl"
+            android:layout_width="match_parent"
+            android:layout_height="86dp">
+
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_width="19.5dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/weituo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="24dp"
+                android:layout_toRightOf="@+id/iv3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/corent"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/entrustNumber_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="¥--"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/ffdee2ee"></View>
+
+
+        <TextView
+            android:id="@+id/close_bn"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:background="@drawable/person_bg"
+            android:text="@string/exit"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/ff8881a6"/>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

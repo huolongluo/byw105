@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    // resourcePrefix 'mpcht'
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 3
+        versionName '3.0.3'
+    }
+    buildTypes {
+        devRelease {
+        }
+        scriptRelease {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        //兼容低端手机[云测兼容性测试]
+        dexOptions {
+            javaMaxHeapSize "4g"
+            preDexLibraries = false
+            additionalParameters += '--multi-dex'
+            additionalParameters += '--set-max-idx-number=35000'//每个包内方法数上限（根据实际项目配置这个数，来适配4.0-4.4一些低端机型，因为拆分的dex太大，这些低端机型加载不了dex）
+            additionalParameters += '--minimal-main-dex'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true // this prevents "not mocked" error
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    maven {
+        url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+    }
+}
+
+dependencies {
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    //compile 'com.android.support:support-v4:19.+'
+    //provided 'io.realm:realm-android:0.87.5' // "optional" dependency to realm-database API
+    testImplementation 'junit:junit:4.12'
+    //testImplementation "org.mockito:mockito-core:1.10.19"
+}
+
+android.libraryVariants.all { variant ->
+    def name = variant.buildType.name
+    def task = project.tasks.create "jar${name.capitalize()}", Jar
+    task.dependsOn variant.javaCompile
+    task.from variant.javaCompile.destinationDir
+    artifacts.add('archives', task)
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+//task javadoc(type: Javadoc) {
+//    options.charSet = 'UTF-8'
+//    failOnError  false
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+
+artifacts {
+    archives sourcesJar
+    //archives javadocJar
+}

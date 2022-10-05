@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <size android:width="35dp"-->
+<!--        android:height="2dp" />-->
+<!--&lt;!&ndash;    <solid android:color="@color/color_FDC706" />&ndash;&gt;-->
+<!--    <solid android:color="@color/color_FDC706" />-->
+<!--        -->
+<!--    <corners android:radius="2dp" />-->
+<!--</shape>-->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+android:opacity="opaque">
+<item android:drawable="@drawable/ic_tab_flag"/>
+</layer-list>

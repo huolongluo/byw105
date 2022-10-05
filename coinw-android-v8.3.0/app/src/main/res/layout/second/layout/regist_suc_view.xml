@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        >
+
+
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="133dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/regist_dialog_shap"
+            android:gravity="center"
+            >
+
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                   android:text="@string/regist_suc"
+                 android:textColor="@color/ff222222"
+                 android:textSize="22sp"
+
+                 />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/regist_suc"
+            />
+        <ImageView
+            android:id="@+id/cancle_iv"
+            android:layout_width="29.5dp"
+            android:layout_height="29.5dp"
+            android:layout_marginTop="10dp"
+            android:padding="2.5dp"
+            android:src="@drawable/guanbi"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ll"
+
+            />
+    </RelativeLayout>
+
+</LinearLayout>

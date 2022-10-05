@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main">
+    <include android:id="@+id/toolbar"
+        layout="@layout/inc_toolbar"/>
+    <LinearLayout android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_36"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/bg_cor7_40aaacba"
+        android:padding="@dimen/dp_3">
+        <TextView android:id="@+id/gongao_tv"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/notice"
+            android:textColor="@color/sl_color_normal_main2_selected_white"
+            android:background="@drawable/sl_bg_normal_transparent_selected_cor5_accent"/>
+        <TextView android:id="@+id/news1_tv"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/news"
+            android:textColor="@color/sl_color_normal_main2_selected_white"
+            android:background="@drawable/sl_bg_normal_transparent_selected_cor5_accent"/>
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll"
+        android:layout_marginTop="@dimen/dp_10"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

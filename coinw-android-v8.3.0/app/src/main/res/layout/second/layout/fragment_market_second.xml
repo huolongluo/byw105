@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.android.legend.view.tablayout.SlidingTabLayout2
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_10"
+        app:tl_iconVisible="false"
+        app:tl_indicator_color="@color/accent_main"
+        app:tl_indicator_corner_radius="@dimen/dp_1"
+        app:tl_indicator_height="@dimen/dp_2"
+        app:tl_indicator_width="@dimen/dp_36"
+        app:tl_textSelectColor="@color/accent_main"
+        app:tl_textUnselectColor="@color/text_main2"
+        app:tl_textBold="BOTH"
+        app:tl_tab_padding="@dimen/margin_horizontal"
+        />
+    
+    <View style="@style/Line_main" />
+    <com.android.legend.view.tablayout.NestedScrollableHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.android.legend.view.tablayout.NestedScrollableHost>
+ 
+</LinearLayout>

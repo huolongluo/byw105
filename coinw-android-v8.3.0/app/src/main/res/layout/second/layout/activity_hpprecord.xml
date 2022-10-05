@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_title"></include>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            android:background="@drawable/login_bg"
+            android:orientation="vertical">
+
+            <TextView
+                     android:id="@+id/noData_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableTop="@mipmap/nodata"
+                android:text="@string/nufina_record"
+                android:textColor="@color/ff8881a6" />
+
+            <huolongluo.byw.widget.pulltorefresh.PullToRefreshListView
+                android:id="@+id/lv_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="3dp"
+                android:background="@android:color/transparent"
+                android:divider="@color/ffd8dbea"
+                android:dividerHeight="0px"
+                android:scrollbars="none"
+
+                />
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

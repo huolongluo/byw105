@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlt"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:paddingLeft="@dimen/margin_horizontal"
+    android:paddingRight="@dimen/margin_horizontal"
+    android:orientation="vertical">
+    <com.legend.common.view.textview.DinproBoldTextView
+        android:id="@+id/tvLeftCoinName"
+        style="@style/TextView_16_main_bold"
+        android:layout_centerVertical="true"
+        tools:text="BTC" />
+    <com.legend.common.view.textview.DinproMediumTextView
+        android:id="@+id/tvRightCoinName"
+        style="@style/TextView_10_main2"
+        android:layout_alignBottom="@+id/tvLeftCoinName"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:layout_toRightOf="@+id/tvLeftCoinName"
+        tools:text="/USDT" />
+    <com.legend.common.view.textview.DinproMediumTextView
+        android:id="@+id/tvPrice"
+        style="@style/TextView_16_main"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        tools:text="2934.02" />
+
+</RelativeLayout>

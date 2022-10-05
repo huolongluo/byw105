@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:gravity="center_vertical">
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/TextView_11_A5A2BE"
+        android:layout_marginLeft="14dp"
+        android:text="11:12:33" />
+    <TextView
+        android:id="@+id/price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="345.87"
+        android:textColor="@color/color_4ED3AD"
+        android:textSize="10sp" />
+    <TextView
+        android:id="@+id/number_tv"
+        style="@style/TextView_11_A5A2BE"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:text="0.145" />
+</RelativeLayout>

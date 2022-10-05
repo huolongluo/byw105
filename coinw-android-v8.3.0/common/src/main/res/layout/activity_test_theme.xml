@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.common.R" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/window_background"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:text="买入-看涨"
+            android:textColor="?attr/col_text_on_button"
+            app:theme_background="@{R.attr.bg_buy_btn}"
+            tools:background="?attr/bg_buy_btn" />
+
+        <Button
+            android:id="@+id/btn_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:text="卖出-看跌"
+            android:textColor="?attr/col_text_on_button"
+            app:theme_background="@{R.attr.bg_sell_btn}"
+            tools:background="?attr/bg_sell_btn" />
+
+        <TextView
+            android:id="@+id/tv_up"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            tools:background="?attr/bg_buy_btn"
+            app:theme_background="@{R.attr.bg_buy_btn}"
+            android:padding="10dp"
+            android:text="23%"
+            android:textColor="?attr/col_text_on_button" />
+
+        <TextView
+            android:id="@+id/tv_drop"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            tools:background="?attr/bg_sell_btn"
+            app:theme_background="@{R.attr.bg_sell_btn}"
+            android:padding="10dp"
+            android:text="-16%"
+            android:textColor="?attr/col_text_on_button" />
+
+        <TextView
+            android:id="@+id/tv_up1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:theme_textColor="@{R.attr.up_color}"
+            tools:textColor="?attr/up_color"
+            android:padding="10dp"
+            android:text="23%"
+            android:textColor="?attr/col_text_on_button" />
+
+        <TextView
+            android:id="@+id/tv_drop1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:theme_textColor="@{R.attr.drop_color}"
+            tools:textColor="?attr/drop_color"
+            android:padding="10dp"
+            android:text="-16%"
+            android:textColor="?attr/col_text_on_button" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="?attr/bg_action_btn_accent"
+            android:text="绿涨红跌"
+            android:textColor="?attr/col_text_on_button" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="?attr/bg_action_btn_normal"
+            android:text="红涨绿跌"
+            android:textColor="?attr/col_text_content" />
+    </LinearLayout>
+</layout>

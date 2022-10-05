@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:orientation="vertical">
+    <include layout="@layout/base_title" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_32"
+                android:layout_marginLeft="@dimen/margin_horizontal"
+                android:layout_marginRight="@dimen/margin_horizontal"
+                android:background="@color/background_main"
+                android:paddingBottom="@dimen/dp_24"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/names_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_73"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/title_name"
+                        style="@style/TextView_16_main"
+                        android:layout_marginLeft="@dimen/margin_horizontal"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:text="@string/lian1" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvChain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/tit1"
+                        style="@style/TextView_16_main"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/qr_code" />
+                    <ImageView
+                        android:id="@+id/qr_code_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tit1"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:id="@+id/save_qr_code"
+                        style="@style/TextView_12_main"
+                        android:layout_below="@id/qr_code_iv"
+                        android:layout_centerHorizontal="true"
+                        android:drawableLeft="@mipmap/ic_recharge_download"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:text="@string/save_qrcode" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/main_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/rec1"
+                    android:textColor="@color/ffff5763"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+                <TextView style="@style/TextView_16_main"
+                    android:layout_marginLeft="@dimen/margin_horizontal"
+                    android:layout_marginTop="@dimen/dp_48"
+                    android:text="@string/recharge_address"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_38"
+                    android:layout_marginLeft="@dimen/margin_horizontal"
+                    android:layout_marginRight="@dimen/margin_horizontal"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@drawable/bg_cor3_background_gray"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/TextView_14_main2"
+                        android:layout_width="250dp"
+                        android:layout_alignParentLeft="true"
+                        android:ellipsize="end"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:maxEms="40"
+                        android:maxLines="2"
+                        android:singleLine="true"/>
+                    <TextView
+                        android:id="@+id/copy"
+                        style="@style/TextView_14_accent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:paddingRight="@dimen/dp_12"
+                        android:text="@string/copy_address"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/memo_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView style="@style/TextView_16_main"
+                        android:layout_marginLeft="@dimen/margin_horizontal"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/memo_add" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_38"
+                        android:layout_marginLeft="@dimen/margin_horizontal"
+                        android:layout_marginRight="@dimen/margin_horizontal"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:background="@drawable/bg_cor3_background_gray"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_address1"
+                            style="@style/TextView_14_main2"
+                            android:layout_width="250dp"
+                            android:layout_alignParentLeft="true"
+                            android:ellipsize="end"
+                            android:layout_centerVertical="true"
+                            android:maxEms="40"
+                            android:maxLines="2"
+                            android:singleLine="true" />
+                        <TextView
+                            android:id="@+id/copy1"
+                            style="@style/TextView_14_accent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:paddingRight="@dimen/dp_12"
+                            android:text="@string/copy_address" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView style="@style/TextView_14_main"
+                android:layout_marginLeft="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/hint_info" />
+            <TextView
+                android:id="@+id/des"
+                style="@style/TextView_12_main2"
+                android:layout_marginLeft="@dimen/margin_horizontal"
+                android:layout_marginRight="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@string/des_address"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

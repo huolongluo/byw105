@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/linearl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        >
+
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent">
+
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="wrap_content"
+                android:layout_height="30.3dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_cor3_background_tab"
+                android:enabled="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="2dp"
+                    android:src="@drawable/zxxx"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/tv_cnyt1"
+                    style="@style/TextView_14_main_bold"
+                    android:layout_width="21dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:textColor="@color/sl_color_normal_main_selected_accent"
+                    tools:text="CNYT" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/number_tv"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+
+                android:layout_alignRight="@+id/ll"
+
+                android:background="@drawable/rund_yellow1"
+
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/base_col"
+                android:textSize="11sp"
+
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:orientation="vertical"
+      android:background="@color/base_bg_white"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@color/base_col"
+        >
+
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+
+            android:paddingLeft="14dp"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/back"
+            android:paddingTop="8dp"
+           />
+
+
+         <ImageView
+             android:layout_width="183dp"
+             android:layout_height="47dp"
+             android:src="@drawable/login_logo"
+             android:layout_marginTop="45dp"
+             android:layout_centerHorizontal="true"
+             />
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:src="@drawable/bg"
+        android:layout_marginTop="-2dp"
+        android:scaleType="fitXY"
+        />
+</LinearLayout>

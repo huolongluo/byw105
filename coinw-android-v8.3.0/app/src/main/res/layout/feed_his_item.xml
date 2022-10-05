@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c46"
+            android:layout_centerVertical="true"
+            android:textColor="@color/FF333333"
+            android:textSize="12.7sp"
+            />
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:text="@string/c47"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/tv_type"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/FF333333"
+            android:textSize="9.7sp"
+            android:background="@drawable/text_bg"
+            />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c48"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/FF333333"
+            android:textSize="11sp"
+            android:layout_alignParentRight="true"
+            />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/FF888888"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c49"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/FF333333"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/delete_1"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c50"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/FF333333"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c51"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/FF333333"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

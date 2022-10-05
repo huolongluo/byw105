@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <import type="huolongluo.byw.R" />
+
+        <import type="android.view.View" />
+
+        <import type="android.view.Gravity" />
+
+        <import type="com.android.coinw.biz.trade.TradeLeftView" />
+
+        <variable
+            name="isBuy"
+            type="androidx.databinding.ObservableBoolean" />
+
+        <variable
+            name="tradeType"
+            type="androidx.databinding.ObservableInt" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:background="?attr/window_background"
+        tools:layout_width="210dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_trade_type"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/ll_net_worth"
+                android:background="?bg_edit"
+                android:drawablePadding="2dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:paddingLeft="5dp"
+                android:text="@{tradeType == TradeLeftView.TRADE_TYPE_LIMIT ? @string/mc_sdk_contract_limit_order : @string/mc_sdk_contract_market_order}"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/ll_net_worth"
+                app:layout_constraintTop_toTopOf="parent"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:textColor="?attr/col_text_title" />
+
+            <ImageView
+                android:id="@+id/iv_arrow_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="?ic_arrow_down"
+                app:layout_constraintBottom_toBottomOf="@id/tv_trade_type"
+                app:layout_constraintRight_toRightOf="@id/tv_trade_type"
+                app:layout_constraintTop_toTopOf="@id/tv_trade_type" />
+
+            <LinearLayout
+                android:id="@+id/ll_net_worth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_trade_type"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="center_vertical"
+                    android:lines="1"
+                    android:text="@string/str_net_worth"
+                    android:textColor="#ff504a69"
+                    android:textSize="10sp"
+                    app:theme_textColor="@{R.attr.col_text_content}"
+                    tools:textColor="?attr/col_text_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text=":"
+                    android:textColor="#ff504a69"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_net_worth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="2dp"
+                    android:gravity="center_vertical"
+                    android:lines="1"
+                    android:text=""
+                    android:textColor="@color/color_B3AFC9"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/iv_net_worth_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"
+                    android:background="@mipmap/ic_doubt_etf"
+                    android:padding="2dp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.android.coinw.biz.trade.QuoteInputView
+            android:id="@+id/qiv_market_price"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:visibility="@{tradeType == TradeLeftView.TRADE_TYPE_MARKET ? View.VISIBLE : View.GONE}"
+            app:enable="@{false}"
+            app:gravity="@{Gravity.CENTER_VERTICAL|Gravity.LEFT}"
+            app:hint="@{isBuy ? R.string.market_price_hint : R.string.market_price_hint}" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{tradeType == TradeLeftView.TRADE_TYPE_LIMIT ? View.VISIBLE : View.GONE}"
+            android:layout_marginTop="10dp">
+
+            <com.android.coinw.biz.trade.QuoteInputView
+                android:id="@+id/qiv_price"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:gravity="@{Gravity.CENTER}"
+                app:hint="@{R.string.price}" />
+
+            <ImageView
+                android:id="@+id/iv_minus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="left|center_vertical"
+                android:padding="10dp"
+                android:src="@drawable/ic_minus" />
+
+            <ImageView
+                android:id="@+id/iv_plus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="right|center_vertical"
+                android:padding="10dp"
+                android:src="@drawable/ic_plus" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_convert_cny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            android:visibility="@{tradeType == TradeLeftView.TRADE_TYPE_LIMIT ? View.VISIBLE : View.INVISIBLE}"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            android:text="≈ --" />
+
+        <com.android.coinw.biz.trade.QuoteInputView
+            android:id="@+id/qiv_num"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp" />
+
+        <include
+            android:id="@+id/seek_bar"
+            layout="@layout/seek_bar_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_seek_bar"
+                android:layout_margin="5dp"
+                android:text="0"
+                android:textSize="10sp"
+                app:theme_textColor="@{R.attr.col_text_content}"
+                tools:textColor="?col_text_content" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_seek_bar"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="10sp"
+                app:theme_textColor="@{R.attr.col_text_content}"
+                tools:text="0"
+                tools:textColor="?col_text_content" />
+
+            <TextView
+                android:id="@+id/tv_max_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_seek_bar"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:textSize="10sp"
+                app:theme_textColor="@{R.attr.col_text_content}"
+                tools:text="USDT"
+                tools:textColor="?col_text_content" />
+        </LinearLayout>
+
+        <com.android.coinw.biz.trade.QuoteInputView
+            android:id="@+id/qiv_amount"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp" />
+
+        <include layout="@layout/layout_trade_available" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_buy"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="?bg_buy_btn"
+                android:gravity="center"
+                android:lines="1"
+                android:text=""
+                android:textColor="?col_text_on_button"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:theme_background="@{isBuy ? R.attr.bg_buy_btn : R.attr.bg_sell_btn}" />
+
+            <ImageView
+                android:id="@+id/iv_sumbit_loadding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/loading"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="earnProduct"
+            type="com.android.legend.model.earn.wrap.EarnProductWrap" />
+
+        <import type="android.view.View" />
+
+        <import type="com.legend.modular_contract_sdk.utils.TimeUtils"/>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="?window_background"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/iv_product_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    tools:src="@drawable/banner_default"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_coin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{earnProduct.productCoinName}"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="BTC" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_profit_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{earnProduct.profitRate}"
+                        android:textColor="?up_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="10% - 20%" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_hot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="?ic_hot"
+                        android:text="@string/earn_hot_progress"
+                        android:drawablePadding="5dp"
+                        android:textColor="#E65261"
+                        android:textSize="12sp"
+                        android:visibility="@{earnProduct.inProgress ? View.VISIBLE : View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/tv_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{earnProduct.getStartTime(context)}"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        android:visibility="@{earnProduct.inProgress ? View.GONE : View.VISIBLE}"
+                        tools:text="开始时间" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/earn_year_profit_rate"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:visibility="@{earnProduct.isHotProduct &amp;&amp; !earnProduct.mixProduct ? View.VISIBLE : View.GONE}">
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:maxHeight="8dp"
+                        android:minHeight="8dp"
+                        android:progress="@{earnProduct.buyProgress}"
+                        android:progressDrawable="@drawable/bg_layer_progress"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_current_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{earnProduct.currentCurrentNum}"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/progress"
+                        tools:text="560BTC" />
+
+                    <TextView
+                        android:id="@+id/tv_symbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="8dp"
+                        android:text="/"
+                        android:textColor="?col_text_title"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toRightOf="@id/tv_current_progress"
+                        app:layout_constraintTop_toBottomOf="@id/progress" />
+
+                    <TextView
+                        android:id="@+id/tv_max_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@{earnProduct.totalCurrencyNum}"
+                        android:textColor="?col_text_title"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toRightOf="@id/tv_symbol"
+                        app:layout_constraintTop_toBottomOf="@id/progress"
+                        tools:text="1000BTC" />
+
+                    <TextView
+                        android:id="@+id/tv_end_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/earn_end_date"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_current_progress" />
+
+                    <TextView
+                        android:id="@+id/tv_end_date_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{earnProduct.endTime}"
+                        android:textColor="?col_text_title"
+                        android:textSize="12sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_current_progress"
+                        tools:text="2022-12-12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/earn_time_limit"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        android:visibility="@{earnProduct.hotProduct ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_end_date" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{earnProduct.getBuyDeadlineDays(context)}"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="@{earnProduct.hotProduct ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_end_date"
+                        tools:text="15天" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:visibility="@{earnProduct.mixProduct ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:id="@+id/tv_end_date_"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/earn_end_date"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        android:visibility="@{earnProduct.hotProduct ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_end_date_value_"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@{earnProduct.endTime}"
+                        android:textColor="?col_text_title"
+                        android:textSize="12sp"
+                        android:visibility="@{earnProduct.hotProduct ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="2022-12-12" />
+
+                    <TextView
+                        android:id="@+id/tv_earn_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/earn_earn_type"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        android:visibility="@{earnProduct.hotProduct ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_end_date_" />
+
+                    <TextView
+                        android:id="@+id/tv_earn_type_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@{earnProduct.earnType}"
+                        android:visibility="@{earnProduct.hotProduct ? View.VISIBLE : View.GONE}"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_end_date_"
+                        tools:text="活期" />
+
+                    <TextView
+                        android:id="@+id/tv_earn_time_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/earn_time_limit"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_earn_type" />
+
+                    <TextView
+                        android:id="@+id/tv_earn_time_limit_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{earnProduct.getBuyDeadlineDays(context)}"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_earn_time_limit"
+                        tools:text="15天" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:visibility="@{earnProduct.isRegularProduct &amp;&amp; !earnProduct.hotProduct ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/earn_time_limit"
+                        android:textColor="?col_text_content"
+                        android:textSize="12sp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <RadioGroup
+                            android:id="@+id/rg_time_limit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal">
+
+
+                        </RadioGroup>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_buy_earn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="24dp"
+                    android:background="?bg_action_btn_accent"
+                    android:enabled="@{earnProduct.inProgress}"
+                    android:text="@string/earn_buy"
+                    android:textAllCaps="false"
+                    android:textColor="?col_text_on_button" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </FrameLayout>
+</layout>

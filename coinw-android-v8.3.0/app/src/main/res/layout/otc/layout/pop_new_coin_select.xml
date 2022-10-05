@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/bg_market_new_coin">
+
+    <TextView style="@style/TextView_14_main"
+        android:text="@string/institute_project"
+        android:paddingLeft="@dimen/dp_24"
+        android:paddingRight="@dimen/dp_30"
+        android:layout_gravity="center_vertical"/>
+</FrameLayout>

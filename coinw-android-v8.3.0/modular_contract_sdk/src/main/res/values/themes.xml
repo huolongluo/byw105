@@ -1,0 +1,33 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="mc_sdk_Theme_LegendExchanger" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/mc_sdk_color_primary</item>
+        <item name="colorPrimaryDark">@color/mc_sdk_color_primary_dark</item>
+        <item name="mc_sdk_accent_color">@color/mc_sdk_color_accent</item>
+        <item name="mc_sdk_up_color">@color/mc_sdk_up_color</item>
+        <item name="mc_sdk_drop_color">@color/mc_sdk_drop_color</item>
+        <item name="mc_sdk_up_accent_color">@color/mc_sdk_up_accent_color</item>
+        <item name="mc_sdk_drop_accent_color">@color/mc_sdk_drop_accent_color</item>
+        <item name="mc_sdk_up_depth_bg_color">#66193F49</item>
+        <item name="mc_sdk_drop_depth_bg_color">#66402E3F</item>
+        <item name="mc_sdk_window_background">@color/mc_sdk_color_primary</item>
+    </style>
+
+    <style name="mc_sdk_Theme_DialogTheme" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 遮罩层 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+</resources>

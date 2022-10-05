@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/hy_open_cancel_btn_color" />
+    <corners android:radius="19dp"></corners>
+    <size android:height="38dp"></size>
+
+</shape>

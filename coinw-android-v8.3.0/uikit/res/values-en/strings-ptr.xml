@@ -1,0 +1,12 @@
+<resources>
+    <string name="loading">Loading...</string>
+    <string name="load_failed">load more failed</string>
+    <string name="load_end">No more data</string>
+    <string name="total_money">Order Amount</string>
+    <string name="canceled_">Cancelled</string>
+    <string name="finish_">Completed</string>
+    <string name="complaint_">In the complaint</string>
+    <string name="cancel_complaint">Complaint cancelled</string>
+    <string name="complaint_complet">Complaint completed</string>
+    <string name="readed" translatable="false">Read</string>
+</resources>

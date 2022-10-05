@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/camera_base_title_01" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:src="@mipmap/failure_img" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/camera_c3"
+        android:textColor="#333333"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/camera_c4"
+        android:textColor="#3B3B3B"
+        android:textSize="13sp" />
+
+
+    <Button
+        android:id="@+id/toAuth"
+        android:layout_width="339dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="#6F679A"
+        android:text="@string/camera_c5"
+        android:textColor="#ffffff"
+        android:textSize="13sp" />
+
+
+    <LinearLayout
+        android:id="@+id/toHome"
+        android:layout_width="339dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_rectangle_"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/camera_c6"
+            android:textColor="#928DAA"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</LinearLayout>

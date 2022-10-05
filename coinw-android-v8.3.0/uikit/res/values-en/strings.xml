@@ -1,0 +1,20 @@
+<resources>
+    <string name="photo_crop">Picture cropping</string>
+    <string name="crop">Crop</string>
+    <string name="msg_type_image">Photo</string>
+    <string name="str_today">Today</string>
+    <string name="str_yesterday">Yesterday</string>
+    <string name="str_before_yesterday">The day before yesterday</string>
+    <string name="str_midnight">Midnight</string>
+    <string name="str_am">AM</string>
+    <string name="str_pm">PM</string>
+    <string name="str_night">Night</string>
+    <string name="str_sunday">Sunday</string>
+    <string name="str_monday">Monday</string>
+    <string name="str_tuesday">Tuesday</string>
+    <string name="str_wednesday">Wednesday</string>
+    <string name="str_thursday">Thursday</string>
+    <string name="str_friday">Friday</string>
+    <string name="str_saturday">Saturday</string>
+    <string name="ok">Confirm</string>
+</resources>

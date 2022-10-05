@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/main_view">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/money_manager_bg1">
+
+
+        <TextView
+            android:id="@+id/huodong_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/hyper_bg4"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="11sp"
+            android:text=""
+
+            />
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="7dp"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_gravity="right"
+                android:orientation="horizontal"
+              >
+
+
+                <TextView
+                    android:id="@+id/miaoshu_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginBottom="-2dp"
+                    android:lines="1"
+                    android:text="@string/nianll"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/baifenbi_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8.5dp"
+                    android:textStyle="bold"
+                    android:text="85%"
+                    android:textColor="@color/F2C8FF7"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginTop="15dp"
+                android:lines="1"
+                android:text="--"
+                android:textColor="@color/ff938cc1"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/logo_iv1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/default_coin" />
+
+            <TextView
+                android:id="@+id/coin_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="9dp"
+
+                android:lines="1"
+                android:text="HC"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mc_sdk_common_margin">17dp</dimen>
+    <dimen name="mc_sdk_txt_position_title">15.5sp</dimen>
+    <dimen name="mc_sdk_txt_title">14sp</dimen>
+    <dimen name="mc_sdk_txt_sub_title">11sp</dimen>
+    <dimen name="mc_sdk_txt_depth">10sp</dimen>
+    <dimen name="mc_sdk_txt_sub_menu">13sp</dimen>
+    <dimen name="mc_sdk_txt_edit">13sp</dimen>
+    <dimen name="mc_sdk_txt_price">16sp</dimen>
+    <dimen name="mc_sdk_txt_dialog_title">18sp</dimen>
+    <dimen name="mc_sdk_txt_dialog_big_title">22sp</dimen>
+    <dimen name="mc_sdk_txt_dialog_body">13sp</dimen>
+    <dimen name="mc_sdk_txt_experience_gold">13sp</dimen>
+    <!--  交易页三个列表水平公共间距  -->
+    <dimen name="mc_sdk_margin_horizontal_trade_list">12dp</dimen>
+    <dimen name="mc_sdk_btn_height_trade_list">34dp</dimen>
+    
+    <dimen name="mc_sdk_chart_height">353dp</dimen>
+    <dimen name="mc_sdk_bottom_chart_height">70dp</dimen>
+    <dimen name="mc_sdk_chart_xaxis_height">18dp</dimen>
+</resources>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <import type="com.legend.modular_contract_sdk.ui.contract.TriggerSetType" />
+
+        <import type="com.legend.modular_contract_sdk.R" />
+
+        <import type="android.content.Context" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="position"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.PositionWrap" />
+
+        <variable
+            name="tradeUnit"
+            type="com.legend.modular_contract_sdk.ui.contract.QuantityUnit" />
+
+        <variable
+            name="triggerPrice"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="callbackRate"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="quantity"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="isUseMarketPrice"
+            type="androidx.databinding.ObservableBoolean" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/mc_sdk_contract_name(position.contractName)}"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="BTC/USDT 永续" />
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:paddingLeft="6dp"
+                android:paddingTop="3dp"
+                android:paddingRight="6dp"
+                android:paddingBottom="3dp"
+                android:text="@{position.direction}"
+                android:textColor="?col_text_on_button"
+                android:textSize="@dimen/mc_sdk_txt_depth"
+                app:layout_constraintBottom_toBottomOf="@id/tv_leverage"
+                app:layout_constraintLeft_toRightOf="@id/tv_leverage"
+                app:layout_constraintTop_toTopOf="@id/tv_leverage"
+                app:theme_background="@{position.directionIsLong ? R.attr.bg_buy_btn : R.attr.bg_sell_btn}"
+                tools:background="?bg_buy_btn"
+                tools:text="全仓做多" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_contract_position_open_price"
+                android:textColor="?col_text_content"
+                android:textSize="@dimen/mc_sdk_txt_dialog_body" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@{position.open}"
+                android:textColor="?col_text_title"
+                android:textSize="@dimen/mc_sdk_txt_dialog_body"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                tools:text="@string/mc_sdk_contract_position_open_price" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/mc_sdk_share_last_price"
+                android:textColor="?col_text_content"
+                android:textSize="@dimen/mc_sdk_txt_dialog_body" />
+
+            <TextView
+                android:id="@+id/tv_last_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:textColor="?col_text_title"
+                android:textSize="@dimen/mc_sdk_txt_dialog_body"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                tools:text="@string/mc_sdk_contract_position_open_price" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?bg_edit"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:enabled="@{!isUseMarketPrice}"
+                    android:hint="@{isUseMarketPrice ? @string/mc_sdk_last_price : @string/mc_sdk_modify_move_tp_sl_activation_price}"
+                    android:inputType="numberDecimal"
+                    android:text="@={triggerPrice}"
+                    android:textSize="14dp"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                    tools:hint="@string/mc_sdk_modify_move_tp_sl_activation_price" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/mc_sdk_usdt"
+                    android:textColor="?col_text_title"
+                    android:visibility="@{isUseMarketPrice ? View.GONE : View.VISIBLE}"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_market_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="12dp"
+                    android:gravity="center"
+                    android:text="@{isUseMarketPrice ? @string/mc_sdk_modify_move_tp_sl_activation_price : @string/mc_sdk_last_price}"
+                    android:textColor="?col_text_accent"
+                    tools:text="@string/mc_sdk_modify_move_tp_sl_activation_price"
+                    android:textSize="@dimen/mc_sdk_txt_dialog_body" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?bg_edit"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_callback_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/mc_sdk_modify_move_tp_sl_callback_rate"
+                    android:inputType="numberDecimal"
+                    android:text="@={callbackRate}"
+                    android:textSize="14dp"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="%"
+                    android:textColor="?col_text_title"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/rg_callback_rate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/rb_5_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?bg_selector_radio_button"
+                    android:button="@null"
+                    android:gravity="center"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                    android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                    android:text="5%" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rb_10_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?bg_selector_radio_button"
+                    android:button="@null"
+                    android:gravity="center"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                    android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                    android:text="10%" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rb_15_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?bg_selector_radio_button"
+                    android:button="@null"
+                    android:gravity="center"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                    android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                    android:text="15%" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rb_20_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?bg_selector_radio_button"
+                    android:button="@null"
+                    android:gravity="center"
+                    app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                    android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                    android:text="20%" />
+            </RadioGroup>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="15dp"
+            android:background="?bg_edit"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/mc_sdk_contract_number"
+                android:inputType="numberDecimal"
+                android:text="@={quantity}"
+                android:textSize="14dp"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+            <TextView
+                android:id="@+id/tv_amount_unit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:text="@{position.getTradeUnitStr(tradeUnit, context)}"
+                android:textColor="?col_text_title"
+                android:textSize="14sp"
+                tools:text="UNIT" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_close_position_rate"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_25_amount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?bg_selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:text="25%" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rb_50_amount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?bg_selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:text="50%" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rb_75_amount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?bg_selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:text="75%" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rb_100_amount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?bg_selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:text="100%" />
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_position_amount"
+                android:textColor="?col_text_content"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{position.getCanClosePosition(tradeUnit.unit),default="- -"}'
+                android:textColor="?col_text_content"
+                android:textSize="14sp"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+            <TextView
+                android:id="@+id/tv_amount_unit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{position.getTradeUnitStr(tradeUnit, context)}"
+                android:textColor="?col_text_content"
+                android:textSize="14sp"
+                tools:text="UNIT" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="23dp"
+            android:background="?bg_action_btn_accent"
+            android:text="@string/mc_sdk_confirm"
+            android:textColor="?col_text_on_button" />
+
+    </LinearLayout>
+</layout>

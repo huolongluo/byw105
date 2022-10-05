@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/unbindhpp_dia_bg"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="23.5dp"
+            android:text="@string/remove_bind"
+            android:textColor="@color/ff222222"
+            android:textSize="18.5sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_code_phone"
+                android:layout_width="0dp"
+                android:layout_height="25.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="23dp"
+                android:layout_toLeftOf="@+id/tv_getCode"
+
+                android:layout_weight="1"
+                android:background="@drawable/set_trade_psw_"
+                android:hint="@string/pen_inmsg_code"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="10"
+                android:paddingLeft="4.5dp"
+                android:text=""
+                android:textColor="@color/ff222222"
+                android:textColorHint="@color/ffb5b2c7"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/tv_getCode"
+                android:layout_width="66.5dp"
+                android:layout_height="26.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="21dp"
+                android:background="@drawable/safe_bg"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="@color/ff8881a6"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/google_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_code_google"
+                android:layout_width="0dp"
+                android:layout_height="26dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="23dp"
+                android:layout_toLeftOf="@+id/googleCode"
+
+                android:layout_weight="1"
+                android:background="@drawable/set_trade_psw_"
+                android:hint="@string/please_inphogoogle_code"
+                android:lines="1"
+
+                android:paddingLeft="4.5dp"
+                android:text=""
+                android:textColor="@color/ff222222"
+                android:textColorHint="@color/ffb5b2c7"
+                android:textSize="11.5sp" />
+
+            <TextView
+                android:id="@+id/googleCode"
+                android:layout_width="66.5dp"
+                android:layout_height="26.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="17dp"
+                android:background="@drawable/safe_bg"
+                android:gravity="center"
+                android:text="@string/poste"
+                android:textColor="@color/ff8881a6"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="26dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp">
+
+
+            <TextView
+                android:id="@+id/cancel_tv"
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+
+                android:layout_weight="1"
+                android:background="@drawable/gray_bn_bg"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/cancle"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/confirm_tv"
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_bn_bg"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

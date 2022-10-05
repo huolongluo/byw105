@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_prompt_bg"
+        android:layout_marginTop="@dimen/dp_size_12"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="已领取"
+            android:layout_marginTop="56dp"
+            android:textStyle="bold"
+            android:textColor="#7A72A1"
+            android:textSize="20sp"/>
+        <TextView android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="您已领过该红包，不可重复领取哦"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#AAA7BA"
+            android:textSize="13sp"/>
+    
+        <TextView android:id="@+id/tvKnow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iknow"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_cor16_7a72a1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="28dp"
+            android:paddingRight="28dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+        
+        <LinearLayout android:id="@+id/llTwoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="30dp">
+            <TextView android:id="@+id/tvRule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/red_rule"
+                android:textColor="#7A72A1"
+                android:background="@drawable/bg_cor16_stroke1_7a72a1"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:textSize="13sp"/>
+    
+            <TextView android:id="@+id/tvWelfare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:text="@string/str_welfare_center"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_cor16_7a72a1"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:textSize="13sp"/>
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="@string/red_failed"
+        android:background="@mipmap/bg_dialog_red_failed"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    
+</RelativeLayout>

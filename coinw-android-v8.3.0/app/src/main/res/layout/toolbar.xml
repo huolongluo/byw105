@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/lin1"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/text_414577"
+                android:gravity="center_horizontal">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/text_414577"
+        android:minHeight="45dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x22"
+                android:src="@mipmap/back"
+               />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_toRightOf="@+id/iv_left"
+                android:gravity="center"
+                android:text="@string/risk"
+                android:textColor="@color/FFFFFF"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toolbar_center_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:singleLine="true"
+                    android:text="coinw"
+                    android:textColor="@color/FFFFFF"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText"/>
+
+                <ImageView
+                    android:id="@+id/iv_toolbar_center_title"
+                    android:layout_width="@dimen/x30"
+                    android:layout_height="@dimen/y30"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x15"
+                    android:src="@mipmap/btn_user_arrow"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_toLeftOf="@+id/tv_right"
+                    android:src="@mipmap/add"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x22"
+                    android:gravity="center"
+                    android:text="客服"
+                    android:textColor="@color/FFFFFF"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</RelativeLayout>

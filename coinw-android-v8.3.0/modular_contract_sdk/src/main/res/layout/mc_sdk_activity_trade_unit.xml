@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?window_background"
+        android:orientation="vertical">
+
+        <include layout="@layout/mc_sdk_view_tool_bar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="?divider_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_count"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mc_sdk_contract_unit"
+                    android:textColor="?col_text_title"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_count_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mc_sdk_trade_unit_desc"
+                    android:textColor="?col_text_content"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mc_sdk_ic_selected" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="?divider_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_coin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_trade_unit_coin"
+                android:textColor="?col_text_title"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mc_sdk_ic_selected" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="?divider_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_usdt"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_usdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_usdt"
+                android:textColor="?col_text_title"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_usdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mc_sdk_ic_selected" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="?divider_line" />
+
+    </LinearLayout>
+</layout>

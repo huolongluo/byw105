@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ImageView android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_back"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"/>
+    <TextView android:id="@+id/tvTitle"
+        style="@style/TextView_22_main"
+        tools:text="登录"
+        android:layout_marginTop="@dimen/dp_12"
+        />
+    <TextView
+        android:id="@+id/tvTips"
+        style="@style/TextView_12_E65261"
+        android:drawableStart="@mipmap/ic_warning"
+        android:background="@drawable/bg_cor5_fff5f5"
+        android:padding="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp_20"
+        tools:text="出于您的账户安全考虑，更改安全项后，24小时内"
+        android:visibility="gone"/>
+    <LinearLayout android:id="@+id/llCodeTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_login_code_tips"
+            />
+        <TextView android:id="@+id/tvCodeTips"
+            style="@style/TextView_14_main2"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_1"
+            tools:text="请输入您在手机 +86 15001356665 收到的6位验证码"/>
+    </LinearLayout>
+</LinearLayout>

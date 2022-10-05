@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.legend.modular_contract_sdk.R" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_40"
+            android:src="@drawable/ic_empty_list" />
+
+        <TextView
+            android:id="@+id/tvNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="200dp"
+            android:drawablePadding="@dimen/dp_10"
+            android:text="@string/mc_sdk_contract_load_empty"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tvNoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginBottom="200dp"
+            android:text="@string/mc_sdk_contract_login_can_see"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+    </LinearLayout>
+</layout>

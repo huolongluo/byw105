@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/y100">
+    
+    <TextView
+        android:id="@+id/tv_bank_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_centerVertical="true"
+        android:textColor="@color/FF000000"
+        android:textSize="@dimen/text_size34"
+        android:text="@string/d17" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:background="@color/F93979A"
+        android:layout_marginLeft="@dimen/x12"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/x12"/>
+
+</RelativeLayout>

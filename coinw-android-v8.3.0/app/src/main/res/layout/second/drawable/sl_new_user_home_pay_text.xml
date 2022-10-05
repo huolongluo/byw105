@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <layer-list>
+            <item android:left="@dimen/dp_16" android:right="@dimen/dp_16"
+                android:top="@dimen/dp_38">
+                <shape>
+                    <corners android:radius="@dimen/dp_2"/>
+                    <solid android:color="@color/accent_main" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/transparent" />
+        </shape>
+    </item>
+</selector>

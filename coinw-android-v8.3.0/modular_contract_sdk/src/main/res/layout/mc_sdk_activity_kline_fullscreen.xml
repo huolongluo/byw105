@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mc_sdk_ff1e1b33"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mc_sdk_white"
+            android:textSize="13sp"
+            android:layout_marginStart="10dp"
+            android:includeFontPadding="false"
+            android:textStyle="bold"
+            tools:text="BTC/USDT" />
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/mc_sdk_color_red"
+            android:textSize="13sp"
+            tools:text="8888" />
+        <ImageView
+            android:id="@+id/ivChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            app:srcCompat="@drawable/mc_sdk_zhang" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:textColor="@color/mc_sdk_a5a2be"
+            android:textSize="10sp"
+            android:text="@string/mc_sdk_mark_price"/>
+        <TextView
+            android:id="@+id/tvMarkPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/mc_sdk_a5a2be"
+            android:textSize="10sp"
+            tools:text="3425435.324" />
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/mc_sdk_color_red"
+            android:textSize="10sp"
+            tools:text="+0.25%" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/tvHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:text="@string/mc_sdk__24h_high"
+            android:textColor="@color/mc_sdk_6f698b"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tvHighValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mc_sdk_a5a2be"
+            android:textSize="10sp"
+            tools:text="12343245.23" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/mc_sdk_558b88a2" />
+        <TextView
+            android:id="@+id/tvLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:text="@string/mc_sdk__24h_low"
+            android:textColor="@color/mc_sdk_6f698b"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tvLowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mc_sdk_a5a2be"
+            android:textSize="10sp"
+            tools:text="3245.23" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/mc_sdk_558b88a2" />
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/mc_sdk_ic_close_white" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/sv_indicator" />
+
+        <ScrollView
+            android:id="@+id/sv_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/mc_sdk_chart_main_index"
+                        android:textColor="@color/mc_sdk_6f698b"
+                        android:textSize="13sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvMa"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="MA"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvEma"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="EMA"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvBoll"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="BOLL"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/mc_sdk_chart_sub_index"
+                        android:textColor="@color/mc_sdk_6f698b"
+                        android:textSize="13sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvMacd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="MACD"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvKdj"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="KDJ"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/mc_sdk_ff1e1b33"
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp">
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/vLineChart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_polyline" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v1Min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_1m" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v5Min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_5m" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v15Min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_15m" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v1Hour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_1h" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v4Hour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_4h" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v1Day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_1day" />
+        <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+            android:id="@+id/v1Week"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:title="@string/mc_sdk_1week" />
+
+    </LinearLayout>
+</LinearLayout>

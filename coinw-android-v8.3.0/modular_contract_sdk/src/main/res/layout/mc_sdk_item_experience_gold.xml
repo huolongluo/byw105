@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.modular_contract_sdk.utils.McTypefaceUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="expGold"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.ExperienceGoldWrap" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:background="#000">
+
+        <ImageView
+            android:id="@+id/iv_bg_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mc_sdk_bg_item_experience_gold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.35" />
+
+        <ImageView
+            android:id="@+id/iv_bg_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mc_sdk_bg_item_experience_gold_right"
+            app:layout_constraintLeft_toRightOf="@id/iv_bg_left"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.65" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{expGold.amount}"
+            android:textColor="@color/mc_sdk_txt_title"
+            android:textSize="@dimen/mc_sdk_txt_dialog_big_title"
+            android:gravity="bottom"
+            app:layout_constraintWidth_max="100dp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            android:maxLines="1"
+            app:layout_constraintBottom_toTopOf="@id/tv_desc1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="@id/iv_bg_left"
+            app:layout_constraintRight_toLeftOf="@id/tv_amount_unit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/tv_amount_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/mc_sdk_usdt"
+            android:textColor="@color/mc_sdk_txt_title"
+            android:textSize="@dimen/mc_sdk_txt_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_amount"
+            app:layout_constraintLeft_toRightOf="@id/tv_amount"
+            app:layout_constraintRight_toRightOf="@id/iv_bg_left" />
+
+        <TextView
+            android:id="@+id/tv_desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{expGold.getLimit(context)}"
+            android:textColor="@color/mc_sdk_txt_DCDBE6"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/iv_bg_left"
+            app:layout_constraintRight_toRightOf="@id/iv_bg_left"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+            tools:text="@string/mc_sdk_contract_experience_gold_desc1" />
+
+        <TextView
+            android:id="@+id/tv_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="5dp"
+            android:text="@{@string/mc_sdk_contract_experience_gold_desc2(expGold.leverage)}"
+            android:textColor="@color/mc_sdk_txt_dialog_title"
+            app:layout_constraintBottom_toTopOf="@id/tv_required"
+            app:layout_constraintLeft_toLeftOf="@id/iv_bg_right"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="杠杆倍数" />
+
+        <TextView
+            android:id="@+id/tv_required"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{@string/mc_sdk_activation_condition(expGold.conditionAmount)}"
+            android:textColor="@color/mc_sdk_txt_sub_title"
+            android:textSize="9sp"
+            android:visibility="@{expGold.notActive ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/tv_required2"
+            app:layout_constraintLeft_toLeftOf="@id/tv_desc2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc2"
+            tools:text="划转至合约账户≥1000USDT激活备份"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_required2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{@string/mc_sdk_activation_progress(expGold.currentAmount)}"
+            android:textColor="@color/mc_sdk_txt_sub_title"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            android:visibility="@{expGold.notActive ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/tv_time"
+            app:layout_constraintLeft_toLeftOf="@id/tv_desc2"
+            app:layout_constraintTop_toBottomOf="@id/tv_required"
+            tools:text="当前划转量：备份"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{expGold.timeSpan}"
+            android:textColor="@color/mc_sdk_txt_sub_title"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tv_desc2"
+            app:layout_constraintTop_toBottomOf="@id/tv_required2"
+            tools:text="1111.11.11 - 2222.22.22" />
+
+        <ImageView
+            android:id="@+id/iv_state"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/mc_sdk_ic_used"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="54dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/mc_sdk_bg_btn_4f4a84_r5"
+            android:text="@{expGold.getActionName(context)}"
+            android:textAllCaps="false"
+            android:textColor="@color/mc_sdk_txt_title"
+            android:textSize="9sp"
+            android:visibility="@{expGold.isEnable ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="@string/mc_sdk_to_use" />
+
+        <ImageView
+            android:id="@+id/iv_selected"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/mc_sdk_ic_selected"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

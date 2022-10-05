@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.legend.modular_contract_sdk.ui.contract.TriggerSetType" />
+
+        <import type="android.content.Context" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="position"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.PositionWrap" />
+
+        <variable
+            name="takeProfitType"
+            type="androidx.databinding.ObservableField&lt;TriggerSetType>" />
+
+        <variable
+            name="stopLossType"
+            type="androidx.databinding.ObservableField&lt;TriggerSetType>" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mc_sdk_bg_bottom_dialog_r7"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/mc_sdk_modify_profit_loss_title"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E5E5E5"></View>
+
+        <LinearLayout
+            android:id="@+id/ll_more_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvSymbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@{position.contractName}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="BTC/USDT" />
+
+                <TextView
+                    android:id="@+id/tvLeverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/mc_sdk_txt_dialog_body"
+                    android:textSize="10sp"
+                    android:text="@{@string/mc_sdk_leverage(position.position.mLeverage)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSymbol"
+                    tools:text="50倍杠杆" />
+
+                <TextView
+                    android:id="@+id/tvLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@{position.isLong ? @drawable/mc_sdk_bg_btn_buy_r3:@drawable/mc_sdk_bg_btn_sell_r3}"
+                    tools:background="@drawable/mc_sdk_bg_btn_sell_r3"
+                    android:paddingStart="3.5dp"
+                    android:paddingTop="2.5dp"
+                    android:paddingEnd="3.5dp"
+                    android:paddingBottom="2.5dp"
+                    android:textColor="@color/mc_sdk_txt_title"
+                    android:textSize="7.5sp"
+                    android:text="@{position.direction}"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLeverage"
+                    app:layout_constraintStart_toEndOf="@id/tvLeverage"
+                    app:layout_constraintTop_toTopOf="@id/tvLeverage"
+                    tools:text="lable" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@{position.open}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="+0.02" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_zy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:paddingRight="5dp"
+                    android:text="@string/mc_sdk_stop_profit"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_toRightOf="@id/tv_zy"
+                    android:checked="false"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_zy_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/mc_sdk_ic_exchange"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    android:text="@{takeProfitType == TriggerSetType.PERCENT?@string/mc_sdk_by_price : @string/mc_sdk_proportionally}"
+                    tools:text="@string/mc_sdk_proportionally"
+                    android:textColor="?attr/mc_sdk_accent_color"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_zy_price"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/mc_sdk_bg_editor_dialog"
+                android:orientation="horizontal"
+                android:visibility="@{takeProfitType == TriggerSetType.PRICE ? View.VISIBLE : View.GONE}"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/mc_sdk_current_stop_profit_price"
+                    android:textColor="@color/mc_sdk_txt_dialog_body"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvStopProfit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@{position.stopOriginProfitPrice}"
+                    tools:text="34325" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_zy_scale"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/mc_sdk_bg_editor_dialog"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:visibility="@{takeProfitType == TriggerSetType.PERCENT ? View.VISIBLE : View.GONE}"
+                tools:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/mc_sdk_current_stop_profit_scale"
+                    android:textColor="@color/mc_sdk_txt_dialog_body"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvStopProfitScale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@{position.stopOriginProfitRate}"
+                    tools:text="34325" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_zy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_zy_bl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{takeProfitType == TriggerSetType.PERCENT ? View.VISIBLE : View.GONE}"
+                    tools:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/mc_sdk_bg_editor_dialog"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:text="@string/mc_sdk_stop_profit_proportion"
+                            android:textColor="#B3B3B3"></TextView>
+
+                        <EditText
+                            android:id="@+id/et_stopProfitRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical|right"
+                            android:inputType="numberDecimal"
+                            android:lines="1"
+                            android:text="@={position.stopProfitRate}"
+                            android:textColor="@color/mc_sdk_txt_dialog_title"
+                            android:textColorHint="#59657E"
+                            android:textStyle="bold"></EditText>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textColor="@color/mc_sdk_txt_dialog_title"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_zy_jg"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/mc_sdk_bg_editor_dialog"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:visibility="@{takeProfitType == TriggerSetType.PRICE ? View.VISIBLE : View.GONE}"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/mc_sdk_stop_profit_price"
+                        android:textColor="#B3B3B3"/>
+
+                    <EditText
+                        android:id="@+id/et_stopProfitPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:inputType="numberDecimal"
+                        android:lines="1"
+                        android:text="@={position.stopProfitPrice}"
+                        android:textColor="@color/mc_sdk_txt_dialog_title"
+                        android:textColorHint="#59657E"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="USDT"
+                        android:textColor="@color/mc_sdk_txt_dialog_title"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_stop_profit_predict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{position.takeProfitDesc(context, takeProfitType)}"
+                tools:text="@string/mc_sdk_stop_profit_predict"
+                android:textColor="@color/mc_sdk_txt_dialog_body"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_zs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:paddingRight="5dp"
+                    android:text="@string/mc_sdk_stop_loss"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/switch_button_zs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_toRightOf="@id/tv_zs"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_zs_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/mc_sdk_ic_exchange"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical|right"
+                    android:visibility="gone"
+                    android:text="@{stopLossType == TriggerSetType.PERCENT?@string/mc_sdk_by_price : @string/mc_sdk_proportionally}"
+                    tools:text="@string/mc_sdk_proportionally"
+                    android:textColor="?attr/mc_sdk_accent_color"
+                    android:textSize="12sp"
+                    />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_zs_price"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/mc_sdk_bg_editor_dialog"
+                android:orientation="horizontal"
+                android:visibility="@{stopLossType == TriggerSetType.PRICE ? View.VISIBLE : View.GONE}"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/mc_sdk_current_stop_loss_price"
+                    android:textColor="@color/mc_sdk_txt_dialog_body"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvStopLoss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@{position.stopOriginLossPrice}"
+                    tools:text="34325" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_zs_scale"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/mc_sdk_bg_editor_dialog"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:visibility="@{stopLossType == TriggerSetType.PERCENT ? View.VISIBLE : View.GONE}"
+                tools:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/mc_sdk_current_stop_loss_scale"
+                    android:textColor="@color/mc_sdk_txt_dialog_body"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvStopLossScale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@{position.stopOriginLossRate}"
+                    tools:text="34325" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_zs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_zs_bl"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/mc_sdk_bg_editor_dialog"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:visibility="@{stopLossType == TriggerSetType.PERCENT ? View.VISIBLE : View.GONE}"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/mc_sdk_stop_loss_proportion"
+                        android:textColor="#B3B3B3"></TextView>
+
+                    <EditText
+                        android:id="@+id/et_stopLossRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:inputType="numberDecimal"
+                        android:lines="1"
+                        android:text="@={position.stopLossRate}"
+                        android:textColor="@color/mc_sdk_txt_dialog_title"
+                        android:textColorHint="#59657E"
+                        android:textStyle="bold"></EditText>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/mc_sdk_txt_dialog_title"
+                        android:textStyle="bold"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_zs_jg"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/mc_sdk_bg_editor_dialog"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:visibility="@{stopLossType == TriggerSetType.PRICE ? View.VISIBLE : View.GONE}"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/mc_sdk_stop_loss_price"
+                        android:textColor="#B3B3B3"></TextView>
+
+                    <EditText
+                        android:id="@+id/et_stopLossPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:inputType="numberDecimal"
+                        android:lines="1"
+                        android:text="@={position.stopLossPrice}"
+                        android:textColor="@color/mc_sdk_txt_dialog_title"
+                        android:textColorHint="#59657E"
+                        android:textStyle="bold"></EditText>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="USDT"
+                        android:textColor="@color/mc_sdk_txt_dialog_title"
+                        android:textStyle="bold"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_stop_loss_predict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:text="@string/mc_sdk_stop_loss_predict"
+                android:text="@{position.stopLossDesc(context, stopLossType)}"
+                android:textColor="@color/mc_sdk_txt_dialog_body"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/mc_sdk_bg_btn_accent_stroke_r3"
+                android:gravity="center"
+                android:text="@string/mc_sdk_cancel"
+                android:textAllCaps="false"
+                android:textColor="?col_text_content"
+                android:textSize="15sp" />
+
+            <Space
+                android:layout_width="7.5dp"
+                android:layout_height="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/mc_sdk_bg_btn_accent_r3"
+                android:gravity="center"
+                android:text="@string/mc_sdk_confirm"
+                android:textAllCaps="false"
+                android:textColor="@color/mc_sdk_txt_title"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

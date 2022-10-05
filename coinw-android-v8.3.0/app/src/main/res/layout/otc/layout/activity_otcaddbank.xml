@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/base_bg_white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@color/base_col"></View>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/include"
+                layout="@layout/base_title"></include>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="21dp"
+                    android:background="@drawable/login_bg"
+                    android:orientation="vertical"
+                    android:paddingLeft="16.5dp"
+                    android:paddingRight="16.5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="27dp"
+                        android:background="@drawable/edit_bg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6.5dp"
+                            android:text="@string/name"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12.5sp" />
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="-- --"
+                            android:paddingLeft="58dp"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/hint_b5b2c7"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="11.5dp"
+                        android:background="@drawable/edit_bg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6.5dp"
+                            android:text="@string/bank_zgh"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12.5sp" />
+                        <EditText
+                            android:id="@+id/et_bankcard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint=""
+                            android:inputType="number"
+                            android:paddingLeft="20dp"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/hint_b5b2c7"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="11.5dp"
+                        android:background="@drawable/edit_bg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6.5dp"
+                            android:text="@string/bank_name"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12.5sp" />
+                        <TextView
+                            android:id="@+id/et_banklist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="@string/sele_bank"
+                            android:paddingLeft="30dp"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/hint_b5b2c7"
+                            android:textSize="11sp" />
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="8.5dp"
+                            android:src="@mipmap/arrow" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="11.5dp"
+                        android:background="@drawable/edit_bg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6.5dp"
+                            android:text="@string/p5"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12.5sp" />
+                        <TextView
+                            android:id="@+id/et_bankaddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="@string/p4"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/hint_b5b2c7"
+                            android:textSize="11sp" />
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="8.5dp"
+                            android:src="@mipmap/arrow" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="11.5dp"
+                        android:background="@drawable/edit_bg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6.5dp"
+                            android:text="@string/p6"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12.5sp" />
+                        <EditText
+                            android:id="@+id/et_zhihang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="@string/p3"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/hint_b5b2c7"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="11.5dp"
+                        android:background="@drawable/edit_bg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6.5dp"
+                            android:text="@string/p7"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12.5sp" />
+                        <EditText
+                            android:id="@+id/et_tradepsw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="@string/p2"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/hint_b5b2c7"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_sure"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="43dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/login_bn_bg"
+                        android:gravity="center"
+                        android:text="@string/confirm"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/delete_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="30dp"
+                        android:text="@string/p8"
+                        android:textColor="#504A85" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

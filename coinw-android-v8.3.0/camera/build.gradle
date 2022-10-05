@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    resourcePrefix "camera_"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        devRelease {
+        }
+        scriptRelease {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        //兼容低端手机[云测兼容性测试]
+        dexOptions {
+            javaMaxHeapSize "4g"
+            preDexLibraries = false
+            additionalParameters += '--multi-dex'
+            additionalParameters += '--set-max-idx-number=35000'//每个包内方法数上限（根据实际项目配置这个数，来适配4.0-4.4一些低端机型，因为拆分的dex太大，这些低端机型加载不了dex）
+            additionalParameters += '--minimal-main-dex'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api 'androidx.appcompat:appcompat:1.0.2'
+    androidTestImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'com.squareup.okio:okio:1.13.0'
+}

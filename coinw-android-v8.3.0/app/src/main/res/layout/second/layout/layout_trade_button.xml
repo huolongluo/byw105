@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <import type="huolongluo.byw.R" />
+    </data>
+
+    <RadioGroup
+        android:id="@+id/rg_direction"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/tv_tag_buy"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="@string/buy"
+            android:textSize="13sp"
+            app:theme_background="@{R.attr.bg_direction_buy}"
+            app:theme_textColorStateList="@{R.attr.col_sl_text_direction}"
+            android:background="@drawable/sl_trade_direction_buy_green"
+            tools:textColor="?col_sl_text_direction" />
+
+
+        <RadioButton
+            android:id="@+id/tv_tag_sell"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/tv_tag_buy"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/sell2"
+            android:textSize="13sp"
+            app:theme_background="@{R.attr.bg_direction_sell}"
+            app:theme_textColorStateList="@{R.attr.col_sl_text_direction}"
+            android:background="@drawable/sl_trade_direction_sell_red"
+            tools:textColor="?col_sl_text_direction" />
+    </RadioGroup>
+</layout>

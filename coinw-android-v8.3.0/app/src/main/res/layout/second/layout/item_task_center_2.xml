@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dp_16"
+    android:background="@drawable/bg_task_center_item2"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/dp_size_15"
+    android:paddingTop="@dimen/dp_size_12"
+    android:paddingEnd="@dimen/dp_size_15"
+    android:paddingBottom="@dimen/dp_size_12">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTaskCenterName"
+            android:layout_width="@dimen/dp_size_210"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="新手认证任务证任务" />
+
+        <TextView
+            android:layout_width="@dimen/dp_size_10"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tvGetCenterTask"
+            android:background="@color/white"
+            android:paddingTop="@dimen/dp_size_3"
+            android:paddingBottom="@dimen/dp_size_3"
+            android:visibility="gone" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tvGetCenterTask"
+            android:layout_width="@dimen/dp_size_75"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/sl_cor5_d4cfe6_enable_accent"
+            android:lines="1"
+            android:paddingStart="@dimen/dp_size_12"
+            android:paddingTop="@dimen/dp_size_5"
+            android:paddingEnd="@dimen/dp_size_12"
+            android:paddingBottom="@dimen/dp_size_5"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="领取任务" />
+
+    </RelativeLayout>
+
+    <com.legend.common.view.textview.DinproBoldTextView
+        android:id="@+id/tvTaskAwardAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_12"
+        android:background="@drawable/bg_task_num"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingStart="@dimen/dp_size_8"
+        android:paddingTop="@dimen/dp_size_3"
+        android:paddingEnd="@dimen/dp_size_8"
+        android:paddingBottom="@dimen/dp_size_3"
+        android:textColor="@color/color_FF7500"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:text="+900000 合约体验金合约体验金" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dp_size_10"
+        android:layout_toEndOf="@+id/tvTaskCenterName"
+        android:background="@drawable/bg_task_num"
+        android:paddingStart="@dimen/dp_size_8"
+        android:paddingTop="@dimen/dp_size_3"
+        android:paddingEnd="@dimen/dp_size_8"
+        android:paddingBottom="@dimen/dp_size_3"
+        android:textColor="@color/color_FF7500"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="+900000 合约体验金合约体验金" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_12">
+
+        <TextView
+            android:id="@+id/tvTaskCenterDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@mipmap/ic_des"
+            android:drawablePadding="@dimen/dp_size_5"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="12sp"
+            tools:text="任务标任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题任务标题题" />
+
+        <ImageView
+            android:id="@+id/ivShowAllDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="@dimen/dp_9"
+            android:paddingTop="@dimen/dp_9"
+            android:src="@mipmap/ic_des"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_size_10"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/sl_cor5_d4cfe6_enable_accent"
+            android:paddingStart="@dimen/dp_size_12"
+            android:paddingTop="@dimen/dp_size_5"
+            android:paddingEnd="@dimen/dp_size_12"
+            android:paddingBottom="@dimen/dp_size_5"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="领取任务" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/dp_size_14"
+        android:background="@color/color_979797" />
+
+
+</LinearLayout>

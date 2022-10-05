@@ -1,0 +1,9 @@
+<resources>
+    <string name="share">Share</string>
+    <string name="wchat_friend">Wechat Friend</string>
+    <string name="pyq">WeChat Moment</string>
+    <string name="short_msg">Message</string>
+    <string name="save_png">Save image</string>
+    <string name="more">More</string>
+    <string name="cancle">Cancel</string>
+</resources>

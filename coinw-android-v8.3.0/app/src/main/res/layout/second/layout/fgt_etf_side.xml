@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/base_col"
+        android:orientation="horizontal"
+        android:paddingStart="19dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/search_bg">
+
+            <ImageView
+                android:id="@+id/search_iv"
+                android:layout_width="14.5dp"
+                android:layout_height="14.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/search_black" />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/search_iv"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="@string/ssbz"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="10"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cancle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/cancle"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_28"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/sort_market_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="@string/coin"
+                android:textColor="@color/ff8881a6"
+                android:textSize="@dimen/sp_11" />
+
+            <ImageView
+                android:id="@+id/sort_iv1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/market_sort_0"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/price_market_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="@string/price"
+                android:textColor="@color/ff8881a6"
+                android:textSize="@dimen/sp_11" />
+
+            <ImageView
+                android:id="@+id/sort_iv2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/market_sort_0"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zhangf_market_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="@string/zhangfu"
+                android:textColor="@color/ff8881a6"
+                android:textSize="@dimen/sp_11" />
+
+            <ImageView
+                android:id="@+id/sort_iv3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/market_sort_0"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fff0f1f6"
+            android:divider="@null"
+            android:dividerHeight="0dp"></ListView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.legend.modular_contract_sdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="MC-SDK"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/mc_sdk_Theme_LegendExchanger">
+        <activity
+            android:name=".ui.contract.history.McHistoryOrderActivity"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.chart.McKLineActivity"
+            android:theme="@style/mc_sdk_Theme_LegendExchanger"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+    </application>
+
+</manifest>

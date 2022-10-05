@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_load_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                         android:indeterminateBehavior="repeat"
+                style="@style/progress_bar"
+                android:indeterminateDuration="500"
+                android:indeterminateOnly="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_load_imgwithdes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_load_img"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@null"
+            android:src="@drawable/ic_load_error" />
+
+        <TextView
+            android:id="@+id/iv_load_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/load_error"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+        
+        <Button 
+            android:id="@+id/btn_load_even"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@drawable/shape_corner_blue_load_btn"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_load_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/add_custom"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/icon_emptystate_addcustom2x"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:textSize="15sp"
+            android:text=""
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

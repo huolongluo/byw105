@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/proHomeHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/ll_Multiple"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:clickable="true"
+                    android:clipChildren="false">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_120"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:clipChildren="true" />
+
+                    <LinearLayout
+                        android:id="@+id/dot_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_2"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/viewpager"
+                        android:background="@drawable/bg_cor2_background_tab"
+                        android:gravity="center"
+                        android:orientation="horizontal" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rlt_marqueeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40">
+                    <ImageView android:id="@+id/iv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/ic_home_notice_left"
+                        android:paddingStart="@dimen/margin_horizontal"/>
+                    <com.android.legend.view.framelayout.SkinMarqueeView
+                        android:id="@+id/marqueeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:mvAnimDuration="1000"
+                        app:mvDirection="bottom_to_top"
+                        app:mvInterval="3000"
+                        app:mvTextColor="@color/text_main"
+                        app:mvTextSize="@dimen/sp_12"
+                        app:mvSingleLine="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@+id/iv1"
+                        android:layout_toStartOf="@+id/iv_more"
+                        android:layout_marginStart="@dimen/dp_4"
+                        android:layout_marginEnd="@dimen/dp_10"/>
+                    <ImageView
+                        android:id="@+id/iv_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingEnd="@dimen/margin_horizontal"
+                        android:scaleType="fitCenter"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_home_notice_more">
+        
+                    </ImageView>
+                </RelativeLayout>
+                <View
+                    style="@style/Line_main"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_marginStart="@dimen/dp_6"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/bg_cor2_background_tab"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+                <View
+                    style="@style/Space"
+                    android:layout_marginTop="@dimen/dp_6"/>
+
+                <include layout="@layout/layout_home_dynamic" />
+            </LinearLayout>
+
+            <huolongluo.byw.view.NewUserHomeHeaderView
+                android:id="@+id/newUserHomeHeaderView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <include layout="@layout/layout_home_list" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/layout_home_title" />
+</RelativeLayout>

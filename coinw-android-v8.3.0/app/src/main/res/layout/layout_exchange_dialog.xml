@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/llSuccessBoard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="27dp"
+        android:background="@drawable/edit_add_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPromptMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/hint_info"
+            android:textColor="@color/ff222222"
+            android:textSize="18.5sp" />
+
+        <TextView
+            android:id="@+id/des_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1.2"
+            android:padding="30dp"
+            android:textColor="#666666"
+            android:text="--"
+            android:textSize="12sp" />
+
+        <TextView
+            android:padding="2dp"
+            android:id="@+id/tv_ok"
+            android:layout_width="150dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/confirm_jb_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:text="@string/click_ok"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btnCancle"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSuccessBoard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/guanbi" />
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clIntensity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="invisible"
+    tools:visibility="visible"
+    >
+    <TextView
+        android:id="@+id/tvIntensity"
+        style="@style/TextView_12_main"
+        android:text="@string/weak"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/ivPwd1"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_6"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIntensity"
+        app:layout_constraintTop_toTopOf="@+id/tvIntensity"
+        app:layout_constraintLeft_toRightOf="@+id/tvIntensity"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:background="@color/accent_main"/>
+    
+    <ImageView
+        android:id="@+id/ivPwd2"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_6"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIntensity"
+        app:layout_constraintTop_toTopOf="@+id/tvIntensity"
+        app:layout_constraintLeft_toRightOf="@+id/ivPwd1"
+        android:layout_marginLeft="@dimen/dp_size_2"
+        android:background="@color/color_1a000000"/>
+    
+    <ImageView
+        android:id="@+id/ivPwd3"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_6"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIntensity"
+        app:layout_constraintTop_toTopOf="@+id/tvIntensity"
+        app:layout_constraintLeft_toRightOf="@+id/ivPwd2"
+        android:layout_marginLeft="@dimen/dp_size_2"
+        android:background="@color/color_1a000000"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

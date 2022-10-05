@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="addPositionType"
+            type="Integer" />
+
+        <variable
+            name="addPositionCount"
+            type="androidx.databinding.ObservableField&lt;String>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mc_sdk_bg_dialog_r7">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:text="@string/mc_sdk_add_position"
+            android:textColor="@color/mc_sdk_txt_dialog_title"
+            android:textSize="@dimen/mc_sdk_txt_dialog_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_add_position_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="38dp"
+            android:text="@{addPositionType == 1?@string/mc_sdk_by_count:@string/mc_sdk_by_amount}"
+            android:textColor="@color/mc_sdk_txt_dialog_title"
+            android:textSize="@dimen/mc_sdk_txt_title"
+            tools:text="@string/mc_sdk_by_count"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_add_position_type2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="35dp"
+            android:drawableLeft="@drawable/mc_sdk_ic_exchange"
+            android:drawablePadding="6dp"
+            android:text="@{addPositionType == 1?@string/mc_sdk_by_amount:@string/mc_sdk_by_count}"
+            android:textColor="@color/mc_sdk_txt_accent"
+            android:textSize="@dimen/mc_sdk_txt_title"
+            tools:text="@string/mc_sdk_by_amount"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+
+        <EditText
+            android:id="@+id/et_close_position_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mc_sdk_bg_editor_dialog"
+            android:textColorHint="@color/mc_sdk_txt_hint"
+            android:textColor="@color/mc_sdk_txt_dialog_title"
+            android:padding="10dp"
+            android:inputType="numberDecimal"
+            android:text="@={addPositionCount}"
+            android:textSize="@dimen/mc_sdk_txt_edit"
+            app:layout_constraintLeft_toLeftOf="@id/tv_add_position_type"
+            app:layout_constraintRight_toRightOf="@id/tv_add_position_type2"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_position_type" />
+
+        <TextView
+            android:id="@+id/tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="@{addPositionType == 1?@string/mc_sdk_count:@string/mc_sdk_usdt,default=@string/mc_sdk_usdt}"
+            android:textColor="@color/mc_sdk_txt_dialog_title"
+            android:textSize="@dimen/mc_sdk_txt_position_title"
+            app:layout_constraintBottom_toBottomOf="@id/et_close_position_count"
+            app:layout_constraintRight_toRightOf="@id/et_close_position_count"
+            app:layout_constraintTop_toTopOf="@id/et_close_position_count" />
+
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="113dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/mc_sdk_bg_btn_accent_stroke_r3"
+            android:text="@string/mc_sdk_cancel"
+            android:gravity="center"
+            android:textColor="?col_text_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_confirm"
+            app:layout_constraintTop_toBottomOf="@id/et_close_position_count" />
+
+        <TextView
+            android:id="@+id/btn_confirm"
+            android:layout_width="113dp"
+            android:layout_height="41dp"
+            android:background="@drawable/mc_sdk_bg_btn_accent_r3"
+            android:text="@string/mc_sdk_confirm"
+            android:gravity="center"
+            android:textColor="@color/mc_sdk_txt_title"
+            app:layout_constraintLeft_toRightOf="@id/btn_cancel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_cancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

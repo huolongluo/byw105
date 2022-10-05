@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@color/base_col" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="-3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+
+            <huolongluo.byw.widget.pulltorefresh.PullToRefreshListView
+                android:id="@+id/lv_address_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="13dp"
+                android:background="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="13dp"
+                android:scrollbars="none">
+
+            </huolongluo.byw.widget.pulltorefresh.PullToRefreshListView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_nologin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="@dimen/y30"
+                android:src="@mipmap/no_login" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="登录后可查看历史记录"
+                android:textColor="@color/ff8881a6"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_bus_login"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/confirm_jb_bg"
+                android:gravity="center"
+                android:text="@string/loginnow"
+                android:textColor="@color/FFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/tv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/base_bg1">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableTop="@mipmap/nodata"
+                android:text="@string/c64"
+                android:textColor="@color/ff8881a6" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

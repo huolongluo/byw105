@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/mc_sdk_bg_btn_accent_r3" android:state_checked="true" />
+    <item android:drawable="@drawable/mc_sdk_cor3_width1_ddd" android:state_checked="false" />
+</selector>

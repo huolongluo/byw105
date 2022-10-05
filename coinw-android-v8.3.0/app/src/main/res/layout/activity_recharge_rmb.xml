@@ -1,0 +1,191 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/F75A8B1"
+                android:gravity="center_vertical"
+                android:padding="@dimen/x10"
+                android:text="@string/gg"
+                android:textSize="@dimen/text_size36"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y56"
+                android:background="@color/D9D9D9"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y76"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                        android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_tab_left_title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/shop_charge"
+                        android:textColor="@color/F329DDC"
+                        android:textSize="@dimen/text_size36"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/tv_tab_left_title1"
+                        android:text="（7*24小时直冲）"
+                        android:textSize="@dimen/text_size24"/>
+
+                    <View
+                            android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y4"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/F329DDC"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/qy_charge"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size36"/>
+
+
+                    <View
+                            android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y4"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/F329DDC"
+                        android:visibility="invisible"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/include_service_account"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
+                android:background="@drawable/line_bg"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/y26"
+                android:paddingTop="@dimen/y26">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chongzhi"
+                        android:textSize="@dimen/text_size32"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/know"
+                        android:textColor="@color/F329DDC"
+                        android:textSize="@dimen/text_size32"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_chognzhi_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginTop="@dimen/y10"
+                    android:text="---"
+                    android:textSize="@dimen/text_size30"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y56"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y56"
+                android:background="@color/D9D9D9"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x36"
+                    android:layout_marginTop="@dimen/y36"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/x4"
+                        android:layout_height="@dimen/y20"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/F329DDC"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/x16"
+                        android:text="@string/cny_record"
+                        android:textSize="@dimen/text_size36"/>
+
+                </LinearLayout>
+
+                <!--<include layout="@layout/include_table"/>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_chongzhijilu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

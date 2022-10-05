@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- night -->
+<resources>
+    
+    <!--=====  背景色 =====-->
+    <!--  通用背景主色  -->
+    <color name="background_main_night">#1B1E28</color>
+    <color name="background_tab_night">#3385889C</color>
+    
+    <!--=====  文字  =====-->
+    <!--  主文字  -->
+    <color name="text_main_night">#FEFEFC</color>
+    <!--  弱文字  -->
+    <color name="text_main3_night">#505261</color>
+    
+    
+    <!--=====  线条  =====-->
+    <!--  分割线颜色  -->
+    <color name="line_main_night">#252833</color>
+</resources>

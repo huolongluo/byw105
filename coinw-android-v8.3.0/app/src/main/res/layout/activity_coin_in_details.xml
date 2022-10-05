@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <ImageView
+        android:id="@+id/iv_qr_code"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/FFFFFF"
+        android:padding="20dp"
+        android:scaleType="centerCrop"
+        android:visibility="visible"/>
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="30dp">
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@+id/tv_tips"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="@string/addr"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="67dp"
+        android:layout_height="26dp"
+        android:text="@string/copy"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:background="@drawable/text_bg"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:visibility="visible"/>
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_memo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_memo"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@+id/tv_tips1"
+            android:paddingLeft="20dp"
+            android:text="memo："
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/tv_tips1"
+            android:layout_width="67dp"
+            android:layout_height="26dp"
+            android:text="@string/copy"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:background="@drawable/text_bg"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:visibility="visible"/>
+    </RelativeLayout>
+
+</LinearLayout>

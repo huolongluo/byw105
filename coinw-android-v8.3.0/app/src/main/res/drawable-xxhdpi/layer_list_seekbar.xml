@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    <item android:id="@android:id/background">-->
+    <!--        <bitmap-->
+    <!--            android:gravity="center"-->
+    <!--            android:src="@drawable/ic_seekbar_normal"-->
+    <!--            android:tileMode="disabled" />-->
+    <!--    </item>-->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="1dp" />
+                <solid android:color="#50292C42" />
+                <stroke
+                    android:width="0.5dp"
+                    android:color="#44BE9B" />
+            </shape>
+        </clip>
+    </item>
+    <!--    <item-->
+    <!--        android:id="@android:id/progress"-->
+    <!--        android:drawable="@drawable/ic_seekbar_pressed">-->
+
+    <!--        &lt;!&ndash;        <clip>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <shape>&ndash;&gt;-->
+    <!--        &lt;!&ndash;                <corners android:radius="3dp" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;                <solid android:color="#50407062" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;                <stroke&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:width="2dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:color="#407062" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;            </shape>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </clip>&ndash;&gt;-->
+    <!--        -->
+    <!--    </item>-->
+</layer-list>

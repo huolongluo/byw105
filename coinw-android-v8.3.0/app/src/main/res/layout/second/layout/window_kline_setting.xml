@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E519162B"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/chart_main_index"
+            android:textColor="@color/color_6f698b"
+            android:textSize="13sp" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_4d4864" />
+        <TextView
+            android:id="@+id/tvMa"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:text="MA"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tvEma"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="EMA"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tvBoll"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="BOLL"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="13sp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <ImageView
+            android:id="@+id/ivMainIndex"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/kline_eyes_open" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp"
+        android:background="@color/color_558b88a2" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/chart_sub_index"
+            android:textColor="@color/color_6f698b"
+            android:textSize="13sp" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_4d4864" />
+        <TextView
+            android:id="@+id/tvMacd"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:text="MACD"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tvKdj"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="KDJ"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="13sp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <ImageView
+            android:id="@+id/ivSubIndex"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/kline_eyes_open" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,3 @@
+include ':common'
+include ':modular_contract_sdk'
+include ':app', ':MPChartLib', ':roundimageview', ':mysnackbar', ':djkeyboard', ':bubbleseekbar', ':FlycoTabLayout_Lib', ":uikit", ':camera', ':checkVersionLib'

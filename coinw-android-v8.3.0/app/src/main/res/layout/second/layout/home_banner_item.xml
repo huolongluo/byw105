@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:layout_height="match_parent"
+    >
+    <com.beiing.roundimage.RoundImageView
+        android:id="@+id/imgView"
+        android:layout_width="320dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        app:riv_leftBottomRadius="@dimen/dp_10"
+        app:riv_leftTopRadius="@dimen/dp_10"
+        app:riv_rightBottomRadius="@dimen/dp_10"
+        app:riv_rightTopRadius="@dimen/dp_10"
+        android:scaleType="centerInside" />
+</FrameLayout>

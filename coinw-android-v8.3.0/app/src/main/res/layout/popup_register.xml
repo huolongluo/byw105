@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x100"
+        android:layout_marginRight="@dimen/x100"
+        android:background="@drawable/pop_bg"
+        android:divider="?android:attr/listDivider"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:minHeight="@dimen/x50"
+            android:text="@string/d74"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:textSize="@dimen/text_size21"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/pop_register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:minHeight="@dimen/x80"
+            android:text="@string/d75"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:textColor="@color/FF01ACEF"
+            android:textSize="@dimen/text_size25"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/pop_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:minHeight="@dimen/x80"
+            android:text="@string/d76"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:textColor="@color/FF01ACEF"
+            android:textSize="@dimen/text_size25"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y30"
+        android:layout_marginLeft="@dimen/x100"
+        android:layout_marginRight="@dimen/x100"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@drawable/pop_bg">
+
+        <TextView
+            android:id="@+id/pop_register_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:minHeight="@dimen/x80"
+            android:text="@string/d77"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:textColor="@color/FF01ACEF"
+            android:textSize="@dimen/text_size25"/>
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 背景图 -->
+    <item android:drawable="@drawable/ic_seekbar_normal" />
+    <!--全部能量图  -->
+    <item android:drawable="@drawable/ic_seekbar_pressed" />
+    <!-- 进和能量图 -->
+    <item android:drawable="@drawable/ic_seekbar_tag" />
+</layer-list>

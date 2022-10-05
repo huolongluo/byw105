@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="mc_sdk_color_primary">#ff1a1a2e</color>
+    <color name="mc_sdk_color_primary_dark">#ff1a1a2e</color>
+    <color name="mc_sdk_color_accent">#4F4A84</color>
+    <color name="mc_sdk_black">#FF000000</color>
+    <color name="mc_sdk_white">#FFFFFFFF</color>
+    <color name="mc_sdk_txt_title">#FFFFFF</color>
+    <color name="mc_sdk_txt_sub_title">#625D7C</color>
+    <color name="mc_sdk_txt_accent">#4F4A84</color>
+    <color name="mc_sdk_txt_708ab8">#708ab8</color>
+    <color name="mc_sdk_txt_ABACB7">#ABACB7</color>
+    <color name="mc_sdk_txt_DCDBE6">#DCDBE6</color>
+    <color name="mc_sdk_txt_hint">#B3B3B3</color>
+    <color name="mc_sdk_line">#253A5A</color>
+    <color name="mc_sdk_txt_label">#625D7C</color>
+    <color name="mc_sdk_2E2B4E">#2E2B4E</color>
+    <color name="mc_sdk_152641">#152641</color>
+    <color name="mc_sdk_dialog_bg">#EEEEEE</color>
+    <color name="mc_sdk_txt_dialog_title">#333333</color>
+    <color name="mc_sdk_txt_dialog_body">#59657E</color>
+    <color name="mc_sdk_6f698b">#6f698b</color>
+    <color name="mc_sdk_4d4864">#4d4864</color>
+    <color name="mc_sdk_558b88a2">#558b88a2</color>
+    <color name="mc_sdk_a5a2be">#a5a2be</color>
+    <color name="mc_sdk_ff1e1b33">#ff1e1b33</color>
+    <color name="mc_sdk_ff5763">#FF5763</color>
+    <color name="mc_sdk_0f0e1a">#0f0e1a</color>
+    <color name="mc_sdk_27223D">#27223D</color>
+    <color name="mc_sdk_44be9b">#44be9b</color>
+    <color name="mc_sdk_8881a6">#8881a6</color>
+    <color name="mc_sdk_5B5775">#5B5775</color>
+    <color name="mc_sdk_7b759a">#7b759a</color>
+    <color name="mc_sdk_ebe8f7">#ebe8f7</color>
+    <color name="mc_sdk_dddddd">#dddddd</color>
+    <color name="mc_sdk_e7e7e7">#e7e7e7</color>
+    <color name="mc_sdk_4F4A84">#4F4A84</color>
+    <color name="mc_sdk_A8A5BE">#A8A5BE</color>
+    <color name="mc_sdk_FDC706">#FDC706</color>
+    <color name="mc_sdk_2C2A49">#2C2A49</color>
+    <color name="mc_sdk_1a4f4a84">#1a4f4a84</color>
+    <color name="mc_sdk_1F1E2C">#1F1E2C</color>
+    <color name="mc_sdk_F3B800">#F3B800</color>
+    <color name="mc_sdk_758FBF">#758FBF</color>
+
+    <color name="mc_sdk_not_enable">#80615C79</color>
+
+    <color name="mc_sdk_transparent">#00000000</color>
+    <!--  交易页三个列表的line  -->
+    <color name="mc_sdk_line_trade_list">#243755</color>
+    <!--  交易页三个列表的数值名称的颜色  -->
+    <color name="mc_sdk_txt_value_name_trade_list">#67768C</color>
+    <!--  交易页三个列表的数值的颜色  -->
+    <color name="mc_sdk_txt_value_trade_list">#FFFFFF</color>
+    <color name="mc_sdk_up_color">#ff5763</color>
+    <color name="mc_sdk_drop_color">#44be9b</color>
+    <color name="mc_sdk_up_accent_color">#ff5763</color>
+    <color name="mc_sdk_drop_accent_color">#44be9b</color>
+    <!--图表-->
+    <color name="mc_sdk_color_green">#75E3C3</color>
+    <color name="mc_sdk_color_red">#FF5763</color>
+    <color name="mc_sdk_marker_color">#5B5775</color>
+    <color name="mc_sdk_marker_color2">#161325</color>
+    <color name="mc_sdk_marker_text_color">#FFFFFF</color>
+    <color name="mc_sdk_chart_grid_color">#333333</color>
+    <color name="mc_sdk_last_value_color">#F4CB37</color>
+    <color name="mc_sdk_index_color1">#C3AD63</color>
+    <color name="mc_sdk_index_color2">#75E3C3</color>
+    <color name="mc_sdk_index_color3">#E56DD3</color>
+    <color name="mc_sdk_index_name_color">#9257EA</color>
+    
+    <color name="mc_sdk_normal_line_color">#B7B4CC</color>
+    <color name="mc_sdk_ave_color">#bbbbbb</color>
+    <color name="mc_sdk_axis_color">#6F698B</color>
+    <color name="mc_sdk_chart_no_data_color">#be945c</color>
+    <color name="mc_sdk_highlight_color_vertical">#406F698B</color>
+    <color name="mc_sdk_highlight_color_horizontal">#FFF</color>
+    <color name="mc_sdk_limit_color">#adadad</color>
+    <color name="mc_sdk_chart_info_bg">#161325</color>
+    <color name="mc_sdk_chart_background">#19162B</color>
+    <color name="mc_sdk_chart_border_color">#2F2B3F</color>
+    <!--图表end-->
+
+</resources>

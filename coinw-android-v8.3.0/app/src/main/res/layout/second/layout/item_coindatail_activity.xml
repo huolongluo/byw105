@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:layout_marginTop="@dimen/dp_size_12"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="@string/persion_check"
+            android:textColor="@color/text_main"
+            android:textSize="14sp" />
+
+        <com.legend.common.view.textview.DinproMediumTextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:lines="1"
+            android:text="2021/12/06"
+            android:textColor="@color/color_C2C3CD"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <com.legend.common.view.textview.DinproMediumTextView
+        android:id="@+id/money_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/coinName_tv"
+        android:lines="1"
+        android:text="+1001111"
+        android:textColor="@color/ff17BE9E"
+        android:textSize="16sp" />
+    <com.legend.common.view.textview.DinproMediumTextView
+        android:id="@+id/coinName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dp_size_2"
+        android:layout_marginEnd="@dimen/margin_horizontal"
+        android:lines="1"
+        android:text="BTC"
+        android:textColor="@color/ff17BE9E"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_marginEnd="@dimen/dp_size_15"
+        android:layout_marginStart="@dimen/dp_size_15"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/dp_size_60"
+        android:background="@color/color_20979797" />
+</RelativeLayout>
+
+

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <TextView
+            android:id="@+id/otc_title"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:maxEms="8"
+            android:text="@string/fbjy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/back"/>
+
+        <RelativeLayout
+            android:id="@+id/titlex"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <LinearLayout
+                android:layout_width="148dp"
+                android:layout_height="31dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/otcc2c_bg3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/otc_select_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/trade_title1_otc"
+                    android:textColor="@color/ff918BAE"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/c2c_select_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/trade_title2"
+                    android:textColor="@color/ff918BAE"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/c2c_view_layout" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="13dp">
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_titile"
+                android:gravity="center_vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_cnyt_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.3dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/market_custom_bg"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/c53"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_cnyt_t"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.3dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/c54"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="14dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="60dp"
+                        android:src="@mipmap/zixuan_new"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/help_iv"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:padding="4.5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/help_info" />
+
+                <ImageView
+                    android:id="@+id/bank_list_iv"
+                    android:layout_width="32dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="-2dp"
+                    android:layout_marginRight="-2dp"
+                    android:padding="4.5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/bank_card" />
+
+                <ImageView
+                    android:id="@+id/history_iv"
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:layout_marginRight="7dp"
+                    android:padding="4.5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/history_record" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <huolongluo.byw.view.NoScrollViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_title" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_nologin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/y30"
+            android:src="@mipmap/coinw_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginRight="75dp"
+            android:gravity="center"
+            android:text="请先登录后进行C2C操作"
+            android:textColor="@color/F666666"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_bus_login"
+            android:layout_width="@dimen/x360"
+            android:layout_height="@dimen/y84"
+            android:layout_gravity="center"
+            android:layout_marginTop="53dp"
+            android:background="@drawable/text_submit"
+            android:gravity="center"
+            android:text="@string/loginnow"
+            android:textColor="@color/FFFFFF"
+            android:textSize="@dimen/text_size36" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_noC2C"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/y30"
+            android:src="@mipmap/coinw_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginRight="75dp"
+            android:gravity="center"
+            android:text="请先进行身份验证后进行C2C操作"
+            android:textColor="@color/F666666"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_C2C"
+            android:layout_width="@dimen/x360"
+            android:layout_height="@dimen/y84"
+            android:layout_gravity="center"
+            android:layout_marginTop="53dp"
+            android:background="@drawable/text_submit"
+            android:gravity="center"
+            android:text="立即验证"
+            android:textColor="@color/FFFFFF"
+            android:textSize="@dimen/text_size36" />
+    </LinearLayout>
+</LinearLayout>

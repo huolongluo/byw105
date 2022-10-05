@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f80000000"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/bn1"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/sfz"
+            android:textColor="@color/ff222222"
+            android:textSize="16sp" />
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1px"></View>
+        <TextView
+            android:id="@+id/bn2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/hz"
+            android:textColor="@color/ff222222"
+            android:textSize="16sp" />
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1px"></View>
+        <TextView
+            android:id="@+id/bn4"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/gat"
+            android:textColor="@color/ff222222"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"></View>
+        <TextView
+            android:id="@+id/bn5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/str_overseas_id"
+            android:textColor="@color/ff222222"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"></View>
+        <TextView
+            android:id="@+id/bn3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/cancle"
+            android:textColor="@color/ff222222"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"></View>
+    </LinearLayout>
+</LinearLayout>

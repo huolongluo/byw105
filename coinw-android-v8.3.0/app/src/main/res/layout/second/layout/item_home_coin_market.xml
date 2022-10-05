@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="ticker"
+            type="com.android.legend.model.home.TickerWrap" />
+
+        <variable
+            name="showVolume"
+            type="Boolean" />
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <import type="huolongluo.byw.R" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_base"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:maxWidth="100dp"
+                android:maxLines="1"
+                android:text="@{ticker.baseName}"
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="2sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_quote"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:text="BabyBabyBabyBaby"
+                tools:textColor="?attr/col_text_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{ticker.quoteName}"
+                android:textSize="10sp"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="5sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_base"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:theme_textColor="@{R.attr.col_text_content}"
+                tools:text="/USDT"
+                tools:textColor="?attr/col_text_content" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingEnd="20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{ticker.last}"
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="5sp"
+                app:autoSizeTextType="uniform"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:text="123123.1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{ticker.convertCurrency}"
+                android:textSize="10sp"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="5sp"
+                app:autoSizeTextType="uniform"
+                app:theme_textColor="@{R.attr.col_text_content}"
+                tools:text="≈ ¥15,787.57"
+                tools:textColor="?attr/col_text_content" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{ticker.change}"
+                android:textColor="?col_text_on_button"
+                android:textSize="14sp"
+                android:visibility="@{showVolume?View.GONE:View.VISIBLE}"
+                app:theme_background="@{ticker.up ? R.attr.bg_buy_btn : R.attr.bg_sell_btn}"
+                tools:background="?bg_buy_btn"
+                tools:text="+1300000000%" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="end|center_vertical"
+                android:text="@{ticker.volume}"
+                android:textSize="16sp"
+                android:visibility="@{showVolume?View.VISIBLE:View.GONE}"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:text="123K" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

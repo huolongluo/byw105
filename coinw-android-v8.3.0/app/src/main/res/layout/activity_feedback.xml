@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/base_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/base_bg1"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/quest_type"
+                android:textColor="@color/FF333333"
+                android:textSize="13.5sp" />
+
+
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:horizontalSpacing="6.5dp"
+                android:numColumns="3"
+                android:verticalSpacing="8dp"
+                android:layout_marginTop="14dp">
+
+
+            </GridView>
+
+
+            <LinearLayout
+                android:id="@+id/layoutSelectType"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textSuggestType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:text="选择问题类型"
+                    android:textColor="@color/FF333333"
+                    android:textSize="12.7sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@mipmap/ico_arrowright" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/c18"
+                android:textColor="@color/ff222222"
+                android:textSize="13.5sp" />
+
+
+            <EditText
+                android:id="@+id/editContent"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/feedback_bg"
+                android:gravity="top"
+                android:hint="@string/c19"
+                android:lines="5"
+                android:maxLength="100"
+                android:padding="10dp"
+                android:textColor="@color/ff222222"
+                android:textColorHint="@color/ffb5b2c7"
+                android:textSize="14sp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5px"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="53.3dp"
+                android:layout_marginRight="53.3dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/confirm_jb_bg"
+                android:gravity="center"
+                android:text="@string/c17"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

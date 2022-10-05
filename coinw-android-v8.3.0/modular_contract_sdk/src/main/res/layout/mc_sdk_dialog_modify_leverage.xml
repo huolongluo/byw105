@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <variable
+            name="leverage"
+            type="androidx.databinding.ObservableField&lt;String>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mc_sdk_bg_bottom_dialog_r7"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="17dp"
+            android:text="@string/mc_sdk_modify_lever"
+            android:textColor="?col_text_title"
+            android:textSize="@dimen/mc_sdk_txt_dialog_big_title"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="?ic_close"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_position_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_position_type"
+                android:textColor="?col_text_title"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_position_mode_part"
+                android:layout_width="56dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="12dp"
+                android:background="?bg_action_btn_normal"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/mc_sdk_contract_order_type_part"
+                android:textColor="?col_text_check_state"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_position_mode_full"
+                android:layout_width="56dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="12dp"
+                android:background="?bg_action_btn_normal"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/mc_sdk_contract_order_type_full"
+                android:textColor="?col_text_check_state"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/iv_question"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:src="?ic_trade_question"-->
+        <!--            app:layout_constraintRight_toRightOf="parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/rg_position_type"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/rg_position_type"/>-->
+
+        <RadioGroup
+            android:id="@+id/rg_position_merge_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_position_type">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_position_merge_type"
+                android:textColor="?col_text_title"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_position_merge_mode_merge"
+                android:layout_width="56dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="12dp"
+                android:background="?bg_action_btn_normal"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/mc_sdk_position_merge_type_merge"
+                android:textColor="?col_text_check_state"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_position_merge_mode_partition"
+                android:layout_width="56dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="12dp"
+                android:background="?bg_action_btn_normal"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/mc_sdk_position_merge_type_partition"
+                android:textColor="?col_text_check_state"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/ll_leverage"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="20dp"
+            android:background="?bg_edit"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/rg_position_merge_type">
+
+            <ImageView
+                android:id="@+id/iv_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_minus"
+                android:textColor="@color/mc_sdk_txt_accent"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+
+            <EditText
+                android:id="@+id/tv_leverage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={leverage}"
+                android:textColor="@color/mc_sdk_txt_dialog_title"
+                android:textSize="@dimen/mc_sdk_txt_edit"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                tools:text="50" />
+
+            <ImageView
+                android:id="@+id/iv_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_plus"
+                android:textColor="@color/mc_sdk_txt_accent"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:maxHeight="100dp"
+            android:minHeight="30dp"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:splitTrack="false"
+            android:thumbOffset="0dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_leverage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rg_lever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/seekbar">
+
+            <View
+                android:id="@+id/sp1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/sp2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/sp2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/sp1"
+                app:layout_constraintRight_toLeftOf="@id/sp3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/sp3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/sp2"
+                app:layout_constraintRight_toLeftOf="@id/sp4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/sp4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/sp3"
+                app:layout_constraintRight_toLeftOf="@id/sp5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/sp5"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintLeft_toRightOf="@id/sp4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_lever_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="left"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="1X"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+            <TextView
+                android:id="@+id/tv_lever_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="20X"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                app:layout_constraintLeft_toRightOf="@id/sp1"
+                app:layout_constraintRight_toLeftOf="@id/sp2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+            <TextView
+                android:id="@+id/tv_lever_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="40X"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                app:layout_constraintLeft_toRightOf="@id/sp2"
+                app:layout_constraintRight_toLeftOf="@id/sp3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+            <TextView
+                android:id="@+id/tv_lever_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="60X"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                app:layout_constraintLeft_toRightOf="@id/sp3"
+                app:layout_constraintRight_toLeftOf="@id/sp4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}" />
+
+            <TextView
+                android:id="@+id/tv_lever_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="80X"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                app:layout_constraintLeft_toRightOf="@id/sp4"
+                app:layout_constraintRight_toLeftOf="@id/sp5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                tools:checked="true" />
+
+            <TextView
+                android:id="@+id/tv_lever_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="100X"
+                android:textColor="@color/mc_sdk_dialog_menu_txt_selector"
+                android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                tools:checked="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tv_leverage_max_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3dp"
+            android:text="@string/mc_sdk_contract_leverage_max_open"
+            android:textColor="?col_text_content"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_lever" />
+
+        <TextView
+            android:id="@+id/tv_leverage_max_open_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3dp"
+            android:textColor="?col_text_title"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/tv_leverage_max_open"
+            app:layout_constraintTop_toBottomOf="@id/rg_lever"
+            app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+            tools:text="xxx" />
+
+        <TextView
+            android:id="@+id/tv_leverage_warn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_leverage_warn"
+            android:drawableLeft="@drawable/ic_warning"
+            android:drawablePadding="5dp"
+            android:padding="4dp"
+            android:text="@string/mc_sdk_contract_leverage_warn"
+            android:textColor="@color/ticker_red"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_leverage_max_open" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="17dp"
+            android:background="?bg_action_btn_accent"
+            android:text="@string/mc_sdk_confirm"
+            android:textColor="@color/mc_sdk_txt_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_leverage_warn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

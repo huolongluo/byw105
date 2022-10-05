@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/base_bg_white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/base_title"></include>
+
+
+    <LinearLayout
+        android:layout_below="@+id/include"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/s1"
+            android:textColor="@color/ff333333"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/cappeal_bg">
+
+            <EditText
+                android:id="@+id/reason_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/s2"
+                android:textColor="@color/ff333333"
+                android:textSize="12sp"
+                android:maxLength="100"
+                android:textColorHint="@color/ff333333"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="start"
+                android:background="@color/transparent"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="25dp">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/ff333333"
+                   android:textSize="13sp"
+                   android:text="@string/s3" />
+
+                  <TextView
+                      android:id="@+id/upload_tv"
+                      android:layout_width="53dp"
+                      android:layout_height="27dp"
+                      android:background="@drawable/f6a659e_bg"
+                      android:textSize="12sp"
+                      android:textColor="@color/white"
+                      android:text="@string/s4"
+                      android:gravity="center"
+                      android:layout_marginLeft="12sp"
+                      />
+
+
+
+        </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/selector_image_add"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:choiceMode="singleChoice"
+            android:layout_marginLeft="20dp"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:scrollbarStyle="outsideOverlay"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="4"
+             android:layout_marginTop="10dp"
+            tools:listitem="@layout/list_item_image"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/ffb0adc2"
+            android:text="@string/s5"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/comit_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/confirm_jb_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:text="@string/s6"
+        android:gravity="center"/>
+</RelativeLayout>

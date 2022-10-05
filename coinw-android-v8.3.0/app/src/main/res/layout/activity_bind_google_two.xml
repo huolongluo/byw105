@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/text_414577">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/back"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sez"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="76.3dp"
+        android:layout_marginRight="77.3dp"
+        android:layout_marginTop="43.3dp"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:text="@string/goog_kay"/>
+
+        <TextView
+            android:id="@+id/tv_key"
+            android:layout_width="match_parent"
+            android:layout_height="53.3dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginRight="16.7dp"
+            android:layout_marginLeft="16.3dp"
+            android:text=""
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/FF333333"
+            android:background="@drawable/text_google_bg"/>
+    
+    <TextView
+        android:id="@+id/tv_copy_key"
+        android:layout_width="86.7dp"
+        android:layout_height="33.3dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30.3dp"
+        android:background="@drawable/text_bg"
+        android:textColor="@color/FF333333"
+        android:textSize="12sp"
+        android:text="@string/copy_kay"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="match_parent"
+        android:layout_height="43.3dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="58.7dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginRight="103dp"
+        android:background="@drawable/text_submit"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="@string/next"
+        android:gravity="center"/>
+
+</LinearLayout>

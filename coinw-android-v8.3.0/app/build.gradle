@@ -1,0 +1,429 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'org.greenrobot.greendao'
+apply from: 'and_res_guard.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+static def getTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getDefault())
+}
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'byw'
+            keyPassword 'byw2017,.'
+            storeFile file('byw.jks')
+            storePassword 'byw2017,.'
+        }
+    }
+    dataBinding{
+        enabled = true
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    productFlavors {
+        //xiaomi {}
+        //已废弃，故禁用掉
+        //qd1129483{//该渠道与产品确认，已废弃
+        //    buildConfigField "int", "APP_CHANNEL_VALUE", '1'
+        //    buildConfigField "String", "UMENG_CHANNEL_NAME_VALUE", '\"qudao1129483\"'
+        //    buildConfigField "String", "CHANNEL_INTRO_VALUE", '\"1129483\"'
+        //}
+        qd1178197{//币用宝
+            buildConfigField "int", "APP_CHANNEL_VALUE", '2'
+            buildConfigField "String", "UMENG_CHANNEL_NAME_VALUE", '\"qudao1178197\"'
+            buildConfigField "String", "CHANNEL_INTRO_VALUE", '\"1178197\"'
+        }
+        huawei {
+            //非渠道包，APP_CHANNEL_VALUE值为0
+            buildConfigField "int", "APP_CHANNEL_VALUE", '0'
+            buildConfigField "String", "UMENG_CHANNEL_NAME_VALUE", '\"Umeng\"'
+            buildConfigField "String", "CHANNEL_INTRO_VALUE", '\"\"'
+        }
+        //oppo {}
+        //_360 {}  // 不能以数字开头
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [CHANNEL_NAME_VALUE: name]
+        }
+    }
+    defaultConfig {
+        applicationId "huolongluo.byw"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 135
+        versionName "8.3.0"
+
+        multiDexEnabled true
+        flavorDimensions "default"
+        vectorDrawables.useSupportLibrary =true
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                //appkey在MainActivity的bindJPush也需要修改
+//                JPUSH_APPKEY : "9707f682e0274029dbce6072",//JPush上注册的包名对应的appkey.//--此账号为测试账号 需要使用生产的appkey
+                JPUSH_APPKEY : "b547d910cfa28ecd1d127500", //JPush上注册的包名对应的appkey.//--此账号为生产账号（请小心使用）
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                VERSION_CODE : defaultConfig.versionCode
+
+        ]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //添加了javaCompileOptions
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == 'release') {//生产包
+                outputFileName = "Coinw_V${variant.versionName}_${getTime()}_${productFlavors[0].name}_release.apk"
+            } else if (variant.buildType.name == 'devRelease') {//开发、测试版本
+                outputFileName = "Coinw_V${variant.versionName}_${getTime()}_${productFlavors[0].name}_dev_release.apk"
+            } else if (variant.buildType.name == 'debug') {//开发版本
+                outputFileName = "Coinw_V${variant.versionName}_${getTime()}_${productFlavors[0].name}_debug.apk"
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        doNotStrip "*/armeabi/*.so"
+        doNotStrip "*/armeabi-v7a/*.so"
+        doNotStrip "*/arm64-v8a/*.so"
+        doNotStrip "*/x86/*.so"
+        doNotStrip "*/x86_64/*.so"
+        doNotStrip "*/mips/*.so"
+        doNotStrip "*/mips64/*.so"
+    }
+
+    buildTypes {
+
+        debug {
+            // signingConfig signingConfigs.release
+            buildConfigField('String', 'HOST', rootProject.ext.defaultHost)
+            buildConfigField('String', 'HOST_WEB', rootProject.ext.webHost)
+            buildConfigField('String', 'HOST_SWAP', rootProject.ext.swapHost)
+            buildConfigField('String', 'HOST_GRAY', rootProject.ext.defaultHostGray)
+            buildConfigField('String', 'HOST_DOWNLOAD', rootProject.ext.downloadUrl)
+            buildConfigField("boolean", "ENV_DEV", "true")
+            buildConfigField("String[]", "DEV_HOSTS", rootProject.ext.devHosts)
+            buildConfigField("String[]", "DEV_CONTRACT_HOSTS", rootProject.ext.devContractHosts)
+            buildConfigField("String[]", "VERIFY_HOST_NAME_ARRAY", rootProject.ext.verifyHost)
+            signingConfig signingConfigs.release
+            ndk {
+                abiFilters 'x86', 'arm64-v8a', 'armeabi-v7a'
+            }
+        }
+        devRelease {
+            buildConfigField('String', 'HOST', rootProject.ext.defaultHost)
+            buildConfigField('String', 'HOST_WEB', rootProject.ext.webHost)
+            buildConfigField('String', 'HOST_SWAP', rootProject.ext.swapHost)
+            buildConfigField('String', 'HOST_GRAY', rootProject.ext.defaultHostGray)
+            buildConfigField('String', 'HOST_DOWNLOAD', rootProject.ext.downloadUrl)
+            // 不显示Log
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            buildConfigField("boolean", "ENV_DEV", "true")
+            buildConfigField("String[]", "DEV_HOSTS", rootProject.ext.devHosts)
+            buildConfigField("String[]", "DEV_CONTRACT_HOSTS", rootProject.ext.devContractHosts)
+            buildConfigField("String[]", "VERIFY_HOST_NAME_ARRAY", rootProject.ext.verifyHost)
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+//            //资源混淆-开发、测试模式，不删除相关配置
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-dev-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            multiDexKeepFile file('multidex-config.txt')// 小括号记得要加上，官方文档没有
+            ndk {
+                abiFilters 'x86', 'arm64-v8a', 'armeabi-v7a'
+            }
+        }
+        scriptRelease {
+            buildConfigField('String', 'HOST', rootProject.ext.scriptHost)
+            buildConfigField('String', 'HOST_WEB', rootProject.ext.webHost)
+            buildConfigField('String', 'HOST_SWAP', rootProject.ext.swapHost)
+            buildConfigField('String', 'HOST_DOWNLOAD', rootProject.ext.downloadUrl)
+            // 不显示Log
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            buildConfigField("boolean", "ENV_DEV", "false")
+            buildConfigField("String[]", "DEV_HOSTS", 'new String[]{}')
+            buildConfigField("String[]", "DEV_CONTRACT_HOSTS", rootProject.ext.devContractHosts)
+            buildConfigField("String[]", "VERIFY_HOST_NAME_ARRAY", rootProject.ext.verifyHost)
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //资源混淆-开发、测试模式，不删除相关配置
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-dev-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            multiDexKeepFile file('multidex-config.txt')// 小括号记得要加上，官方文档没有
+            ndk {
+                abiFilters 'x86', 'arm64-v8a', 'armeabi-v7a'
+            }
+        }
+
+        release {
+            buildConfigField('String', 'HOST', rootProject.ext.defaultHost)
+            buildConfigField('String', 'HOST_WEB', rootProject.ext.webHost)
+            buildConfigField('String', 'HOST_SWAP', rootProject.ext.swapHost)
+            buildConfigField('String', 'HOST_GRAY', rootProject.ext.defaultHostGray)
+            buildConfigField('String', 'HOST_DOWNLOAD', rootProject.ext.downloadUrl)
+            // 不显示Log
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            buildConfigField("boolean", "ENV_DEV", "false")
+            buildConfigField("String[]", "DEV_HOSTS", 'new String[]{}')
+            buildConfigField("String[]", "DEV_CONTRACT_HOSTS", rootProject.ext.devContractHosts)
+            buildConfigField("String[]", "VERIFY_HOST_NAME_ARRAY", rootProject.ext.verifyHost)
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //资源混淆-生产模式，删除相关无用配置
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            multiDexKeepFile file('multidex-config.txt')// 小括号记得要加上，官方文档没有
+            ndk {
+                abiFilters 'arm64-v8a', 'armeabi-v7a'
+            }
+        }
+    }
+    //兼容低端手机[云测兼容性测试]
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        additionalParameters += '--multi-dex'
+        additionalParameters += '--set-max-idx-number=35000'
+//每个包内方法数上限（根据实际项目配置这个数，来适配4.0-4.4一些低端机型，因为拆分的dex太大，这些低端机型加载不了dex）
+        additionalParameters += '--minimal-main-dex'
+    }
+
+    afterEvaluate {
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    // greendao配置
+//    greendao {
+//        // 版本号 升级时可配置
+//        schemaVersion 2
+//        daoPackage 'huolongluo.byw.byw.db'
+//        targetGenDir 'src/main/java'
+//    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+//            java.srcDirs += 'build/generated/data_binding_base_class_source_out/debug/out'
+            resources.srcDirs = ['src/main/java', 'src/main/aidl']
+            aidl.srcDirs = ['src/main/aidl']
+            res.srcDirs =
+                    ['src/main/res/layout/second',
+                     'src/main/res/layout/otc',
+                     'src/main/res/layout','src\\main\\res', 'src\\main\\res-night'
+                    ]
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+//kapt {
+//    generateStubs = true
+//}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://dl.bintray.com/onfido/maven" }
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+/*MobSDK {
+    appKey "29e034bf383e3"
+    appSecret "c96826ba589c14c669c53d0b9ce44ff6"
+
+    ShareSDK {}
+
+}*/
+dependencies {
+    //TODO gradle
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation(name: 'AVMPSDK-external-release-5.4.1001', ext: 'aar')
+//    implementation(name: 'SecurityBodySDK-external-release-5.4.28', ext: 'aar')
+//    implementation(name: 'SecurityGuardSDK-external-release-5.4.38', ext: 'aar')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    kapt "com.android.databinding:compiler:3.4.2"
+    // 友盟统计SDK
+    implementation  'com.umeng.umsdk:common:9.4.0' // (必选)版本号
+    implementation  'com.umeng.umsdk:asms:1.2.3' // asms包依赖(必选)
+    implementation 'com.umeng.umsdk:crash:0.0.5' // native crash包依赖(必选)
+    implementation  'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
+    implementation  'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
+    implementation  'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
+    implementation  'com.umeng.umsdk:oaid_vivo:1.0.0.1' // (可选)
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.0.0'
+
+    /** *************** 网络请求  ****************/
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    /** *************** 网络请求  ****************/
+    // 权限
+    implementation 'com.yanzhenjie:permission:2.0.3'
+    implementation 'androidx.fragment:fragment-ktx:1.2.4'
+    api 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+
+    implementation 'com.cocosw:favor:0.2.0@aar'
+
+    //Android依赖注入框架
+    implementation 'com.google.dagger:dagger:2.11'
+    kapt 'com.google.dagger:dagger-compiler:2.11'
+    implementation 'io.reactivex:rxjava:1.3.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.jakewharton.rxbinding:rxbinding:1.0.1'
+
+    // webview
+    implementation 'com.just.agentweb:agentweb:3.0.0'
+    //implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.7@aar'
+
+    implementation 'com.baoyz.swipemenulistview:library:1.3.0'
+
+    // 滑动删除的ListView
+    implementation 'com.github.addappcn:android-pickers:1.0.1'
+
+    //TODO 安全验证
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    implementation project(':MPChartLib')
+    implementation files('libs/pinyin4j-2.5.0.jar')
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
+    implementation 'com.github.YvesCheung:RollingText:1.2.0'
+    implementation 'com.cysion:ImagePicker:1.2.0.x'
+    implementation 'com.github.gittjy:LoadingDialog:1.0.2'
+    implementation 'com.koushikdutta.async:androidasync:2.2.1'
+    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
+
+    //极光推送
+    implementation 'cn.jiguang.sdk:jpush:3.5.6'  // 此处以JPush 3.5.6 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.2.8'  // 此处以JCore 2.2.8 版本为例。
+
+    implementation 'com.github.onlynight:NoSwipeViewPager:1.0.0'
+    implementation project(':roundimageview')
+    implementation project(':mysnackbar')
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    implementation 'com.jacktuotuo.customview:verificationcodeview:1.0.4'
+    implementation project(':djkeyboard')
+    implementation project(':bubbleseekbar')
+    implementation project(':FlycoTabLayout_Lib')
+
+    //刷新
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation project(path: ':uikit')
+    implementation project(path: ':camera')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+    implementation "$rootProject.ext.dependencies.core_ktx"
+
+    //add
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "com.android.support:design:28.0.0"
+    //
+    //aliyunface
+    implementation (name:'rpsdk-4.4.2-open', ext:'aar')
+    implementation (name:'oss-android-sdk-2.9.2', ext:'aar')
+    implementation (name:'SecurityGuardSDK-external-release-5.5.13873794', ext:'aar')
+    implementation (name:'SecurityBodySDK-external-release-5.5.19', ext:'aar')
+    implementation (name:'MiddleTierSDK-external-release-5.5.13874142', ext:'aar')
+    implementation (name:'windvane', ext:'aar')
+    //
+    //升级框架
+    implementation project(path: ':checkVersionLib')
+    //k线指标计算
+    implementation 'com.tictactec:ta-lib:0.4.0'
+    //onfido实名认证
+    implementation "com.onfido.sdk.capture:onfido-capture-sdk-core:10.0.0"
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    //socket.io
+    implementation ('io.socket:socket.io-client:1.0.0'){
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+    
+
+    // 首页banner
+    // https://github.com/zguop/banner
+    implementation 'io.github.zguop:pager2Banner:1.0.5'
+
+    //idcm的合约
+    api project(path: ':modular_contract_sdk' )
+    implementation project(':common')
+    //首页滚动的公告
+    implementation 'com.sunfusheng:MarqueeView:1.4.1'
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '27.+'
+                }
+            }
+        }
+        //fix error
+        //06-04 16:38:40.145 W/System.err( 7901): android.content.res.Resources$NotFoundException: String resource ID #0x2040003
+        //06-04 16:38:40.148 W/System.err( 7901): 	at android.content.res.Resources.getText(Resources.java:299)
+        //06-04 16:38:40.148 W/System.err( 7901): 	at android.content.res.Resources.getString(Resources.java:385)
+        //06-04 16:38:40.148 W/System.err( 7901): 	at com.android.org.chromium.content.browser.ContentViewCore.setContainerView(ContentViewCore.java:684)
+        resolutionStrategy.force 'androidx.appcompat:appcompat:1.2.0'
+    }
+}

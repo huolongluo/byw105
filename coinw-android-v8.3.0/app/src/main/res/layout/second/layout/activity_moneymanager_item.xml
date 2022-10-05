@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/money_manager_bg1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/huodong_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/hyper_bg4"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="7dp">
+            <ImageView
+                android:id="@+id/logo_iv1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/default_coin" />
+            <TextView
+                android:id="@+id/coin_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/logo_iv1"
+                android:lines="1"
+                android:text="--"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/baifenbi_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:text="85%"
+                android:textColor="@color/F2C8FF7"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="7dp">
+            <TextView
+                android:id="@+id/miaoshu_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="--"
+                android:textColor="@color/ff8881a6"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:lines="1"
+                android:text="@string/yjnhsyl"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

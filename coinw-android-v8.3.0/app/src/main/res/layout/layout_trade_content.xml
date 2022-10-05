@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="220dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_content_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="72"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/ll_direction"
+                layout="@layout/layout_trade_button" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_content_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="56"/>
+    </LinearLayout>
+</layout>

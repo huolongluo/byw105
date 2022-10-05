@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_marginTop="-10dp"
+        android:layout_below="@id/img"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/dialog_shap"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/activity_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F4F2F8"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/activity_finish"
+            android:textColor="#9389AB"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="@string/whats_nm"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="@string/nm_content_des"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_showdialog_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="@string/nm_title"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="@string/one_reward"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/des_content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="初级奖励："
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="@string/two_reward"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/des_content2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="初级奖励："
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/to_trade"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="15dp"
+                android:background="#3F4389"
+                android:text="@string/to_transfer"
+                android:textColor="#ffffff"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_grant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/zhuyi"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="@string/str_learn_more"
+            android:textColor="#999999"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/head_bg" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/coin" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/share_close" />
+
+</RelativeLayout>

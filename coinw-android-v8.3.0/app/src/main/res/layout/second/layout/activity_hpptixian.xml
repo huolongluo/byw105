@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_title"></include>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="36.5dp"
+                android:layout_height="36.5dp"
+                android:layout_marginLeft="26.5dp"
+                android:src="@mipmap/default_head" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@+id/iv_logo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="--提币"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/canu"
+                        android:textColor="@color/ffb8b0d8"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="-- --"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:text="-- --"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="116.5dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="27dp"
+                android:background="@drawable/tixian_bg1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/hyytx"
+                        android:textColor="@color/white"
+                        android:textSize="12.5sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/exempt_fee"
+                            android:textColor="@color/ffb8b0d8"
+                            android:textSize="10sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="10.5dp"
+                            android:layout_marginLeft="4dp"
+                            android:src="@drawable/zictix" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/base_bg1"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="3.5dp">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/tbaddr"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_toLeftOf="@+id/aa"
+                            android:id="@+id/tv_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/tv1"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="@string/sel_t_addr"
+
+                            android:lines="1"
+                            android:maxLength="60"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="11sp" />
+
+
+                        <LinearLayout
+                            android:id="@+id/aa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/iv_scan"
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:padding="7dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/zc_qr_code"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/address_iv"
+                                android:layout_width="45dp"
+                                android:layout_height="35dp"
+                                android:clickable="true"
+                                android:paddingBottom="7dp"
+                                android:paddingLeft="7dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="7dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/zc_address" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="68.5dp">
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/number"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_all_amount"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:background="@drawable/f6a659e_bg"
+                            android:gravity="center"
+                            android:text="@string/all"
+                            android:textColor="@color/fff8f9fc"
+                            android:textSize="11.5sp" />
+
+
+                        <EditText
+                            android:id="@+id/et_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/tv2"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/tv_all_amount"
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="最小提币数量0.001"
+                            android:inputType="numberDecimal"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/coinName_tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="6.5dp"
+                            android:layout_marginRight="13dp"
+                            android:layout_toLeftOf="@+id/tv_all_amount"
+                            android:text="--"
+                            android:textColor="@color/ff222222"
+                            android:textSize="10.5sp" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginTop="4.5dp"
+                            android:text="@string/fees"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tv_fee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="4.5dp"
+                            android:text="--"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tv_coin_fee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11sp"
+
+                            />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:id="@+id/tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/trade_psw"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <EditText
+                            android:id="@+id/et_zijin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/tv5"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="9dp"
+
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="@string/please_in_psw"
+                            android:lines="1"
+                            android:inputType="textPassword"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/msg_code"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_duanxin"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:background="@drawable/safe_bg"
+                            android:gravity="center"
+                            android:text="@string/send"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_duanxin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/tv4"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/tv_duanxin"
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="@string/pen_inmsg_code"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="13sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/ll_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/google_codes"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+
+                            android:id="@+id/tv_paste"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/safe_bg"
+                            android:gravity="center"
+                            android:text="@string/poste"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_google"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/tv3"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/tv_paste"
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="@string/please_inphogoogle_code"
+                            android:lines="1"
+
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/ll_memo"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:id="@+id/tv6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="MEMO备注"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+
+                            android:id="@+id/tv_memo"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/safe_bg"
+                            android:gravity="center"
+                            android:text="MEMO粘贴"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_memo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/tv6"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/tv_memo"
+                            android:background="@drawable/set_trade_psw_"
+                            android:gravity="bottom"
+                            android:hint="@string/inp_mark"
+                            android:lines="1"
+                                android:maxLength="300"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ffb5b2c7"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20.5dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/sfgt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:text="@string/txxz"
+                            android:textColor="@color/ff222222"
+                            android:textSize="12.5sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="5.5dp"
+                            android:layout_height="5.5dp"
+                            android:src="@drawable/dot_brown3" />
+
+                        <TextView
+                            android:id="@+id/aaaatv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="最小提币数量为0.001 "
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11.5dp" />
+
+                        <TextView
+                            android:id="@+id/coinName_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/ff8881a6"
+
+                            android:textSize="11.5dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="5.5dp"
+                            android:layout_height="5.5dp"
+                            android:src="@drawable/dot_brown3" />
+
+                        <TextView
+                            android:id="@+id/max_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="最大提币数量为0.001 "
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11.5dp" />
+
+                        <TextView
+                            android:id="@+id/coinName_tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/ff8881a6"
+
+                            android:textSize="11.5dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="24.5dp"
+                        android:layout_marginTop="4dp"
+
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="5.5dp"
+                            android:layout_height="5.5dp"
+                            android:layout_marginTop="6dp"
+                            android:src="@drawable/dot_brown3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/safe"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11.5dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="17dp"
+                        android:background="@color/ffd8dbea"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp">
+
+
+                        <TextView
+                            android:id="@+id/name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="26.5dp"
+                            android:text="-- --"
+                            android:textColor="@color/ff222222"
+                            android:textSize="16sp"
+                            android:paddingBottom="3dp"/>
+
+                        <TextView
+                            android:id="@+id/amount_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/name_tv"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/name_tv"
+                            android:text="-- --"
+                            android:textColor="@color/ff222222"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/amount_tv"
+                            android:layout_marginLeft="25dp"
+                            android:text="@string/daza"
+                            android:textColor="@color/ff222222"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/tv_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/login_bn_bg"
+                        android:gravity="center"
+                        android:text="@string/confirm"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

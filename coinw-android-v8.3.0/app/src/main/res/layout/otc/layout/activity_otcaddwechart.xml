@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/base_bg_white"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@color/base_col"></View>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="-3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/base_title"></include>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="21dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="13dp"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="10dp">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:background="@drawable/otcaddbank_bg1">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="14dp"
+                                    android:text="@string/p9"
+                                    android:textColor="@color/ff66617d"
+                                    android:textSize="12.7sp" />
+
+                                <TextView
+                                    android:id="@+id/realNameTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text=""
+                                    android:textColor="@color/ff222222"
+                                    android:textSize="16sp" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginRight="19dp"
+                                android:text="@string/q1"
+                                android:textColor="@color/ff6a6581"
+                                android:textSize="9sp" />
+                        </RelativeLayout>
+
+                        <EditText
+                            android:id="@+id/et_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="16.7dp"
+                            android:layout_marginRight="16.7dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/otcaddbank_bg2"
+                            android:gravity="center_vertical"
+                            android:hint="@string/q2"
+                            android:paddingLeft="6dp"
+                            android:lines="1"
+                            android:maxLength="30"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ff8881a6"
+                            android:textSize="12.7sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginTop="28dp"
+                            android:text="@string/q3"
+                            android:textColor="@color/ff66617d"
+                            android:textSize="13sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="193dp"
+                            android:layout_marginLeft="16.7dp"
+                            android:layout_marginRight="16.7dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/otcaddzhifub_bg1">
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/otcaddzhifub_bg2">
+                                <ImageView
+                                    android:id="@+id/image"
+                                    android:layout_width="138dp"
+                                    android:layout_height="138dp"
+                                    android:layout_margin="11dp"
+
+                                    />
+                                <LinearLayout
+
+                                    android:id="@+id/add_ll"
+                                    android:layout_width="138dp"
+                                    android:layout_height="138dp"
+                                    android:layout_margin="11dp"
+                                    android:background="@drawable/otcaddzhifub_bg3"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_marginTop="10dp"
+                                        android:layout_width="64dp"
+                                        android:layout_height="64dp"
+                                        android:src="@mipmap/add_view" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/q4"
+                                        android:textColor="@color/ffaab0c3"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="5dp"/>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/q5"
+                            android:textColor="@color/ff66617d"
+                            android:textSize="13sp" />
+                        <EditText
+                            android:id="@+id/et_Tradepsw"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="16.7dp"
+                            android:layout_marginRight="16.7dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/otcaddbank_bg2"
+                            android:gravity="center_vertical"
+                            android:hint="@string/q6"
+                            android:paddingLeft="6dp"
+                            android:maxLength="30"
+                            android:inputType="textPassword"
+                            android:textColor="@color/ff222222"
+                            android:textColorHint="@color/ff8881a6"
+                            android:textSize="12.7sp" />
+                        <TextView
+                            android:id="@+id/btn_next"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="19dp"
+                            android:background="@drawable/confirm_jb_bg"
+                            android:gravity="center"
+                            android:text="@string/q7"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/delete_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="30dp"
+                            android:text="@string/q8"
+                            android:textColor="#504A85" />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

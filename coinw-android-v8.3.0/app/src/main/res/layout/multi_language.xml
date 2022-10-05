@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?window_background"
+    android:orientation="vertical">
+    <include layout="@layout/base_title" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/tv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/english_ll"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="English"
+                    android:textColor="?col_text_title"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/iv_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@mipmap/item_select"
+                    android:visibility="gone" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="?divider_line" />
+            <RelativeLayout
+                android:id="@+id/chinese_ll"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="简体中文"
+                    android:textColor="?col_text_title"
+                    android:textSize="16sp"
+                   />
+                <ImageView
+                    android:id="@+id/iv_zh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@mipmap/item_select" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="?divider_line" />
+            <RelativeLayout
+                android:id="@+id/korean_ll"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="한국어"
+                    android:textColor="?col_text_title"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/iv_ko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@mipmap/item_select"
+                    android:visibility="gone" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="?divider_line" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

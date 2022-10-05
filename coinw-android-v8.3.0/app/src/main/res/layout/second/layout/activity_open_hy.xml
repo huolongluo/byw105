@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2"
+            android:background="#1C1830"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/head_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.6dp"
+                    android:layout_marginTop="35dp"
+                    android:text="@string/hy_open_notice"
+                    android:textColor="#B2AEC6"
+                    android:textSize="16sp"
+                    android:textStyle="bold"></TextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="18.3dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#3B3759" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/xieyi_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="17.6dp"
+                        android:layout_marginRight="17.6dp"
+                        android:lineSpacingExtra="5dp"
+                        android:scrollbars="vertical"
+                        android:singleLine="false"
+                        android:text="@string/hy_open_content"
+                        android:textColor="#68647b" />
+                </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.4"
+            android:background="#221F38"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18.6dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/open_hy_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/switch_btn_colors"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:theme="@style/MyCheckBox" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hy_open_agree"
+                    android:textColor="@color/hy_open_agree_color"
+                    android:textSize="13sp"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="18.3dp"
+                android:layout_marginRight="40dp"
+                android:background="#3B3759" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="39dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/open_hy_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rectangle1"
+                    android:gravity="center"
+                    android:text="@string/hy_open_btn_cancel"
+                    android:textColor="#C0BFC7"
+                    android:textSize="13sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/open_hy_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/hy_open_sure_btn_bg"
+                    android:gravity="center"
+                    android:text="@string/hy_open_btn_sure"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

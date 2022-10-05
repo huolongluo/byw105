@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mc_sdk_bg_bottom_dialog_r7"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tabIndicatorFullWidth="false"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="?col_text_title"
+                app:tabTextAppearance="@style/mc_sdk_TabLayoutTextStyle.bold._18sp"
+                app:tabTextColor="?col_text_content"/>
+
+            <ImageView
+                android:id="@+id/iv_question"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:src="?ic_trade_question"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="?ic_close"/>
+
+        </LinearLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+    </LinearLayout>
+</layout>

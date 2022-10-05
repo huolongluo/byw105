@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dp_16"
+    android:layout_marginTop="@dimen/dp_16"
+    android:background="@drawable/bg_cor8_background_main"
+    android:padding="@dimen/margin_horizontal">
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="@dimen/dp_size_210"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/color_primary_dark"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:textColor="@color/color_primary_dark"
+        android:textSize="12sp"
+        app:layout_constraintRight_toLeftOf="@+id/time"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_primary_dark"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="10天" />
+
+    <RelativeLayout
+        android:id="@+id/rl_des"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type">
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:text="@string/task_center_more"
+            android:textColor="@color/color_8085889B"
+            android:textSize="12sp"
+            tools:text="2022年现象级币种，天王级天王级天王级天王级天王级天天王级天王级天王级天王级天王级级天王级天王级天王级天王级级天王级天王级天王级天王级" />
+
+        <ImageView
+            android:id="@+id/moreDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="@dimen/dp_9"
+            android:paddingTop="@dimen/dp_9"
+            android:src="@mipmap/ic_des_more" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/ivBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_7"
+        android:background="@mipmap/bg_task_center_item"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_des" />
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_34"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_des"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_65"
+        android:layout_marginTop="@dimen/dp_59"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_des"
+        tools:text="USDT" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="@dimen/dp_210"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_28"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/color_primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/ivBg"
+        app:layout_constraintTop_toBottomOf="@+id/rl_des"
+        tools:text="合约体验金" />
+
+    <TextView
+        android:id="@+id/tvEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_8085889B"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/ivBg"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_8085889B"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/tvEndTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="2021-01-01 12:12:12" />
+
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:drawableEnd="@mipmap/ic_arrow"
+        android:drawablePadding="@dimen/dp_7"
+        android:paddingTop="@dimen/dp_7"
+        android:paddingEnd="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7"
+        android:text="@string/task_get"
+        android:textColor="@color/color_8F72FB"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/ivBg"
+        app:layout_constraintTop_toBottomOf="@+id/tvEndTime" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

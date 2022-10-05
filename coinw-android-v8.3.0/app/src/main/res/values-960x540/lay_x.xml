@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size18">13.5px</dimen>
+    <dimen name="text_size20">15.0px</dimen>
+    <dimen name="text_size21">15.75px</dimen>
+    <dimen name="text_size22">16.5px</dimen>
+    <dimen name="text_size23">17.25px</dimen>
+    <dimen name="text_size24">18.0px</dimen>
+    <dimen name="text_size25">18.75px</dimen>
+    <dimen name="text_size28">21.0px</dimen>
+    <dimen name="text_size30">22.5px</dimen>
+    <dimen name="text_size32">24.0px</dimen>
+    <dimen name="text_size34">25.5px</dimen>
+    <dimen name="text_size35">26.25px</dimen>
+    <dimen name="text_size36">27.0px</dimen>
+    <dimen name="text_size50">37.5px</dimen>
+
+
+    <dimen name="x1">0.75px</dimen>
+    <dimen name="x4">3.0px</dimen>
+    <dimen name="x10">7.5px</dimen>
+    <dimen name="x12">9.0px</dimen>
+    <dimen name="x15">11.25px</dimen>
+    <dimen name="x16">12.0px</dimen>
+    <dimen name="x20">15.0px</dimen>
+    <dimen name="x22">16.5px</dimen>
+    <dimen name="x24">18.0px</dimen>
+    <dimen name="x30">22.5px</dimen>
+    <dimen name="x36">27.0px</dimen>
+    <dimen name="x40">30.0px</dimen>
+    <dimen name="x42">31.5px</dimen>
+    <dimen name="x50">37.5px</dimen>
+    <dimen name="x60">45.0px</dimen>
+    <dimen name="x78">58.5px</dimen>
+    <dimen name="x80">60.0px</dimen>
+    <dimen name="x100">75.0px</dimen>
+    <dimen name="x280">210.0px</dimen>
+    <dimen name="x360">270.0px</dimen>
+    <dimen name="x640">480.0px</dimen>
+</resources>

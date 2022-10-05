@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <attr name="mc_sdk_accent_color" format="color|reference" />
+    <attr name="mc_sdk_up_color" format="color|reference" />
+    <attr name="mc_sdk_drop_color" format="color|reference" />
+    <attr name="mc_sdk_up_accent_color" format="color|reference" />
+    <attr name="mc_sdk_up_depth_bg_color" format="color|reference" />
+    <attr name="mc_sdk_drop_accent_color" format="color|reference" />
+    <attr name="mc_sdk_drop_depth_bg_color" format="color|reference" />
+    <attr name="mc_sdk_window_background" format="color|reference" />
+    <declare-styleable name="mc_sdk_TabKLineItemView">
+        <attr name="title" tools:ignore="ResourceName" />
+        <attr name="mc_sdk_drawableRight" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="mc_sdk_TabItemView">
+        <attr name="title" tools:ignore="ResourceName" />
+    </declare-styleable>
+</resources>

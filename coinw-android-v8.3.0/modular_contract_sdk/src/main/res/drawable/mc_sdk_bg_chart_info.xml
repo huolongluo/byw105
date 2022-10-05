@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/mc_sdk_chart_info_bg"/>
+    <stroke android:width="0.34dp" android:color="#5C5776"/>
+    <corners android:radius="2dp"/>
+</shape>

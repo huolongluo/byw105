@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?window_background"
+        android:orientation="vertical">
+
+        <include layout="@layout/mc_sdk_view_tool_bar" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorFullWidth="false"
+            app:tabMode="fixed"
+            app:tabTextAppearance="@style/mc_sdk_TabLayoutTextStyle"
+            app:tabSelectedTextColor="?col_text_accent"
+            app:tabTextColor="?col_text_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="?divider_line"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_calculator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

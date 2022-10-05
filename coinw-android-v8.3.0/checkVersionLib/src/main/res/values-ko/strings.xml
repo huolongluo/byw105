@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<resources>
+    
+    <string name="upgrading">업데이트 중(</string>
+    <string name="upgrade_background">백그라운드 업데이트</string>
+</resources>

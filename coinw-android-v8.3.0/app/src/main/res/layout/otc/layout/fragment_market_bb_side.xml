@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <RelativeLayout android:id="@+id/rltSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_34"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_cor15_background_tab">
+        
+        <ImageView
+            android:id="@+id/search_iv"
+            android:layout_width="18.5dp"
+            android:layout_height="18.5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:clickable="true"
+            android:src="@mipmap/ic_home_search_gray" />
+        
+        <EditText
+            android:id="@+id/etContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/search_iv"
+            android:layout_toRightOf="@+id/search_iv"
+            android:background="@null"
+            android:clickable="true"
+            android:cursorVisible="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/ssbz"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="10"
+            android:paddingLeft="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/text_main"
+            android:textColorHint="@color/text_main2"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_42"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:isScrollContainer="false"
+                android:measureAllChildren="true"
+                app:tabBackground="@android:color/transparent"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="@dimen/dp_200"
+                app:tabMinWidth="@dimen/dp_20"
+                app:tabMode="scrollable"
+                app:tabPaddingEnd="@dimen/dp_6"
+                app:tabPaddingStart="@dimen/dp_6"
+                app:tabRippleColor="@color/transparent" />
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/background_main"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

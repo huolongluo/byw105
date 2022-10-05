@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!--=====  通用主色  ======-->
+    <color name="accent_main">#7751FF</color>
+    <color name="accent_main_not_enable">#D4CFE6</color>
+    
+    
+    <!--=====  背景色 =====-->
+    <!--  通用背景主色  -->
+    <color name="background_main">#ffffff</color>
+    <color name="background_tab">#1A85889C</color>
+    <color name="background_gray">#F2F3F5</color>
+    <color name="cancel_btn">#C2C3CD</color>
+
+    
+    
+    <!--  涨的颜色  -->
+    <color name="up">#E65261</color>
+    <!--  跌的颜色  -->
+    <color name="drop">#17BE9E</color>
+    
+    
+    <!--=====  文字  =====-->
+    <!--  主文字  -->
+    <color name="text_main">#1B1E28</color>
+    <!--  次文字  -->
+    <color name="text_main2">#85889C</color>
+    <!--  弱文字  -->
+    <color name="text_main3">#C2C3CD</color>
+    
+    
+    <!--=====  线条  =====-->
+    <!--  分割线颜色  -->
+    <color name="line_main">#F1EDF8</color>
+
+    <!--  涨跌的颜色  -->
+    <color name="ticker_red">#E65261</color>
+    <color name="ticker_red_depth">#14D54567</color>
+
+    <color name="ticker_green">#17BE9E</color>
+    <color name="ticker_green_depth">#1402987D</color>
+
+    <!-- 日间模式主题新增色 -->
+    <color name="light_window_background">#ffffff</color>
+
+    <color name="light_text_title">#1C1D28</color>
+    <color name="light_text_content">#85889C</color>
+    <color name="light_text_hint">#C2C3CD</color>
+    <color name="light_text_accent">#7751FF</color>
+    <color name="light_text_on_button">#ffffff</color>
+
+    <color name="light_divider">#F1EDF8</color>
+    <color name="light_space">#0d85889C</color>
+
+    <color name="light_btn_normal">#F2F3F5</color>
+
+    <color name="light_bg_edit">#F2F3F5</color>
+    <!-- 日间模式主题新增色 end-->
+
+
+    <!--=====  普通颜色不做皮肤切换  =====-->
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_40AAACBA">#40AAACBA</color>
+    <color name="color_E65261">#E65261</color>
+    <color name="color_8085889B">#8085889B</color>
+    <color name="color_8F72FB">#8F72FB</color>
+    <color name="color_4DABACBA">#4DABACBA</color>
+    <color name="color_primary_dark">#1a1a2e</color>
+    <color name="color_FEFEFC">#FEFEFC</color>
+    <color name="color_FFF5F5">#FFF5F5</color>
+    <color name="color_F5F6FA">#F5F6FA</color>
+    <color name="color_FF7500">#FF7500</color>
+    <color name="color_979797">#40979797</color>
+    <color name="color_FFF7D6">#FFF7D6</color>
+    <color name="color_C2C3CD">#C2C3CD</color>
+    <color name="color_E0E0E0">#E0E0E0</color>
+    <color name="color_D4CFE6">#D4CFE6</color>
+    <color name="color_1C1D28">#1C1D28</color>
+    <color name="color_1a000000">#1a000000</color>
+    <color name="color_19162B">#19162B</color>
+    <color name="color_85889C">#1085889C</color>
+    <color name="color_F2F3F5">#F2F3F5</color>
+    <!--  虚线颜色  -->
+    <color name="color_dash">#979797</color>
+</resources>

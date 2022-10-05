@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/mc_sdk_ff1e1b33"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="14dp"
+                android:paddingEnd="4dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/mc_sdk_kline_back" />
+            <View
+                android:layout_width="0.33dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/mc_sdk_4d4864" />
+            <FrameLayout
+                android:id="@+id/flDraw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp">
+                <ImageView
+                    android:id="@+id/ivDraw"
+                    android:layout_width="17dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/mc_sdk_anim_menu" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/mc_sdk_white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="BTC/USDT" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/ivFullScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/ivShare"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/mc_sdk_kline_land" />
+                <ImageView
+                    android:id="@+id/ivShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/mc_sdk_kline_share" />
+            </RelativeLayout>
+        </LinearLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:elevation="0dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/mc_sdk_ff1e1b33"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="11dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="14dp"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:drawablePadding="7dp"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/mc_sdk_ff5763"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="8888" />
+                    <TextView
+                        android:id="@+id/tvMarkPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/mc_sdk_mark_price"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toStartOf="@id/tvPrice"
+                        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+                    <TextView
+                        android:id="@+id/tvMarkPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@id/tvMarkPrice"
+                        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+                        tools:text="标记价格 352.3" />
+                    <TextView
+                        android:id="@+id/tvRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="1dp"
+                        android:textColor="@color/mc_sdk_ff5763"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvPrice"
+                        app:layout_constraintStart_toEndOf="@id/tvPrice"
+                        tools:text="+0.25%" />
+                    <TextView
+                        android:id="@+id/tvHighValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvLowValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread_inside"
+                        tools:text="12343245.23" />
+                    <TextView
+                        android:id="@+id/tvLowValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mc_sdk_a5a2be"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMarkPrice"
+                        app:layout_constraintEnd_toEndOf="@id/tvHighValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvHighValue"
+                        tools:text="3245.23" />
+                    <TextView
+                        android:id="@+id/tvHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+                        android:text="@string/mc_sdk__24h_high"
+                        android:textColor="@color/mc_sdk_6f698b"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvHighValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvHighValue" />
+                    <TextView
+                        android:id="@+id/tvLow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+                        android:text="@string/mc_sdk__24h_low"
+                        android:textColor="@color/mc_sdk_6f698b"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMarkPrice"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                    <ImageView
+                        android:id="@+id/ivChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+                        app:layout_constraintStart_toEndOf="@+id/tvPrice"
+                        app:layout_constraintTop_toTopOf="@+id/tvPrice"
+                        app:srcCompat="@drawable/mc_sdk_zhang" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/mc_sdk_ff1e1b33"
+                    android:orientation="horizontal">
+
+                    <HorizontalScrollView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/dp_32"
+                        android:scrollbars="none"
+                        app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:background="@color/mc_sdk_ff1e1b33"
+                            android:orientation="horizontal"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+                            <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+                                android:id="@+id/vLineChart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                app:title="@string/mc_sdk_polyline" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+                                android:id="@+id/v15Min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                app:title="@string/mc_sdk_15m" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+                                android:id="@+id/v1Hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                app:title="@string/mc_sdk_1h" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+                                android:id="@+id/v4Hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                app:title="@string/mc_sdk_4h" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+                                android:id="@+id/v1Day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                app:title="@string/mc_sdk_1day" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <com.legend.modular_contract_sdk.ui.chart.McTabKLineItemView
+                                android:id="@+id/vMore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:minWidth="50dp"
+                                app:drawableRight="@drawable/sl_dropdown"
+                                app:title="@string/mc_sdk_more" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <View
+                        android:layout_width="0.33dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/mc_sdk_4d4864" />
+
+                    <ImageView
+                        android:id="@+id/ivChartIndex"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/mc_sdk_kline_setting" />
+
+                </LinearLayout>
+
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="440dp"
+                    android:background="@color/mc_sdk_chart_background"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/mc_sdk_0f0e1a"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/mc_sdk_ff1e1b33"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+                    app:layout_constraintTop_toBottomOf="@id/v1"
+                    app:tabBackground="@color/mc_sdk_transparent"
+                    app:tabIndicatorColor="?attr/mc_sdk_accent_color"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="scrollable"
+                    app:tabRippleColor="@color/mc_sdk_transparent"
+                    app:tabSelectedTextColor="@color/mc_sdk_txt_title"
+                    app:tabTextColor="@color/mc_sdk_txt_sub_title"></com.google.android.material.tabs.TabLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/mc_sdk_ff1e1b33"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/mc_sdk_27223D"
+        android:paddingLeft="14dp"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingRight="14dp"
+        android:paddingBottom="@dimen/dp_10">
+        <TextView
+            android:id="@+id/tvBuy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?bg_buy_btn"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:text="@string/mc_sdk_buy"
+            android:textColor="@color/mc_sdk_white"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tvSell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="?bg_sell_btn"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:text="@string/mc_sdk_sell"
+            android:textColor="@color/mc_sdk_white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

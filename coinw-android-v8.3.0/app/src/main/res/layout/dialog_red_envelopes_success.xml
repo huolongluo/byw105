@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_size_42"
+        android:background="@drawable/dialog_prompt_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+            <ImageView android:id="@+id/red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_dialog_red" />
+            <TextView
+                android:id="@+id/tvNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@+id/red"
+                android:textColor="#FFC237"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="+10.235" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                tools:text="已将10.235BTC存入红包账户，您可在我的红包查看您可在我的红包查看" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="30dp">
+            <TextView
+                android:id="@+id/tvKnow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_cor16_stroke1_d23a44"
+                android:paddingLeft="28dp"
+                android:paddingTop="8dp"
+                android:paddingRight="28dp"
+                android:paddingBottom="8dp"
+                android:text="@string/iknow"
+                android:textColor="#D23A44"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/tvGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:background="@drawable/bg_cor16_d23a44"
+                android:paddingLeft="28dp"
+                android:paddingTop="8dp"
+                android:paddingRight="28dp"
+                android:paddingBottom="8dp"
+                android:text="@string/red_go"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/bg_dialog_red_success_ribbon">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/bg_dialog_red_success"
+            android:gravity="center"
+            android:text="@string/str_receive_success"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</RelativeLayout>

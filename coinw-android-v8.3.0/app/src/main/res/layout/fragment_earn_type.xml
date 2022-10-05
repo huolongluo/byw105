@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_margin="15dp"
+            android:background="?bg_edit"
+            android:orientation="horizontal"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp">
+
+            <RadioGroup
+                android:id="@+id/rg_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/rb_normal_product"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="?attr/bg_tab"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="@string/earn_normal_product"
+                    android:textColor="?col_sl_text_tab_selected" />
+
+                <RadioButton
+                    android:id="@+id/rb_hot_product"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="?attr/bg_tab"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:textColor="?col_sl_text_tab_selected" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/center"
+                android:layout_width="1px"
+                android:layout_height="1px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintLeft_toRightOf="@id/center"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/cb_hot_product2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:textColor="?col_text_content"
+                    android:drawableLeft="@drawable/ic_hot"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="@string/earn_hot_product" />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</layout>

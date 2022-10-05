@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:poplar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/text_414577">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/back"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_coin"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <ListView
+            android:id="@+id/lv_coin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ececec"
+            android:divider="@null">
+
+        </ListView>
+        <huolongluo.byw.widget.FancyIndexer
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="344dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            poplar:widthOffset="10dip"
+            poplar:minFontSize="20"
+            poplar:maxFontSize="60"
+            poplar:tipFontSize="70"
+            poplar:maxBezierHeight="150dip"
+            poplar:maxBezierWidth="180dip"
+            poplar:additionalTipOffset="40dip"
+            poplar:fontColor="#6e72a1"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+
+    <TextView
+            android:visibility="gone"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:text="A" />
+
+</LinearLayout>

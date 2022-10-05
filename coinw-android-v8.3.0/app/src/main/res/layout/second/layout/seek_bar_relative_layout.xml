@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.legend.common.util.TypefaceUtil" />
+        <import type="huolongluo.byw.R" />
+    </data>
+
+<com.android.coinw.biz.trade.SeekBarRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_seek_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/seek_bar_relative_layout_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:max="100"
+            android:maxHeight="100dp"
+            android:minHeight="30dp"
+            android:paddingStart="3dp"
+            android:paddingLeft="3dp"
+            android:paddingEnd="3dp"
+            android:paddingRight="3dp"
+            android:splitTrack="false"
+            android:thumb="?ic_seek_thumb_buy"
+            android:thumbOffset="0dp" />
+    </RelativeLayout>
+
+</com.android.coinw.biz.trade.SeekBarRelativeLayout>
+</layout>

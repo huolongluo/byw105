@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/margin_horizontal"
+    android:paddingEnd="@dimen/margin_horizontal"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    
+    <include layout="@layout/inc_login_title"/>
+    
+    <com.android.legend.view.edittext.VerificationCodeView
+        android:id="@+id/verifyCode"
+        app:icv_et_bg_focus="@drawable/bg_cor5_stroke1_accent"
+        app:icv_et_bg_normal="@drawable/bg_cor5_stroke1_e0e0e0"
+        app:icv_et_divider_drawable="@drawable/shape_divider_identifying"
+        app:icv_et_number="6"
+        app:icv_et_text_color="@color/accent_main"
+        app:icv_et_width="@dimen/dp_40"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_32" />
+    <TextView android:id="@+id/tvSendCode"
+        style="@style/TextView_14_accent"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="@string/send_code"/>
+</LinearLayout>

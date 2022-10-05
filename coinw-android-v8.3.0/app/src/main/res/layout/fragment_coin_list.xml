@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:layout_marginRight="@dimen/margin_horizontal">
+
+            <TextView android:layout_width="0dp"
+                android:layout_weight="1"
+                style="@style/TextView_12_main2"
+                android:text="@string/str_name"/>
+
+            <TextView android:id="@+id/tv_home_center"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:gravity="right"
+                style="@style/TextView_12_main2"
+                android:layout_centerHorizontal="true"
+                android:paddingEnd="@dimen/dp_20"
+                android:text="@string/last_price"/>
+
+            <TextView android:id="@+id/tv_home_right"
+                style="@style/TextView_12_main2"
+                android:layout_width="80dp"
+                android:gravity="right"
+                android:text="@string/str_chg"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:listitem="@layout/item_home_coin_market"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+</layout>

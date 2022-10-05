@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_cor3_background_tab"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/total_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_horizontal"
+        android:paddingEnd="@dimen/dp_10">
+        <TextView
+            style="@style/TextView_14_main"
+            android:drawableLeft="@mipmap/ic_risk_red"
+            android:drawablePadding="@dimen/dp_5"
+            android:text="@string/risk" />
+        <ImageView
+            android:id="@+id/ivSpread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/sl_market_more_active" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tvWarn"
+        style="@style/TextView_12_main2"
+        android:paddingStart="@dimen/margin_horizontal"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        tools:text="DEFFI交易区尚处于市场发展初期，CoinW无法对其价值共识与市场流通情况作出任何保证。请您仔细浏览项目信息，在自身能够承受的范围内审慎参与投资。" />
+</LinearLayout>

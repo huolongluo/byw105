@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="earnProduct"
+            type="com.android.legend.model.earn.wrap.EarnProductWrap" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mc_sdk_bg_bottom_dialog_white_r7"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{earnProduct.productCoinName}"
+                android:textColor="?col_text_title"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="USDT" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_cor5_stroke1_accent"
+                android:paddingLeft="6dp"
+                android:paddingTop="3dp"
+                android:paddingRight="6dp"
+                android:paddingBottom="3dp"
+                android:text="@{earnProduct.isMixRegularProduct ? @string/earn_regular : @string/earn_current}"
+                android:textColor="?col_text_accent"
+                android:textSize="10sp"
+                tools:text="@string/earn_current" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="?ic_close" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp">
+
+            <TextView
+                android:id="@+id/tv_profit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/earn_expected_profit"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_profit_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                tools:text="100 USDT" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/earn_buy_amount"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{earnProduct.buyAmount}"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                tools:text="12%" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/earn_refer_profit_rate"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{earnProduct.realProfitRate}"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                tools:text="12%" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/earn_state"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{earnProduct.myEarnIsRedeeming ? @string/earn_state_redeeming : @string/earn_state_income}"
+                tools:text="@string/earn_state_redeeming"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{earnProduct.mixRegularProduct ? View.VISIBLE : View.GONE}"
+            android:layout_marginTop="17dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/earn_time_limit"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{earnProduct.getInvestTimeLimit(context)}"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                tools:text="12天"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{earnProduct.mixRegularProduct ? View.VISIBLE : View.GONE}"
+            android:layout_marginTop="17dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/earn_expiry_date"
+                android:textColor="?col_text_content"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{earnProduct.expiryDate}"
+                android:textColor="?col_text_title"
+                android:textSize="12sp"
+                tools:text="2021-11-11"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_redemption"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:textColor="?col_text_on_button"
+            android:background="?bg_action_btn_accent"
+            android:enabled="@{!earnProduct.myEarnIsRedeeming}"
+            android:text="@string/earn_redemption"/>
+
+    </LinearLayout>
+</layout>

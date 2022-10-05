@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.modular_contract_sdk.utils.McTypefaceUtil" />
+
+        <import type="com.legend.modular_contract_sdk.ui.contract.Direction" />
+
+        <import type="com.legend.modular_contract_sdk.R" />
+
+        <import type="com.legend.modular_contract_sdk.ui.contract.QuantityUnit" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="order"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.OrderWrap" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="?window_background"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/mc_sdk_contract_name(order.contractName)}"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="BTC/USDT永续"
+            tools:textColor="?col_text_title" />
+
+        <TextView
+            android:id="@+id/tvLeverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:layout_marginTop="10dp"
+            android:text="@{order.getLeverage(context)}"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSymbol"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:text="50倍杠杆" />
+
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:paddingLeft="6dp"
+            android:paddingTop="3dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="3dp"
+            android:text="@{order.getDirection(context)}"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvLeverage"
+            app:layout_constraintStart_toEndOf="@id/tvLeverage"
+            app:layout_constraintTop_toTopOf="@id/tvLeverage"
+            app:theme_background="@{order.getDirectionBackground(context)}"
+            app:theme_textColor="@{R.attr.col_text_on_button}"
+            tools:background="?bg_buy_btn"
+            tools:text="全仓做多"
+            tools:textColor="?col_text_on_button" />
+
+        <TextView
+            android:id="@+id/tv_experience_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/mc_sdk_bg_btn_f3b800_r3"
+            android:paddingLeft="6dp"
+            android:paddingTop="3dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="3dp"
+            android:text="@string/mc_sdk_contract_experience_gold"
+            android:textSize="9sp"
+            android:visibility="@{order.isExpGold ? View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/tvLeverage"
+            app:layout_constraintStart_toEndOf="@id/tvLabel"
+            app:layout_constraintTop_toTopOf="@id/tvLeverage"
+            app:theme_textColor="@{R.attr.col_text_on_button}"
+            tools:text="@string/mc_sdk_contract_experience_gold"
+            tools:textColor="?col_text_on_button" />
+
+
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabel" />
+
+        <TextView
+            android:id="@+id/tvProfit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:text="@{order.orderPrice}"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{order.directionIsLong ? R.attr.up_color : R.attr.drop_color}"
+            tools:text="+0.02"
+            tools:textColor="?up_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:text="@string/mc_sdk_contract_execute_price"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProfit"
+            app:theme_textColor="@{R.attr.col_text_content}" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:layout_marginTop="17dp"
+            android:text="@{@string/mc_sdk_contract_order_num(order.getTradeUnitStr(context))}"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvMargin"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:text="@string/mc_sdk_contract_order_num" />
+
+        <TextView
+            android:id="@+id/tvMargin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mc_sdk_contract_margin_usdt"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvNumber"
+            app:layout_constraintEnd_toStartOf="@id/tvDealPrice"
+            app:layout_constraintStart_toEndOf="@id/tvNumber"
+            app:layout_constraintTop_toTopOf="@id/tvNumber"
+            app:theme_textColor="@{R.attr.col_text_content}" />
+
+        <TextView
+            android:id="@+id/tvDealPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:gravity="end"
+            android:text="@string/mc_sdk_contract_deal_price_usdt"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvMargin"
+            app:layout_constraintTop_toTopOf="@id/tvNumber"
+            app:theme_textColor="@{R.attr.col_text_content}" />
+
+        <TextView
+            android:id="@+id/tvMarginValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="center"
+            android:text="@{order.margin}"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/tvMargin"
+            app:layout_constraintStart_toStartOf="@id/tvMargin"
+            app:layout_constraintTop_toBottomOf="@id/tvMargin"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="0.0" />
+
+        <TextView
+            android:id="@+id/tvNumberValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="@{order.entrustCount}"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/tvNumber"
+            app:layout_constraintStart_toStartOf="@id/tvNumber"
+            app:layout_constraintTop_toBottomOf="@id/tvNumber"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="0.1123" />
+
+        <!-- 成交价写死0 -->
+        <TextView
+            android:id="@+id/tvDealPriceValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="end"
+            android:text="0"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/tvDealPrice"
+            app:layout_constraintStart_toStartOf="@id/tvDealPrice"
+            app:layout_constraintTop_toBottomOf="@id/tvDealPrice"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}" />
+
+        <LinearLayout
+            android:id="@+id/ll_stop_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:visibility="@{order.openOrder ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberValue"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvStopLoss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mc_sdk_contract_stop_loss_price"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNumberValue"
+                app:theme_textColor="@{R.attr.col_text_content}" />
+
+            <TextView
+                android:id="@+id/tvStopLossValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:drawableRight="@drawable/mc_sdk_ic_edit"
+                android:drawablePadding="4dp"
+                android:gravity="end"
+                android:text="@{order.stopLoss}"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvStopLoss"
+                app:layout_constraintStart_toEndOf="@id/tvStopLoss"
+                app:layout_constraintTop_toTopOf="@id/tvStopLoss"
+                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:text="184.00"
+                tools:textColor="?col_text_title" />
+
+            <TextView
+                android:id="@+id/tvStopWin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="@string/mc_sdk_contract_stop_profit_price"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvStopLoss"
+                app:layout_constraintStart_toEndOf="@id/tvStopLossValue"
+                app:layout_constraintTop_toTopOf="@id/tvStopLoss"
+                app:theme_textColor="@{R.attr.col_text_content}" />
+
+            <TextView
+                android:id="@+id/tvStopWinValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:drawableRight="@drawable/mc_sdk_ic_edit"
+                android:drawablePadding="4dp"
+                android:text="@{order.takeProfit}"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvStopLoss"
+                app:layout_constraintStart_toEndOf="@id/tvStopWin"
+                app:layout_constraintTop_toTopOf="@id/tvStopLoss"
+                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:text="89.00"
+                tools:textColor="?col_text_title" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelOrder"
+            android:layout_width="58dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:layout_marginBottom="2dp"
+            android:padding="0dp"
+            android:text="@string/mc_sdk_contract_cancel_order"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDealPriceValue"
+            app:theme_background="@{R.attr.bg_action_btn_normal}"
+            app:theme_textColor="@{R.attr.col_text_accent}"
+            tools:background="?bg_action_btn_normal"
+            tools:textColor="?col_text_accent" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mc_sdk_margin_horizontal_trade_list"
+            android:layout_marginTop="10dp"
+            android:text="@{order.getCreateTime(context)}"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_stop_profit"
+            app:layout_goneMarginTop="20dp"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:text="创建时间"
+            tools:textColor="?col_text_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

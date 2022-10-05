@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F5F6FA">
+
+        <include
+            android:id="@+id/toolBar"
+            layout="@layout/mc_sdk_view_tool_bar" />
+
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:drawablePadding="@dimen/dp_8"
+            android:text="@string/state_pending_pay"
+            android:drawableEnd="@drawable/ic_down"
+            android:textColor="@color/text_main2"
+            android:paddingTop="@dimen/dp_14"
+            android:paddingBottom="@dimen/dp_8"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMyTaskList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvState" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

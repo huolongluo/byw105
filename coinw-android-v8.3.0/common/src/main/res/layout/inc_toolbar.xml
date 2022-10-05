@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:background="@color/background_main"
+    app:layout_collapseMode="pin"
+    app:navigationIcon="@mipmap/ic_back">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TextView_18_main"
+        android:layout_gravity="center_horizontal"
+        android:lines="1"
+        tools:text="标题"/>
+    <TextView
+        android:id="@+id/tvRight"
+        style="@style/TextView_12_main2"
+        android:layout_gravity="end"
+        android:lines="1"
+        android:paddingTop="@dimen/click_padding"
+        android:paddingBottom="@dimen/click_padding"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:visibility="gone"
+        tools:text="登录"/>
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@mipmap/fram1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@mipmap/share_close" />
+
+    <TextView
+        android:id="@+id/title_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/congratulations"
+        android:textColor="#343434"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title_des1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:minLines="3"
+        android:text="-- --"
+        android:textColor="#999999"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="50"
+        android:textColor="#BF9F72"
+        android:textSize="80sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_money_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usdt_nm"
+        android:textColor="#999999"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/save_to_contract_account"
+        android:textColor="#999999"
+        android:textSize="14sp" />
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/to_trade"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="15dp"
+        android:background="#424578"
+        android:text="@string/to_trade"
+        android:textColor="#ffffff"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_grant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@drawable/wenti"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:text="@string/whats_nm"
+        android:textColor="#999999"
+        android:textSize="14sp" />
+
+</LinearLayout>

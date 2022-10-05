@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_title"></include>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_bg"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="26dp"
+                        android:text="@string/ple_save_kay"
+                        android:textColor="@color/ff222222"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/qr_code_iv"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="14dp"
+
+                        android:scaleType="centerInside"/>
+
+                    <TextView
+                        android:id="@+id/key_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="21dp"
+                        android:text="-- --"
+                        android:textColor="@color/ff222222"
+                        android:textSize="22.5sp" />
+
+                    <TextView
+                        android:id="@+id/tv_down"
+                        android:layout_width="100dp"
+                        android:layout_height="33dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/green_jb_bg"
+                        android:gravity="center"
+                        android:text="@string/copy_kay"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="22.5dp"
+                            android:text="@string/google_codes"
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/cope_google_code"
+                            android:layout_width="66.5dp"
+                            android:layout_height="26.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:background="@drawable/safe_bg"
+                            android:gravity="center"
+                            android:text="@string/poste"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_google_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="16.5dp"
+                            android:layout_marginRight="9dp"
+                            android:layout_toLeftOf="@+id/cope_google_code"
+                            android:background="@drawable/set_trade_psw_"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:paddingLeft="4.5dp"
+                            android:text=""
+                            android:textColor="@color/ff222222"
+                            android:textSize="13sp" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="38dp"
+                        android:background="@drawable/login_bn_bg"
+                        android:gravity="center"
+                        android:text="@string/bind"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginLeft="23dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/zhuyi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="24dp"
+                            android:text="@string/save_da"
+                            android:textColor="@color/ff8881a6"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <include layout="@layout/base_title" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28">
+                <ImageView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginRight="@dimen/dp_8"
+                    tools:src="@drawable/coin_logo_1" />
+                <TextView
+                    android:id="@+id/tvCoinWithdraw"
+                    style="@style/TextView_16_main"
+                    android:layout_alignTop="@+id/ivIcon"
+                    android:layout_toRightOf="@+id/ivIcon"
+                    android:includeFontPadding="false"
+                    tools:text="USDT提币" />
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    style="@style/TextView_12_main2"
+                    android:layout_alignBottom="@+id/ivIcon"
+                    android:layout_toRightOf="@+id/ivIcon"
+                    android:text="@string/d37" />
+                <TextView
+                    android:id="@+id/tvAvailable"
+                    style="@style/TextView_12_main"
+                    android:layout_alignBottom="@+id/ivIcon"
+                    android:layout_toRightOf="@+id/tvTitle1"
+                    tools:text="2314USDT" />
+            </RelativeLayout>
+            <TextView
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_28"
+                android:text="@string/lian1" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12" />
+            <TextView
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/tbaddr" />
+            <RelativeLayout
+                android:id="@+id/tv_address_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_8">
+                <TextView
+                    android:id="@+id/tv_address"
+                    style="@style/TextView_14_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/address_ivx"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/sel_t_addr"
+                    android:lines="1"
+                    android:maxEms="20"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColorHint="@color/text_main2" />
+                <ImageView
+                    android:id="@+id/address_ivx"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@mipmap/ic_triangle_down_gray" />
+            </RelativeLayout>
+            <View
+                style="@style/Line_main"
+                android:layout_marginTop="@dimen/dp_6" />
+            <TextView
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/number" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_8">
+    
+                <EditText
+                    android:id="@+id/et_price"
+                    style="@style/TextView_14_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_toLeftOf="@+id/ll1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="最小提币数量0.001"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:text=""/>
+                <LinearLayout android:id="@+id/ll1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+                    <TextView
+                        android:id="@+id/coinName_tv1"
+                        style="@style/TextView_14_main"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/tv_all_amount"
+                        android:gravity="center"
+                        android:text="--"
+                        tools:text="BCHABC" />
+                    <TextView
+                        android:id="@+id/tv_all_amount"
+                        style="@style/TextView_14_accent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_4"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="@string/all"/>
+                </LinearLayout>
+               
+            </RelativeLayout>
+            <View
+                style="@style/Line_main"
+                android:layout_marginTop="@dimen/dp_6" />
+            <TextView
+                android:id="@+id/tvPriceTips"
+                style="@style/TextView_10_f6767f"
+                android:layout_marginTop="@dimen/dp_4"
+                android:visibility="gone" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4">
+                <com.legend.common.view.textview.DashTextView
+                    android:id="@+id/dtv_Fee"
+                    style="@style/TextView_12_main2"
+                    android:text="@string/fees" />
+                <com.legend.common.view.textview.DinproMediumTextView
+                    android:id="@+id/tv_fee"
+                    style="@style/TextView_12_main"
+                    android:layout_toLeftOf="@+id/tv_coin_fee"
+                    android:layout_centerVertical="true"
+                    android:text="--" />
+                <TextView
+                    android:id="@+id/tv_coin_fee"
+                    style="@style/TextView_12_main"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true">
+                    <TextView
+                        android:id="@+id/tvLimit"
+                        style="@style/TextView_12_main"
+                        android:layout_gravity="center_vertical"
+                        tools:text="4/6BTC" />
+                    <ImageView
+                        android:id="@+id/ivQuestion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_withdraw_question"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_gravity="center_vertical"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <TextView
+                    style="@style/TextView_12_main2"
+                    android:text="@string/withdraw_24h" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6">
+                <TextView
+                    android:id="@+id/tvRealAmount"
+                    style="@style/TextView_12_main2"
+                    android:text="@string/real_amount" />
+                <TextView
+                    android:id="@+id/tvRealAmountValue"
+                    style="@style/TextView_12_main"
+                    android:layout_toLeftOf="@+id/tvRealAmountUnit"
+                    android:text="0"/>
+                <TextView
+                    android:id="@+id/tvRealAmountUnit"
+                    style="@style/TextView_12_main"
+                    android:layout_alignParentRight="true"
+                    tools:text="USDT" />
+            </RelativeLayout>
+            <TextView style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/trade_psw" />
+            <EditText
+                android:id="@+id/et_zijin"
+                style="@style/TextView_14_main"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:background="@null"
+                android:hint="@string/please_in_psw"
+                android:layout_marginTop="@dimen/dp_8"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:text=""
+                android:textColorHint="@color/text_main2"/>
+            <View style="@style/Line_main"
+                android:layout_marginTop="@dimen/dp_6"/>
+            <TextView android:id="@+id/tv6"
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/memo_remark"/>
+            <RelativeLayout
+                android:id="@+id/ll_memo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_8">
+                <TextView
+                    android:id="@+id/tv_memo"
+                    style="@style/TextView_14_accent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="@dimen/dp_10"
+                    android:gravity="center"
+                    android:text="@string/memo_paste"
+                    android:textAllCaps="false" />
+                <EditText
+                    android:id="@+id/et_memo"
+                    style="@style/TextView_14_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_toLeftOf="@+id/tv_memo"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/inp_mark"
+                    android:lines="1"
+                    android:maxLength="300"
+                    android:text=""
+                    android:textColorHint="@color/text_main2"/>
+            </RelativeLayout>
+            <View style="@style/Line_main"
+                android:layout_marginTop="@dimen/dp_6"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_cor5_fff5f5"
+                android:paddingBottom="@dimen/dp_8">
+                <TextView style="@style/TextView_12_E65261"
+                    android:text="@string/txxz"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:drawableLeft="@mipmap/ic_warning"
+                    android:drawablePadding="@dimen/dp_4"/>
+                <TextView
+                    android:id="@+id/tv_des"
+                    style="@style/TextView_10_E65261"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginLeft="@dimen/dp_26"
+                    android:text="--" />
+                <LinearLayout
+                    android:id="@+id/ll_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginLeft="@dimen/dp_26">
+                    <LinearLayout
+                        android:id="@+id/desLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <TextView
+                            android:id="@+id/des"
+                            style="@style/TextView_10_E65261"
+                            android:text="• 仅支持{主链}提币，请谨慎核实地址，非{主链}地址会导致资产丢失。"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/aaaatv"
+                            style="@style/TextView_10_E65261"
+                            android:text="• 最小提币数量为0.001 "/>
+                        <TextView
+                            android:id="@+id/coinName_tv"
+                            style="@style/TextView_10_E65261"
+                            android:text="" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/aaaatv1"
+                            style="@style/TextView_10_E65261"
+                            android:text="• 最大提币数量为0.001 " />
+                        <TextView
+                            android:id="@+id/coinName_tv2"
+                            style="@style/TextView_10_E65261"
+                            android:text="" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tvRiskTips"
+                            style="@style/TextView_10_E65261"
+                            android:text="@string/safe" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llOtcTips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <TextView style="@style/TextView_10_E65261"
+                            android:text="@string/otc_withdraw_tips" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv24HLimit"
+                        style="@style/TextView_10_E65261"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:visibility="gone"
+                        tools:text="@string/withdraw_24h_limit_tips" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/tv_submit"
+                style="@style/TextView_16_white"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginTop="@dimen/dp_48"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@drawable/bg_cor3_accent"
+                android:gravity="center"
+                android:text="@string/confirm"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

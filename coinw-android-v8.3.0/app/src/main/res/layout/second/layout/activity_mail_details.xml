@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.legend.ui.home.notice.MailDetailsActivity"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <include layout="@layout/inc_toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginEnd="@dimen/margin_horizontal">
+            <com.legend.common.view.textview.DinproMediumTextView android:id="@+id/tvTitle2"
+                style="@style/TextView_16_main"
+                android:layout_marginTop="@dimen/dp_16"
+                tools:text="CoinW关于永续合约正式上线Web端的"/>
+            <TextView android:id="@+id/tvTime"
+                style="@style/TextView_12_main2"
+                android:layout_marginTop="@dimen/dp_10"
+                tools:text="2021-12-12 12:21:23"/>
+            <TextView android:id="@+id/tvContent"
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_16"
+                tools:text="关于永续合约正式上线Web端的公告，关于关于永续合约正式上线Web端的公告，关于关于永续合约正式上线Web端的公告，关于"/>
+        </LinearLayout>
+    </ScrollView>
+   
+</LinearLayout>

@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    resourcePrefix "versionchecklib"
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName version
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        devRelease {
+        }
+        scriptRelease {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        //兼容低端手机[云测兼容性测试]
+        dexOptions {
+            javaMaxHeapSize "4g"
+            preDexLibraries = false
+            additionalParameters += '--multi-dex'
+            additionalParameters += '--set-max-idx-number=35000'//每个包内方法数上限（根据实际项目配置这个数，来适配4.0-4.4一些低端机型，因为拆分的dex太大，这些低端机型加载不了dex）
+            additionalParameters += '--minimal-main-dex'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+}

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_menu_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_col"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/ff524b72"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_doubt"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/iv_doubt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@mipmap/ic_doubt" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_doubt_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/str_trade_doubt_all"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+                <!-- datetype  当前时间先前推移    1 近一周  3  近一个月  4 近三个月  5近半年 -->
+                <Button
+                    android:id="@+id/btn_day7"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/trade_bug4"
+                    android:gravity="center"
+                    android:tag="1"
+                    android:text="@string/str_trade_day7"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_day30"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/trade_bug4"
+                    android:gravity="center"
+                    android:tag="3"
+                    android:text="@string/str_trade_day30"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_day90"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/trade_bug4"
+                    android:gravity="center"
+                    android:tag="4"
+                    android:text="@string/str_trade_day90"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_day180"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/trade_bug4"
+                    android:gravity="center"
+                    android:tag="5"
+                    android:visibility="gone"
+                    android:text="@string/str_trade_day180"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="14dp"
+            android:lines="1"
+            android:text="@string/jyd"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/coinName_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_orderlist_bg"
+                android:cursorVisible="true"
+                android:gravity="center_vertical"
+                android:hint="@string/coin"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="10"
+                android:paddingLeft="8dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/ffd7dcea"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:text="/"
+                android:textColor="@color/ff524b72"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/selectCny_rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_orderlist_bg">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@null"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:id="@+id/cnytName_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="5dp"
+                    android:text="CNYT"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="7dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6.5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/xl" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/oopercation"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/history_status_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buy_bn"
+                android:layout_width="91.5dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_bug4"
+                android:gravity="center"
+                android:text="@string/buy"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/sell_bn"
+                android:layout_width="91.5dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_bug4"
+                android:gravity="center"
+                android:text="@string/sell2"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/buy_bn_1"
+                android:layout_width="91.5dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_bug4"
+                android:gravity="center"
+                android:text="@string/user_back"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/sell_bn_1"
+                android:layout_width="91.5dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_bug4"
+                android:gravity="center"
+                android:text="@string/chengjall"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/reset_bn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/trade_bug4"
+                android:text="@string/reset"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/confirm_bn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/trade_bug5"
+                android:text="@string/confirm"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

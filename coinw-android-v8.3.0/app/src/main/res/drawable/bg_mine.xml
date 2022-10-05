@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/base_bg_white" />
+    <item android:height="215dp"
+        android:drawable="@color/base_col"
+        android:top="0dp" />
+    <item android:height="15dp"
+        android:bottom="@dimen/dp_size_1"
+        android:gravity="top"
+        android:top="215dp">
+        <bitmap android:gravity="center"
+            android:src="@drawable/bg" />
+    </item>
+</layer-list>

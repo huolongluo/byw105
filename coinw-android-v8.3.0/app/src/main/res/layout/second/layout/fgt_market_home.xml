@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:id="@+id/title_tab_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/margin_horizontal">
+            <TextView android:id="@+id/tvSelf"
+                style="@style/TextView_16_main2"
+                android:text="@string/dd14"
+                android:layout_centerVertical="true"
+                android:paddingTop="@dimen/click_padding"
+                android:paddingBottom="@dimen/click_padding"
+                android:paddingEnd="@dimen/dp_15"
+                android:textColor="@color/sl_color_normal_main2_selected_main"/>
+    
+            <TextView android:id="@+id/tvPlate"
+                style="@style/TextView_16_main2"
+                android:text="@string/plate"
+                android:layout_toRightOf="@+id/tvSelf"
+                android:layout_centerVertical="true"
+                android:paddingTop="@dimen/click_padding"
+                android:paddingBottom="@dimen/click_padding"
+                android:paddingEnd="@dimen/dp_13"
+                android:paddingStart="@dimen/dp_13"
+                android:textColor="@color/sl_color_normal_main2_selected_main"/>
+            <LinearLayout
+                android:id="@+id/transfer_bb_trans_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/tvPlate"
+                android:paddingStart="@dimen/dp_13"
+                android:paddingEnd="@dimen/dp_13"
+                android:paddingTop="@dimen/click_padding"
+                android:paddingBottom="@dimen/click_padding"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/transfer_bb_trans_tv"
+                    style="@style/TextView_16_main2"
+                    android:text="@string/bb_tab"
+                    android:textColor="@color/sl_color_normal_main2_selected_main"/>
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transfer_bb_swap_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_13"
+                android:paddingTop="@dimen/click_padding"
+                android:paddingBottom="@dimen/click_padding"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/transfer_bb_trans_ll"
+                android:gravity="center">
+                <!-- 标题 -->
+                <TextView
+                    android:id="@+id/tv_swap"
+                    style="@style/TextView_16_main2"
+                    android:text="@string/swap"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/sl_color_normal_main2_selected_main"/>
+                <!-- 倍数 -->
+                <TextView
+                    android:id="@+id/tv_swap_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_size_13"
+                    android:background="@drawable/bg_cor2_e65261"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_size_20"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="100X"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/textsize_9sp"
+                    android:visibility="visible"
+                    app:layout_constraintLeft_toRightOf="@id/tv_swap"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transfer_bb_etf_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_13"
+                android:paddingTop="@dimen/click_padding"
+                android:paddingBottom="@dimen/click_padding"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/transfer_bb_swap_ll"
+                android:gravity="center">
+                <!-- 标题 -->
+                <TextView
+                    android:id="@+id/tv_etf"
+                    style="@style/TextView_16_main2"
+                    android:text="ETF"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/sl_color_normal_main2_selected_main" />
+                <!-- 倍数 -->
+                <TextView
+                    android:id="@+id/tv_etf_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_size_13"
+                    android:background="@drawable/bg_cor2_e65261"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_size_20"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="3X"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/textsize_9sp"
+                    android:visibility="visible"
+                    app:layout_constraintLeft_toRightOf="@id/tv_etf"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="22dp"
+                android:layout_height="21dp"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_search" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        style="@style/Line_main"/>
+    <huolongluo.byw.view.ViewPagerSlide
+        android:id="@+id/transation_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_tab_parent" />
+</LinearLayout>

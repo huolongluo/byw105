@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/llSuccessBoard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/edit_add_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPromptMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/d39"
+            android:textColor="@color/ff222222"
+            android:textSize="18.5sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPromptMsg"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_info"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="29dp"
+                android:background="@drawable/text_google2_bg"
+                android:gravity="center_vertical"
+                android:hint="@string/d40"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/ff222222"
+                android:textSize="12sp"
+              android:textColorHint="@color/ffb5b2c7"
+
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price_01"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="11sp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/bug_total"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tv_money_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/ff8881a6"
+                    android:textSize="11sp"
+
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="33dp"
+                android:layout_marginTop="27dp">
+
+                <TextView
+
+                    android:layout_width="133dp"
+                    android:layout_height="36.5dp"
+                    android:background="@drawable/edit_dialog_cancal"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="@color/FF333333"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/btnSure"
+                    android:layout_width="133dp"
+                    android:layout_height="36.5dp"
+
+                    android:background="@drawable/green_jb_bg"
+                    android:gravity="center"
+                    android:text="@string/d41"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+     <ImageView
+         android:id="@+id/btnCancle"
+         android:layout_width="24dp"
+         android:layout_height="wrap_content"
+            android:src="@drawable/guanbi"
+             android:layout_centerHorizontal="true"
+         android:layout_below="@+id/llSuccessBoard"
+         android:layout_marginTop="24dp"
+         />
+
+</RelativeLayout>

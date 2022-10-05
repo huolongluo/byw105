@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:width="27dp"
+        android:height="27dp"
+        android:drawable="@drawable/trade_sbg3">
+
+
+    </item>
+
+
+        <item android:gravity="center">
+
+            <shape android:shape="rectangle">
+                <size
+                    android:height="1.5dp"
+                    android:width="11dp" />
+                <solid android:color="@color/white" />
+                <corners android:radius="360dp" />
+            </shape>
+
+        </item>
+</layer-list>

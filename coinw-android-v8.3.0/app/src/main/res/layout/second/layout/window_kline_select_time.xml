@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E519162B"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv1min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/_1"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="12sp" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_558b88a2"/>
+        <TextView
+            android:id="@+id/tv5min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/_5"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="12sp" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_558b88a2" />
+        <TextView
+            android:id="@+id/tv30min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/_30"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="12sp" />
+        <View
+            android:id="@+id/vDivider6Hour"
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_558b88a2" />
+        <TextView
+            android:id="@+id/tv6hour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/str_6hour"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="12sp" />
+        <View
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_558b88a2" />
+        <TextView
+            android:id="@+id/tv1week"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/str_1week"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="12sp" />
+        <View
+            android:id="@+id/vDivider1Month"
+            android:layout_width="0.33dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/color_558b88a2" />
+        <TextView
+            android:id="@+id/tv1month"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/_1month"
+            android:textColor="@color/color_a5a2be"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/match_wrap"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_shap"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        >
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="right"
+            android:paddingRight="15dp"
+            android:src="@mipmap/close"
+
+            />
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_exit"
+
+            android:gravity="center"
+
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:text="@string/cancle"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/gray_bn_bg"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                />
+
+            <TextView
+                android:clickable="true"
+                android:id="@+id/tv_ok"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:text="@string/confirm"
+                android:gravity="center"
+                android:background="@drawable/blue_bn_bg"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/white"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rime_view_pager"
+    android:layout_width="280dp"
+    android:layout_height="260dp"
+    android:layout_centerInParent="true"
+    android:background="#ffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/camera_c10"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="25dp"
+        android:lineSpacingExtra="3dp"
+        android:text="@string/camera_d1"
+        android:textColor="#666666"
+        android:textSize="11sp" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/bt_next"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:height="30dp"
+        android:background="#6F679A"
+        android:padding="5dp"
+        android:text="@string/camera_d2"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
+</LinearLayout>

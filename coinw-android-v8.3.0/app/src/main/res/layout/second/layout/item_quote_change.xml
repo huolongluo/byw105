@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:background="@drawable/trade_buy_item_bg"
+        android:clickable="true"
+        android:gravity="center_vertical">
+        <ProgressBar
+            android:id="@+id/pb_value"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="1px"
+            android:max="100"
+            android:progress="10"
+            android:progressDrawable="@drawable/buy_bg" />
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="--"
+            android:textColor="@color/ff5a5670"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30.5dp"
+            android:text="--"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="--"
+            android:textColor="@color/ff44be9b"
+            android:textSize="11sp" />
+    </RelativeLayout>
+</LinearLayout>

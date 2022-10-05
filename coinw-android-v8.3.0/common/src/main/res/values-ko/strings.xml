@@ -1,0 +1,9 @@
+<resources>
+    <string name="share">공유</string>
+    <string name="wchat_friend">위챗친구</string>
+    <string name="pyq">모멘트</string>
+    <string name="short_msg">문자</string>
+    <string name="save_png">이미지 저장</string>
+    <string name="more">더 보기</string>
+    <string name="cancle">취소</string>
+</resources>

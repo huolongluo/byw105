@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:poplar="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/text_414577"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/search_bg"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/tv_cancel"
+            >
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="14.5dp"
+                android:layout_height="14.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/search_black"
+                />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@color/FF333333"
+                android:textSize="14sp"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/FF888888"
+                android:layout_toRightOf="@+id/iv_search"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/cancle"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <ListView
+            android:id="@+id/lv_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ececec"
+            android:divider="@null">
+
+        </ListView>
+
+        <ListView
+            android:id="@+id/lv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:visibility="gone">
+
+        </ListView>
+        <huolongluo.byw.widget.FancyIndexer
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="344dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            poplar:widthOffset="10dip"
+            poplar:minFontSize="20"
+            poplar:maxFontSize="60"
+            poplar:tipFontSize="70"
+            poplar:maxBezierHeight="150dip"
+            poplar:maxBezierWidth="180dip"
+            poplar:additionalTipOffset="40dip"
+            poplar:fontColor="#6e72a1" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/coinLogo_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@+id/coinLogo_iv"
+            android:text="-- --"
+            android:textColor="@color/ff222222"
+            android:textSize="15sp" />
+
+
+
+        <TextView
+            android:id="@+id/sum_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="17dp"
+
+            android:lines="1"
+            android:textColor="@color/ff8881a6"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</RelativeLayout>

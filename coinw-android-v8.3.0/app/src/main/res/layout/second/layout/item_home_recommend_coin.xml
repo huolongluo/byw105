@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.legend.common.util.TypefaceUtil"/>
+        <import type="huolongluo.byw.R" />
+        <variable
+            name="ticker"
+            type="com.android.legend.model.home.TickerWrap" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll1"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:id="@+id/main_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_2">
+        <RelativeLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/coinName_tv1"
+                style="@style/TextView_12_main_bold"
+                android:singleLine="true"
+                android:text="@{ticker.productName}"
+                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:theme_textColor="@{R.attr.col_text_title}"
+                tools:text="BTC/USDT"
+                tools:textColor="?col_text_title" />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/coinPrice_tv1"
+            style="@style/TextView_18_up_bold"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_alignLeft="@+id/linearLayout1"
+            android:layout_marginTop="@{ticker.getMarginTop}"
+            android:includeFontPadding="false"
+            app:is_up="@{ticker.isUp}"
+            android:text="@{ticker.last}"
+            android:textSize="@{ticker.textSize}"
+            app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            tools:text="1000" />
+        <TextView
+            android:id="@+id/tv_pricing_exchange"
+            style="@style/TextView_12_main2"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_alignParentBottom="true"
+            android:text="@{ticker.convertCurrency}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+            tools:text="≈ $100" />
+        <TextView
+            android:id="@+id/coinRange_tv1"
+            style="@style/TextView_10_main2"
+            android:layout_toRightOf="@+id/linearLayout1"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_alignTop="@+id/linearLayout1"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@{ticker.change}"
+            app:is_up="@{ticker.isUp}"
+            app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+            tools:text="+52%" />
+    </RelativeLayout>
+</LinearLayout>
+</layout>

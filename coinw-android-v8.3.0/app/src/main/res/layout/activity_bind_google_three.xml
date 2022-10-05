@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/text_414577">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/back"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sez"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="16.3dp"
+        android:layout_marginLeft="16.3dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/text_google2_bg">
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:textSize="12.7sp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:textColor="@color/FF333333"
+            android:textColorHint="@color/FF333333"
+            android:hint="@string/please_inpsw2"
+            android:layout_marginLeft="9.7dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="16.3dp"
+        android:layout_marginLeft="16.3dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/text_google2_bg">
+
+        <EditText
+            android:id="@+id/et_verificationCode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:textSize="12.7sp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="@color/FF333333"
+            android:textColorHint="@color/FF333333"
+            android:hint="@string/pleingoogc"
+            android:layout_marginLeft="9.7dp"
+
+            />
+
+    </LinearLayout>
+   <!-- <huolongluo.byw.widget.ItemPasswordLayoutNew
+        android:id="@+id/google_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        >
+
+    </huolongluo.byw.widget.ItemPasswordLayoutNew>-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pleingoogc"
+        android:layout_marginLeft="15dp"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"/>
+    
+    
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="match_parent"
+        android:layout_height="43.3dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="103dp"
+        android:layout_marginLeft="103dp"
+        android:background="@drawable/text_submit"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="@string/next"
+        android:gravity="center"/>
+
+</LinearLayout>

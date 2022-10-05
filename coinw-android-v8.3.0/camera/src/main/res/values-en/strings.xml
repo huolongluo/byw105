@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resources>
+    <string name="came_a1">The first video:\n According to the content of the prompt, please complete the recording of the verification video.
+You will be asked to film your ID during the record, so be sure to have your ID in advance for your primary verification.</string>
+    <string name="camera_a2">Success</string>
+    <string name="camera_a3">You can start trading in all and Fiat: the total daily sales can not exceed %1$s, and the single transaction amount can not exceed %2$s. If you want to increase the transaction quota, please complete the advanced identity verification.</string>
+    <string name="camera_a4">As for some ads, merchants may be required to complete the advanced identity verification first to trade then</string>
+    <string name="camera_a5">Go to Buying</string>
+    <string name="camera_a6">Go to Spot</string>
+    <string name="camera_a7">Go to advanced identity verification</string>
+    <string name="camera_a9">Primary  Identity Verification</string>
+    <string name="camera_b1">Advanced Identity Verification </string>
+
+    <string name="camera_b2">Video Verification</string>
+    <string name="camera_b3">Uploading...</string>
+    <string name="camera_b4">Uploading...</string>
+    <string name="camera_b5">First Part：%s</string>
+    <string name="camera_b6">Second Part：%s</string>
+    <string name="camera_b7">Video Duration：</string>
+    <string name="camera_b8">Uploaded</string>
+    <string name="camera_b9">Failed</string>
+    <string name="camera_c1">Start</string>
+    <string name="camera_c2">Go to verify</string>
+    <string name="camera_c3">Verification failed</string>
+    <string name="camera_c4">Advanced identity verification failed. Please try again</string>
+    <string name="camera_c5">Review failed. Try again</string>
+    <string name="camera_c6">Back</string>
+    <string name="camera_c7">The video recording will be performed soon. Please ensure that the data or WIFI is working smoothly. Otherwise, the video upload may fail, you need to re-record the video.</string>
+    <string name="camera_c8">The video is divided into 2 parts. The total length of the 2 videos is 2 minutes. The total size is less than 100M. Please arrange the time for recording each video.</string>
+    <string name="camera_c9">After each video recording is completed, you can play this video to check its clarity. If you are not satisfied with the video, you can re-record this part.</string>
+    <string name="camera_c10">The first video:</string>
+    <string name="camera_d1">According to the content of the prompt, please complete the recording of the verification video.
+You will be asked to film your ID during the record, so be sure to have your ID in advance for your primary verification.</string>
+    <string name="camera_d2">I have read and understood</string>
+    <string name="camera_d3">The second video:</string>
+    <string name="camera_d4">1. Please keep your face in the center of the video, and read the text of the prompt. Glasses is allowed to wear.\n2. No need to hold any ID.\n3. The total duration should not exceed 2 minutes.\n4, Video upload for data and network traffic requirements are high. It is expected to cost you 20M.</string>
+    <string name="camera_d5">I have read and understood</string>
+    <string name="camera_d6">Re-record</string>
+    <string name="camera_d7">Next</string>
+    <string name="camera_d8">Submitted</string>
+    <string name="camera_d9">Uploaded. Please wait for review</string>
+    <string name="camera_e1">Prepare for upload</string>
+    <string name="camera_e2">Start uploading</string>
+    <string name="camera_e3">Verified</string>
+    <string name="camera_e4">In review</string>
+    <string name="camera_e5">Identity verification failed</string>
+    <string name="camera_e6">Identity Verification</string>
+    <string name="permossion_denied">Permission denied</string>
+    <string name="Completed">Completed</string>
+    <string name="camera_d12">Submit</string>
+    <string name="userinfo">Prompt\nI (%1$s), ID card number (%2$s). I’m willing to register and trade on CoinW and guarantee that the account is for personal use. My source of funds is legal and reliable, and I am willing to trade digital assets such as Bitcoin all by myself. I fully understand the digital currency and the potential risks, and I have the ability to resist risks and agree to bear all risks. I swear that I will not use the digital assets for illegal purpose, and conduct any illegal activity on CoinW, such as money laundering, pyramid schemes, and illegal exchange of legal money.</string>
+    <string name="camera_base_01">Please complete the primary verification</string>
+    <string name="base_02">Primary Verification</string>
+    <string name="sc1">The video duration exceeds 2 minutes, please re-record</string>
+    <string name="no_permission_camera" translatable="false">Permission denied</string>
+    
+    <string name="camera_record_failed" >Recording error, please try again</string>
+    <string name="camera_retry">Retry</string>
+</resources>

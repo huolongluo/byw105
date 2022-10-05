@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/camera_base_title_01"></include>
+
+    <SurfaceView
+        android:id="@+id/record_surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/des1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include"
+        android:background="#50000000"
+        android:lineSpacingExtra="3dp"
+        android:padding="5dp"
+        android:text="@string/came_a1"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/des2_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/des2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#50000000"
+            android:lineSpacingExtra="3dp"
+            android:padding="5dp"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/des2"
+            android:layout_marginTop="10dp"
+            android:background="#50000000">
+
+            <TextView
+                android:id="@+id/Zoom"
+                android:layout_width="50dp"
+                android:layout_height="21dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/ZoomOut"
+                android:background="#50FFFFFF"
+                android:gravity="center"
+                android:text="A+"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/ZoomOut"
+                android:layout_width="50dp"
+                android:layout_height="21dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="#50FFFFFF"
+                android:gravity="center"
+                android:text="A-"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:padding="10dp">
+
+        <Chronometer
+            android:id="@+id/record_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:format="%s"
+            android:textColor="#ffffff" />
+
+        <!-- 开始/结束 录制按钮 -->
+        <TextView
+            android:id="@+id/record_control"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_below="@id/record_time"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_camera"
+            android:gravity="center"
+            android:text="@string/camera_c1"
+            android:textColor="#ffffff"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/record_control"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/record_control"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@id/page"
+                android:text="/2"
+                android:textColor="#6F679A" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/switch_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/camera_" />
+
+        <ImageView
+            android:id="@+id/record_pause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/control_pause"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

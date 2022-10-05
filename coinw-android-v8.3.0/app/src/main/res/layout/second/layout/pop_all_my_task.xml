@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvAll"
+        style="@style/TextView_14_main2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="@string/all_state"
+        android:textColor="@color/sl_color_normal_main2_selected_accent" />
+
+    <View style="@style/Line_main" />
+
+    <TextView
+        android:id="@+id/tvPending"
+        style="@style/TextView_14_main2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="@string/state_pending_pay"
+        android:textColor="@color/sl_color_normal_main2_selected_accent" />
+
+    <View style="@style/Line_main" />
+
+    <TextView
+        android:id="@+id/tvComplete"
+        style="@style/TextView_14_main2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="@string/state_complete"
+        android:textColor="@color/sl_color_normal_main2_selected_accent" />
+
+    <TextView
+        android:id="@+id/tvExpired"
+        style="@style/TextView_14_main2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="@string/state_expired"
+        android:textColor="@color/sl_color_normal_main2_selected_accent" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/background_gray" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        style="@style/TextView_14_main2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="@string/cancle" />
+</LinearLayout>

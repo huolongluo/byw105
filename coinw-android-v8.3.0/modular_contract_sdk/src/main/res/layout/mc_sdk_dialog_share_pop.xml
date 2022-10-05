@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/iv_share_img"
+                android:layout_width="375dp"
+                android:layout_height="375dp"
+                android:layout_gravity="center"
+                tools:src="@drawable/mc_sdk_position_share_bg_new" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mc_sdk_bg_bottom_dialog_white_r7"
+            android:orientation="vertical"
+            android:paddingBottom="13dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="13.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/mc_sdk_share"
+                    android:textColor="@color/mc_sdk_txt_dialog_title"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="32dp"
+                    android:layout_height="30.5dp"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:paddingTop="13.5dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/mc_sdk_share_close" />
+            </FrameLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/wechat_bn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="51dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mc_sdk_ssdk_oks_classic_wechat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_wechat_friend"
+                        android:textColor="@color/mc_sdk_txt_label"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/friend_bn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="51dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mc_sdk_ssdk_oks_classic_wechatmoments" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_pyq"
+                        android:textColor="@color/mc_sdk_txt_label"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/qq_bn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="51dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mc_sdk_ssdk_oks_classic_qq" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QQ"
+                        android:textColor="@color/mc_sdk_txt_label"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/message_bn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="51dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mc_sdk_message" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/short_msg"
+                        android:textColor="@color/mc_sdk_txt_label"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/savePng_bn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="51dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mc_sdk_save_png" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_save_png"
+                        android:textColor="@color/mc_sdk_txt_label"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/more_bn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="51dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mc_sdk_more" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_sdk_more"
+                        android:textColor="@color/mc_sdk_txt_label"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_buy"
+                style="@style/TextView_10_6F698B"
+                android:layout_width="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:text="@string/str_bid_buy"/>
+            <TextView
+                android:id="@+id/tv_buy_volume"
+                style="@style/TextView_10_6F698B"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_buy"
+                tools:text="数量(BTC)" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/TextView_10_6F698B"
+            android:layout_gravity="center_vertical"
+            tools:text="价格((USDT))"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_sell_volume"
+                style="@style/TextView_10_6F698B"
+                android:layout_toLeftOf="@+id/tv_sell_num"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                tools:text="数量(BTC)"/>
+
+            <TextView
+                android:id="@+id/tv_sell_num"
+                style="@style/TextView_10_6F698B"
+                android:layout_width="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:gravity="right"
+                android:text="@string/str_ask_sell"
+                tools:ignore="RtlCompat" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_size_34"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ProgressBar
+                android:id="@+id/pb_bid_volume"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/kline_buy_progress"/>
+
+            <TextView
+                android:id="@+id/tv_bid_num"
+                style="@style/TextView_10_6F698B"
+                android:layout_width="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                tools:text="1"/>
+
+            <TextView
+                android:id="@+id/tv_bid_volume"
+                style="@style/TextView_11_A5A2BE"
+                android:layout_toRightOf="@+id/tv_bid_num"
+                android:layout_toLeftOf="@+id/tv_bid_price"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="30923"/>
+
+            <TextView
+                android:id="@+id/tv_bid_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:textColor="?attr/up_color"
+                tools:text="9102.02"
+                android:textSize="10sp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ProgressBar
+                android:id="@+id/pb_ask_volume"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/kline_sell_progress"/>
+
+            <TextView
+                android:id="@+id/tv_ask_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="?attr/drop_color"
+                tools:text="9093.20"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_ask_volume"
+                style="@style/TextView_11_A5A2BE"
+                android:layout_toLeftOf="@+id/tv_ask_num"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="29485"/>
+
+            <TextView
+                android:id="@+id/tv_ask_num"
+                style="@style/TextView_10_6F698B"
+                android:layout_width="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:gravity="right"
+                android:text="1"
+                tools:ignore="RtlCompat" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

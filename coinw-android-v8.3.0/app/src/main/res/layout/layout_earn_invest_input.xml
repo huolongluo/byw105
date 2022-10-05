@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="amount"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="investCoin"
+            type="com.android.legend.model.earn.ProductInvest" />
+
+        <import type="com.legend.common.util.TypefaceUtil" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_invest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/et_amount1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/earn_buy_count"
+            android:inputType="numberDecimal"
+            android:text="@={amount}"
+            android:textColor="?col_text_title"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_coin1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_all1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all"
+            android:textColor="?col_text_accent"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="1px"
+            android:layout_height="0dp"
+            android:layout_marginRight="10dp"
+            android:background="?divider_line"
+            app:layout_constraintBottom_toBottomOf="@id/et_amount1"
+            app:layout_constraintRight_toLeftOf="@id/tv_all1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_coin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textColor="?col_text_title"
+            android:textSize="14sp"
+            app:layout_constraintRight_toLeftOf="@id/view1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="USDT" />
+
+        <View
+            android:id="@+id/hline1"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="10dp"
+            android:background="?divider_line"
+            app:layout_constraintTop_toBottomOf="@id/et_amount1" />
+
+        <TextView
+            android:id="@+id/tv_available1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/earn_available"
+            android:textColor="?col_text_content"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_available_value1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_available_value1" />
+
+        <TextView
+            android:id="@+id/tv_available_value1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/light_text_title"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/tv_available1"
+            app:layout_constraintTop_toBottomOf="@id/hline1"
+            app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+            tools:text="100 USDT" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

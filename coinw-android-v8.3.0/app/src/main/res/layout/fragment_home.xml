@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="huolongluo.byw.R"/>
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="?window_background">
+
+        <include
+            android:id="@+id/include_tool_bar"
+            layout="@layout/layout_home_title" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:theme_background="@{R.attr.window_background}"
+            >
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:elevation="0dp"
+                app:theme_background="@{R.attr.window_background}"
+                tools:background="?window_background">
+
+                <LinearLayout
+                    android:id="@+id/proHomeHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/ll_Multiple"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        >
+
+                        <com.to.aboomy.pager2banner.Banner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"/>
+
+<!--                        <androidx.viewpager.widget.ViewPager-->
+<!--                            android:id="@+id/vp_banner"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/dp_120"-->
+<!--                            android:layout_alignParentTop="true"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:clipChildren="true" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/dot_parent"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="@dimen/dp_2"-->
+<!--                            android:layout_below="@+id/viewpager"-->
+<!--                            android:layout_alignParentBottom="true"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:background="@drawable/bg_cor2_background_tab"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="horizontal" />-->
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlt_marqueeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40">
+
+                        <ImageView
+                            android:id="@+id/iv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="@dimen/margin_horizontal"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/ic_home_notice_left" />
+
+                        <com.android.legend.view.framelayout.SkinMarqueeView
+                            android:id="@+id/marqueeView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:layout_toStartOf="@+id/iv_more"
+                            android:layout_toEndOf="@+id/iv1"
+                            app:mvAnimDuration="1000"
+                            app:mvDirection="bottom_to_top"
+                            app:mvInterval="3000"
+                            app:mvSingleLine="true"
+                            app:mvTextColor="@color/text_main"
+                            app:mvTextSize="@dimen/sp_12" />
+
+                        <ImageView
+                            android:id="@+id/iv_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:paddingEnd="@dimen/margin_horizontal"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/ic_home_notice_more">
+
+                        </ImageView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="?divider_line" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_recommend"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_80"
+                        android:layout_marginStart="@dimen/dp_6" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_2"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:background="@drawable/bg_cor2_background_tab"
+                        android:gravity="center"
+                        android:orientation="horizontal" />
+
+                    <View
+                        style="@style/Space"
+                        android:layout_marginTop="@dimen/dp_6" />
+
+                    <include
+                        android:id="@+id/include_dynamic_menu"
+                        layout="@layout/layout_home_dynamic" />
+
+                </LinearLayout>
+
+                <huolongluo.byw.view.NewUserHomeHeaderView
+                    android:id="@+id/newUserHomeHeaderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_coin_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0dp"
+                    android:background="?window_background"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="?colorAccent"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="fixed"
+                    app:tabRippleColor="@color/mc_sdk_transparent"
+                    app:tabSelectedTextColor="?col_text_title"
+                    app:tabTextColor="?col_text_content" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_coin_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="?window_background"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="@mipmap/ic_back">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextView_20_white"
+                android:layout_gravity="center_horizontal"
+                android:lines="1"
+                android:text="@string/a36"
+                android:textColor="@color/color_1C1D28"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRight"
+                style="@style/TextView_14_white"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/dp_size_8"
+                android:drawablePadding="@dimen/dp_size_8"
+                android:lines="1"
+                android:padding="@dimen/dp_size_8"
+                android:visibility="gone"
+                tools:text="登录" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/llFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/margin_horizontal">
+
+            <TextView
+                android:id="@+id/tvFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxEms="5"
+                android:maxLines="1"
+                android:text="@string/a37"
+                android:textColor="@color/light_text_title"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="4dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_triangle" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/ffedecf1" />
+</LinearLayout>

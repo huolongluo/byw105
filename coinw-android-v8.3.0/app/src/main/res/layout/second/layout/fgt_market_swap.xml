@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_market_swap"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_42"
+        android:gravity="center_vertical"
+        android:isScrollContainer="false"
+        android:measureAllChildren="true"
+        app:tabBackground="@android:color/transparent"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="@dimen/dp_6"
+        android:layout_marginStart="@dimen/dp_10"
+        app:tabPaddingStart="@dimen/dp_6"
+        app:tabMaxWidth="@dimen/dp_200"
+        app:tabMinWidth="@dimen/dp_20" />
+    <View style="@style/Line_main"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_market_swap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <include
+            layout="@layout/net_errer_view"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

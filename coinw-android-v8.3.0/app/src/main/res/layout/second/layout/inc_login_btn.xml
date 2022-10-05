@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/tvSubmit"
+        style="@style/TextView_14_white"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_height="@dimen/login_btn_height"
+        tools:text="@string/next"
+        android:background="@drawable/sl_cor5_d4cfe6_enable_accent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:enabled="false"
+        android:gravity="center"
+        />
+</merge>

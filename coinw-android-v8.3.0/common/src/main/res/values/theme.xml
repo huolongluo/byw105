@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 日间模式 红涨绿跌 -->
+    <style name="CoinW_Theme_Light_RedUp_GreenDrop" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/accent_main</item>
+        <item name="colorAccentNotEnable">@color/accent_main_not_enable</item>
+
+        <!-- Customize your theme here. -->
+        <item name="window_background">@color/light_window_background</item>
+        <item name="up_color">@color/ticker_red</item>
+        <item name="up_depth_color">@color/ticker_red_depth</item>
+        <item name="drop_color">@color/ticker_green</item>
+        <item name="drop_depth_color">@color/ticker_green_depth</item>
+
+        <item name="bg_buy_btn">@drawable/bg_buy_btn_r3</item>
+        <item name="bg_sell_btn">@drawable/bg_sell_btn_r3</item>
+        <item name="bg_action_btn_normal">@drawable/bg_action_normal_btn_r3</item>
+        <item name="bg_action_btn_accent">@drawable/bg_action_accent_btn_r3</item>
+        <item name="bg_edit">@drawable/bg_edit_r3</item>
+        <item name="bg_selector_radio_button">@drawable/sl_bg_rb</item>
+        <item name="bg_direction_buy">@drawable/sl_trade_direction_buy_red</item>
+        <item name="bg_direction_sell">@drawable/sl_trade_direction_sell_green</item>
+        <item name="bg_seek_bar_buy">@drawable/bg_seek_bar_red_img</item>
+        <item name="bg_seek_bar_sell">@drawable/bg_seek_bar_green_img</item>
+        <item name="bg_tab">@drawable/sl_bg_tab</item>
+
+        <item name="menu_home">@drawable/sl_menu_home</item>
+        <item name="menu_market">@drawable/sl_menu_market</item>
+        <item name="menu_trade">@drawable/sl_menu_trade</item>
+        <item name="menu_contract">@drawable/sl_menu_contract</item>
+        <item name="menu_assets">@drawable/sl_menu_assets</item>
+
+        <item name="ic_trade_products">@drawable/ic_trade_products</item>
+        <item name="ic_trade_menu">@drawable/ic_trade_menu</item>
+        <item name="ic_trade_collect">@drawable/ic_trade_collect</item>
+        <item name="ic_trade_candles">@drawable/ic_trade_candles</item>
+        <item name="ic_trade_question">@drawable/ic_trade_question</item>
+        <item name="ic_direction_buy">@drawable/ic_buy_red</item>
+        <item name="ic_direction_sell">@drawable/ic_sell_green</item>
+        <item name="ic_seek_thumb_buy">@drawable/ic_seekbar_thumb_red</item>
+        <item name="ic_seek_thumb_sell">@drawable/ic_seekbar_thumb_green</item>
+        <item name="ic_arrow_down">@drawable/ic_arrow_down_black</item>
+        <item name="ic_preferences_setting">@drawable/ic_preferences_settings</item>
+        <item name="ic_calculator">@drawable/ic_calculator</item>
+        <item name="ic_switch">@drawable/ic_switch</item>
+        <item name="ic_history">@drawable/ic_history</item>
+        <item name="ic_hot">@drawable/ic_hot</item>
+        <item name="ic_success">@drawable/ic_success</item>
+
+        <item name="ic_copy">@drawable/ic_copy_accent_color</item>
+        <item name="ic_mine_copy">@drawable/ic_copy</item>
+        <item name="ic_mine_security">@drawable/ic_security</item>
+        <item name="ic_mine_settings">@drawable/ic_settings</item>
+        <item name="ic_mine_your_mother">@drawable/ic_your_mother_b</item>
+        <item name="ic_mine_red_packet">@drawable/ic_red_packet</item>
+        <item name="ic_mine_swap">@drawable/ic_swap</item>
+        <item name="ic_mine_earn">@drawable/ic_earn</item>
+        <item name="ic_mine_help">@drawable/ic_help</item>
+        <item name="ic_cw_earn">@drawable/ic_cw_earn</item>
+        <item name="ic_mine_share">@drawable/ic_share</item>
+        <item name="ic_mine_feedback">@drawable/ic_feedback</item>
+        <item name="ic_mine_entrust">@drawable/ic_entrust</item>
+        <item name="ic_mine_address">@drawable/ic_address_manage</item>
+        <item name="ic_mine_invite">@drawable/ic_invite</item>
+        <item name="ic_mine_services">@drawable/ic_services</item>
+        <item name="ic_arrow_right">@drawable/ic_arrow_right</item>
+        <item name="ic_arrow_back">@drawable/ic_arrow_back</item>
+        <item name="ic_close">@drawable/ic_close</item>
+
+        <item name="ic_recharge">@drawable/ic_recharge</item>
+        <item name="ic_transfer">@drawable/ic_transfer</item>
+        <item name="ic_trade_transfer">@drawable/ic_trade_transfer</item>
+
+        <item name="col_sl_text_home_menu">@color/sl_color_main_tab_text</item>
+        <item name="col_sl_text_direction">@color/sl_color_direction_text</item>
+        <item name="col_sl_text_tab_selected">@color/sl_color_tab_selected_text</item>
+        <item name="col_text_title">@color/light_text_title</item>
+        <item name="col_text_content">@color/light_text_content</item>
+        <item name="col_text_hint">@color/light_text_hint</item>
+        <item name="col_text_accent">@color/light_text_accent</item>
+        <item name="col_text_on_button">@color/light_text_on_button</item>
+        <item name="col_text_check_state">@color/sl_color_main_tab_text</item>
+        <item name="col_action_btn_normal">@color/light_btn_normal</item>
+        <item name="col_bg_edit">@color/light_bg_edit</item>
+
+        <item name="divider_line">@color/light_divider</item>
+        <item name="space_line">@color/light_space</item>
+    </style>
+
+    <!-- 日间模式 绿涨红跌 -->
+    <style name="CoinW_Theme_Light_GreenUp_RedDrop" parent="CoinW_Theme_Light_RedUp_GreenDrop">
+
+        <!-- Customize your theme here. -->
+        <item name="up_color">@color/ticker_green</item>
+        <item name="drop_color">@color/ticker_red</item>
+        <item name="up_depth_color">@color/ticker_green_depth</item>
+        <item name="drop_depth_color">@color/ticker_red_depth</item>
+
+        <item name="bg_buy_btn">@drawable/bg_buy_btn_r3</item>
+        <item name="bg_sell_btn">@drawable/bg_sell_btn_r3</item>
+
+        <item name="bg_direction_buy">@drawable/sl_trade_direction_buy_green</item>
+        <item name="bg_direction_sell">@drawable/sl_trade_direction_sell_red</item>
+        <item name="bg_seek_bar_buy">@drawable/bg_seek_bar_green_img</item>
+        <item name="bg_seek_bar_sell">@drawable/bg_seek_bar_red_img</item>
+
+        <item name="ic_direction_buy">@drawable/ic_buy_green</item>
+        <item name="ic_direction_sell">@drawable/ic_sell_red</item>
+        <item name="ic_seek_thumb_buy">@drawable/ic_seekbar_thumb_green</item>
+        <item name="ic_seek_thumb_sell">@drawable/ic_seekbar_thumb_red</item>
+    </style>
+
+</resources>

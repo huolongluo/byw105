@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mc_sdk_bg_chart_info"
+    android:orientation="horizontal"
+    android:padding="6dp"
+    tools:ignore="MissingPrefix">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_time"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_kpj"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_max"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_min"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_spj"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_chart_change_rate"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/mc_sdk_change_amount"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_7b759a"
+            android:textSize="10sp"
+            android:text="@string/mc_sdk_change_volume"
+            android:visibility="visible"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="201511111" />
+        <TextView
+            android:id="@+id/tv_open_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465" />
+        <TextView
+            android:id="@+id/tv_high_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465" />
+        <TextView
+            android:id="@+id/tv_low_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465" />
+        <TextView
+            android:id="@+id/tv_close_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465" />
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465" />
+        <TextView
+            android:id="@+id/tv_change_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465" />
+        <TextView
+            android:id="@+id/tv_vol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="2dp"
+            android:textColor="@color/mc_sdk_ebe8f7"
+            android:textSize="10sp"
+            tools:text="546465"
+            android:visibility="visible"/>
+    </LinearLayout>
+</LinearLayout>

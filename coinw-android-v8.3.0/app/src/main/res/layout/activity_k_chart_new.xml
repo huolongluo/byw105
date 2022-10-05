@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/F000000"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/last_price"
+                android:textColor="@color/main_green_color"/>
+
+            <ImageView
+                android:id="@+id/iv_up_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/ico_red_up"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="36dp"
+            android:layout_toRightOf="@+id/ll_left"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fu"
+                    android:textColor="@color/FFEF2D0D"/>
+
+                <TextView
+                    android:id="@+id/tv_fu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---"
+                    android:textColor="@color/FFFFFF"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/liang"
+                    android:textColor="@color/FFEF2D0D"/>
+
+                <TextView
+                    android:id="@+id/tv_liang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---"
+                    android:textColor="@color/FFFFFF"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/y180"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/high"
+                    android:textColor="@color/FFEF2D0D"/>
+
+                <TextView
+                    android:id="@+id/tv_gao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---"
+                    android:textColor="@color/FFFFFF"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/low"
+                    android:textColor="@color/FFEF2D0D"/>
+
+                <TextView
+                    android:id="@+id/tv_di"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---"
+                    android:textColor="@color/FFFFFF"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/open"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/low"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shou"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/liang"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_ma5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MA5:"
+            android:textColor="@color/F537BAC"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_ma10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MA10"
+            android:textColor="@color/E3B67F"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_ma30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MA30"
+            android:textColor="@color/F833B87"
+            android:textSize="@dimen/text_size20"/>
+
+    </LinearLayout>
+
+    <huolongluo.byw.widget.MyCombinedChart
+        android:id="@+id/chart_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_vma5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VMA5:"
+            android:textColor="@color/F537BAC"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_vma10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VMA10"
+            android:textColor="@color/E3B67F"
+            android:textSize="@dimen/text_size20"/>
+
+    </LinearLayout>
+
+    <huolongluo.byw.widget.MyCombinedChart
+        android:id="@+id/chart_center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_chart_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MACD(12,26,9)"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_value01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DIF:"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_value02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEA:"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+        <TextView
+            android:id="@+id/tv_value03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MACD:"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size20"/>
+
+    </LinearLayout>
+
+    <huolongluo.byw.widget.MyCombinedChart
+        android:id="@+id/chart_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"/>
+
+    <!--<HorizontalScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/y100">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/x12"
+            android:text="@string/fs"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size35"/>
+
+        <TextView
+            android:id="@+id/tv_time15"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/x12"
+            android:text="@string/f40"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size35"/>
+
+        <TextView
+            android:id="@+id/tv_time30"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/x12"
+            android:text="@string/m15"
+            android:textColor="@color/EF2D0D"
+            android:textSize="@dimen/text_size35"/>
+
+        <TextView
+            android:id="@+id/tv_time60"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/x12"
+            android:text="@string/hxy"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size35"/>
+
+        <TextView
+            android:id="@+id/tv_target"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/jszb"
+            android:textColor="@color/A7A7A7"
+            android:textSize="@dimen/text_size35"/>
+
+    </LinearLayout>
+
+    <!--</HorizontalScrollView>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/CE1817"
+            android:gravity="center"
+            android:text="@string/buy"
+            android:textColor="@color/F242424"/>
+
+        <TextView
+            android:id="@+id/tv_sell"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/F20A548"
+            android:gravity="center"
+            android:text="@string/sell2"
+            android:textColor="@color/F242424"/>
+
+    </LinearLayout>
+
+</LinearLayout>

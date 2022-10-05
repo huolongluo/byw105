@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/dp_7"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/dp_8"
+    android:layout_marginLeft="@dimen/margin_horizontal"
+    android:layout_marginRight="@dimen/margin_horizontal"
+    android:layout_marginBottom="@dimen/dp_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_16">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.legend.common.view.textview.DinproBoldTextView
+                android:id="@+id/tv_name"
+                style="@style/TextView_16_main_bold"
+                android:layout_centerVertical="true"
+                tools:text="USDT"/>
+            <com.legend.common.view.textview.DinproMediumTextView android:id="@+id/tv_byb"
+                style="@style/TextView_12_main2"
+                android:layout_toRightOf="@+id/tv_name"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@drawable/coin_pos"
+                android:paddingLeft="@dimen/dp_7"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_7"
+                android:paddingBottom="@dimen/dp_2"
+                android:textColor="@color/color_E65261"
+                android:text="@string/financial_management"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_etf"
+                style="@style/TextView_12_main2"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_toRightOf="@+id/tv_byb"
+                android:background="@drawable/coin_pos"
+                android:paddingLeft="@dimen/dp_7"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_7"
+                android:paddingBottom="@dimen/dp_2"
+                android:textColor="@color/color_E65261"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="ETF"
+                android:visibility="gone" />
+            <TextView android:id="@+id/tvTransfer"
+                style="@style/TextView_14_accent"
+                android:layout_alignParentRight="true"
+                android:text="@string/d33"
+                android:background="@drawable/bg_cor3_background_tab"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingBottom="@dimen/dp_3"
+                android:visibility="gone"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_14">
+            <TextView android:id="@+id/tv1"
+                style="@style/TextView_12_main3"
+                android:text="@string/d36"
+                />
+            <TextView android:id="@+id/tv2"
+                style="@style/TextView_12_main3"
+                android:text="@string/d37"
+                android:layout_marginLeft="@dimen/dp_105"
+                />
+            <TextView android:id="@+id/tv3"
+                style="@style/TextView_12_main3"
+                android:text="@string/d38"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_2">
+            <com.legend.common.view.textview.DinproMediumTextView android:id="@+id/tvValue1"
+                style="@style/TextView_12_main"
+                tools:text="$12.04567"
+                />
+            <com.legend.common.view.textview.DinproMediumTextView android:id="@+id/tvValue2"
+                style="@style/TextView_12_main"
+                tools:text="0.125156"
+                android:layout_marginLeft="@dimen/dp_105"
+                />
+            <com.legend.common.view.textview.DinproMediumTextView android:id="@+id/tvValue3"
+                style="@style/TextView_12_main"
+                tools:text="0.0000123"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+        <LinearLayout android:id="@+id/ll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_16"
+            android:visibility="gone">
+            <TextView android:id="@+id/tv4"
+                style="@style/TextView_12_main3"
+                android:text="@string/hy_position_margin"
+                />
+            <com.legend.common.view.textview.DinproMediumTextView android:id="@+id/tvValue4"
+                style="@style/TextView_12_main"
+                android:layout_marginTop="@dimen/dp_2"
+                tools:text="12.04124567"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16">
+            <TextView android:id="@+id/tvOperate1"
+                style="@style/TextView_14_accent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/bg_cor3_background_tab"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingBottom="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_16"
+                tools:text="充值"
+                android:visibility="gone"/>
+            <TextView android:id="@+id/tvOperate2"
+                style="@style/TextView_14_main2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/bg_cor3_background_tab"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingBottom="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_16"
+                tools:text="划转"
+                android:visibility="gone"/>
+            <TextView android:id="@+id/tvOperate3"
+                style="@style/TextView_14_main2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/bg_cor3_background_tab"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingBottom="@dimen/dp_3"
+                tools:text="交易"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

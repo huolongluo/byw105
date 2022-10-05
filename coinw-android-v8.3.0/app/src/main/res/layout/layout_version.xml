@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlt"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/app_upgrade_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_50"
+        android:orientation="vertical">
+        <LinearLayout android:id="@+id/llVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_size_24"
+            android:layout_marginTop="@dimen/dp_16"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                style="@style/TextView_18_white_bold"
+                android:text="@string/str_found_new_version" />
+            <TextView
+                android:id="@+id/tv_version_name"
+                style="@style/TextView_14_white"
+                android:layout_marginTop="@dimen/dp_2"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_2"
+                tools:text="V6.1.1" />
+        </LinearLayout>
+        <TextView
+            style="@style/TextView_14_main2"
+            android:layout_below="@+id/llVersion"
+            android:layout_marginLeft="@dimen/dp_size_26"
+            android:layout_marginTop="@dimen/dp_90"
+            android:text="@string/upgrade_content" />
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_below="@+id/tvTitle"
+            style="@style/TextView_14_main2"
+            android:layout_marginLeft="@dimen/dp_size_26"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_size_26"
+            tools:text="币赢是新加坡开设的全球数字资产交易平台，主要面向全球用户提供以太币、HC等数字资产的交易服务。币赢CoinW致力于打造安全稳定的数字货币交易平台，为全球区块链爱好者提供安全、专业、诚信、优质、便捷的数字资产交易服务。" />
+        <LinearLayout android:id="@+id/llBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/dp_36"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_below="@+id/tv_msg"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@id/versionchecklib_version_dialog_cancel"
+                style="@style/TextView_13_B7B7C2"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/dp_14"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_app_upgrade_later"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_size_10"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_size_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/b24" />
+            <TextView
+                android:id="@id/versionchecklib_version_dialog_commit"
+                style="@style/TextView_13_white"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_app_upgrade_now"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_size_10"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_size_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/b25" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_16"
+        android:src="@mipmap/ic_upgrade_rocket"
+        android:layout_alignParentRight="true"/>
+    
+    <ImageView
+        android:id="@id/versionchecklib_version_dialog_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_below="@+id/ll"
+        android:padding="@dimen/dp_10"
+        android:src="@mipmap/app_upgrade_close"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/inc_finance"/>
+    <TextView
+        android:id="@+id/freeze"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="85dp"
+        android:background="#D8000000"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="您的合约账户已被冻结，如有疑问请联系客服"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+</RelativeLayout>

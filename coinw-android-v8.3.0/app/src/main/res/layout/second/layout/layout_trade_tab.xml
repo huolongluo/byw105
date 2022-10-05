@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="huolongluo.byw.R" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="95dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:minWidth="80dp">
+
+        <TextView
+            android:id="@+id/tv_latest"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:lines="1"
+            android:minWidth="80dp"
+            android:text="@string/dqwt"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:textColor="?attr/col_text_title" />
+
+        <TextView
+            android:id="@+id/tv_tip_count"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_yellow"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/color_D9FFFFFF"
+            android:textSize="9.0sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

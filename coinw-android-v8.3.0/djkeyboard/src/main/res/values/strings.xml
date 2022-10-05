@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">keyboard</string>
+    <string name="buy_d">买入</string>
+    <string name="sell_d">卖出</string>
+</resources>

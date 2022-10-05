@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_cor3_background_main"
+    android:padding="@dimen/margin_horizontal"
+    android:layout_marginTop="@dimen/dp_10">
+    <ImageView android:id="@+id/ivShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_new_coin_share"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_12"
+        android:layout_gravity="right"/>
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12">
+        <com.legend.common.view.textview.DinproBoldTextView
+            android:id="@+id/tvName"
+            style="@style/TextView_16_main"
+            android:layout_centerVertical="true"
+            tools:text="ETH"/>
+        <TextView android:id="@+id/tvAnalysisReport"
+            style="@style/TextView_12_accent"
+            android:layout_centerVertical="true"
+            android:text="@string/analysis_report"
+            android:layout_alignParentRight="true"
+            android:drawableStart="@mipmap/ic_anylysis_report"
+            android:drawablePadding="@dimen/dp_4"
+            />
+    </RelativeLayout>
+    <TextView android:id="@+id/tvTitle"
+        style="@style/TextView_14_main"
+        tools:text="2002年现象级币种"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/dp_12"/>
+    <TextView android:id="@+id/tvContent"
+        style="@style/TextView_12_main2"
+        android:layout_marginTop="@dimen/dp_10"
+        android:lines="2"
+        android:ellipsize="end"
+        tools:text="天王级项目，2022年现象级币种，2022年现象级币种，天王级项目，
+        2022年现象级币种，天王级天王级天王级天王级天王级天王级级天王级天王级天王级天王级级天王级天王级天王级天王级"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16">
+        <TextView
+            style="@style/TextView_12_main2"
+            android:text="@string/online_time"/>
+        <TextView android:id="@+id/tvTime"
+            style="@style/TextView_12_main2"
+            tools:text="2021/07/24  19:12:11"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <com.legend.common.view.textview.DinproBoldTextView
+        android:id="@+id/tvTrade"
+        style="@style/TextView_14_white"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_24"
+        android:enabled="false"
+        tools:text="距离活动开启倒计时：22:22:22"
+        android:background="@drawable/sl_cor5_d4cfe6_enable_accent"
+        android:layout_marginBottom="@dimen/dp_8"/>
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:background="@color/mc_sdk_chart_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="@string/mc_sdk_time"
+                android:textColor="@color/mc_sdk_txt_sub_title"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mc_sdk_contract_depth_side"
+                android:textColor="@color/mc_sdk_txt_sub_title"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mc_sdk_price_usdt"
+                android:textColor="@color/mc_sdk_txt_sub_title"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="@string/mc_sdk_amount_bookmaker"
+                android:textColor="@color/mc_sdk_txt_sub_title"
+                android:gravity="right"
+                android:textSize="11sp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/mc_sdk_item_last_deal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </LinearLayout>
+</layout>

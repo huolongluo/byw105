@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="earnProduct"
+            type="com.android.legend.model.earn.wrap.EarnProductWrap" />
+        <variable
+            name="amount"
+            type="androidx.databinding.ObservableField&lt;String>" />
+        <import type="com.legend.common.util.TypefaceUtil"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?window_background"
+        android:orientation="vertical">
+
+        <include layout="@layout/mc_sdk_view_tool_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/earn_time_limit"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <RadioGroup
+                            android:id="@+id/rg_time_limit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal">
+
+                        </RadioGroup>
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="64dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_selected_temp"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:text="@string/earn_current"
+                        android:textColor="?col_text_title"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/earn_buy_count"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_invest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{earnProduct.mixProduct ? View.GONE : View.VISIBLE}"
+                        android:layout_marginTop="18dp">
+
+                        <EditText
+                            android:id="@+id/et_amount1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="@string/earn_buy_count"
+                            android:textColor="?col_text_title"
+                            android:textSize="14sp"
+                            android:text="@={amount}"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintRight_toLeftOf="@id/tv_coin1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_all1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/all"
+                            android:textColor="?col_text_accent"
+                            android:textSize="14sp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="1px"
+                            android:layout_height="0dp"
+                            android:layout_marginRight="10dp"
+                            android:background="?divider_line"
+                            app:layout_constraintBottom_toBottomOf="@id/et_amount1"
+                            app:layout_constraintRight_toLeftOf="@id/tv_all1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_coin1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:textColor="?col_text_title"
+                            android:textSize="14sp"
+                            android:text="@{earnProduct.investCurrencyName}"
+                            app:layout_constraintRight_toLeftOf="@id/view1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="USDT" />
+
+                        <View
+                            android:id="@+id/hline1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:background="?divider_line"
+                            app:layout_constraintTop_toBottomOf="@id/et_amount1" />
+
+                        <TextView
+                            android:id="@+id/tv_available1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/earn_available"
+                            android:textColor="?col_text_content"
+                            android:textSize="12sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tv_available_value1"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_available_value1" />
+
+                        <TextView
+                            android:id="@+id/tv_available_value1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            tools:text="100 USDT"
+                            android:textColor="?col_text_title"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="14sp"
+                            app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                            app:layout_constraintLeft_toRightOf="@id/tv_available1"
+                            app:layout_constraintTop_toBottomOf="@id/hline1" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_invest_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_mix_product_profit_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:visibility="@{earnProduct.mixProduct ? View.VISIBLE : View.GONE}"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?col_text_title"
+                            android:textSize="16sp"
+                            android:text="@string/earn_refer_profit_rate"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_mix_product_income_coins_profit_rate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?col_text_title"
+                            android:textSize="16sp"
+                            android:layout_marginTop="25dp"
+                            android:visibility="@{earnProduct.mixRegularProduct ? View.VISIBLE : View.GONE}"
+                            android:text="@string/earn_expected_interest"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_mix_product_income_coins_interest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{earnProduct.mixRegularProduct ? View.VISIBLE : View.GONE}"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_not_mix_product_profit_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17dp"
+                        android:visibility="@{earnProduct.mixProduct ? View.GONE : View.VISIBLE}"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?col_text_content"
+                                android:textSize="16sp"
+                                android:text="@string/earn_refer_profit_rate"/>
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/tv_profit_rate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?col_text_title"
+                                android:text="@{earnProduct.realProfitRate}"
+                                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                                android:textSize="16sp"
+                                tools:text="15%"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?col_text_content"
+                                android:textSize="16sp"
+                                android:text="@string/earn_profit_currency"/>
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/tv_profit_currency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?col_text_title"
+                                android:textSize="16sp"
+                                android:text="@{earnProduct.incomeCurrencyName}"
+                                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                                tools:text="USDT"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{earnProduct.mixRegularProduct ? View.VISIBLE : View.GONE}"
+                            android:layout_marginTop="11dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?col_text_content"
+                                android:textSize="16sp"
+                                android:text="@string/earn_expected_interest"/>
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/tv_expected_interest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?col_text_title"
+                                android:textSize="16sp"
+                                app:localTypeface="@{TypefaceUtil.INSTANCE.TYPEFACE_DINPRO_MEDIUM}"
+                                tools:text="200 USDT"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="?space_line"/>
+
+                <include
+                    android:id="@+id/layout_earn_buy_rule"
+                    layout="@layout/layout_earn_buy_rule" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="?space_line"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/earn_problems"
+                        android:textColor="?col_text_title"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_problems"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/earn_problems"
+                        android:layout_marginTop="15dp"
+                        android:textColor="?col_text_content"
+                        android:textSize="14sp"/>
+
+                    <Button
+                        android:id="@+id/btn_buy"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="25dp"
+                        android:textColor="?col_text_on_button"
+                        android:background="?bg_action_btn_accent"
+                        android:enabled="false"
+                        android:textAllCaps="false"
+                        android:text="@string/earn_buy"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

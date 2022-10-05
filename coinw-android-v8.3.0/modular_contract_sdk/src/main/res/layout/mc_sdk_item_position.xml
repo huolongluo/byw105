@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.legend.modular_contract_sdk.utils.McTypefaceUtil" />
+
+        <import type="com.legend.modular_contract_sdk.ui.contract.Direction" />
+
+        <import type="com.legend.modular_contract_sdk.R" />
+
+        <import type="com.legend.modular_contract_sdk.ui.contract.QuantityUnit" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="position"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.PositionWrap" />
+
+        <variable
+            name="tradeUnit"
+            type="QuantityUnit" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="?window_background">
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@{@string/mc_sdk_contract_name(position.contractName)}"
+            android:textSize="@dimen/mc_sdk_txt_position_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="BTC/USDT 永续"
+            tools:textColor="?col_text_title" />
+
+        <TextView
+            android:id="@+id/tv_leverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{@string/mc_sdk_leverage(position.position.mLeverage)}"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintLeft_toLeftOf="@id/tv_product_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_name"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:text="100倍杠杆"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:paddingLeft="6dp"
+            android:paddingTop="3dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="3dp"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintBottom_toBottomOf="@id/tv_leverage"
+            app:layout_constraintLeft_toRightOf="@id/tv_leverage"
+            app:layout_constraintTop_toTopOf="@id/tv_leverage"
+            app:theme_textColor="@{R.attr.col_text_on_button}"
+            tools:background="?bg_buy_btn"
+            tools:text="全仓做多"
+            tools:textColor="?col_text_on_button" />
+
+        <TextView
+            android:id="@+id/tv_experience_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/mc_sdk_bg_btn_f3b800_r3"
+            android:paddingLeft="6dp"
+            android:paddingTop="3dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="3dp"
+            android:text="@string/mc_sdk_contract_experience_gold"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            android:visibility="@{position.isExpGold ? View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_leverage"
+            app:layout_constraintLeft_toRightOf="@id/tv_direction"
+            app:layout_constraintTop_toTopOf="@id/tv_leverage"
+            app:theme_textColor="@{R.attr.col_text_on_button}"
+            tools:textColor="?col_text_on_button" />
+
+        <TextView
+            android:id="@+id/tv_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{position.profit}"
+            android:textSize="@dimen/mc_sdk_txt_position_title"
+            app:is_up="@{position.isHaveProfit}"
+            app:layout_constraintLeft_toLeftOf="@id/tv_profit_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_profit_title"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            tools:text="100"
+            tools:textColor="?up_color" />
+
+        <TextView
+            android:id="@+id/tv_profit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/mc_sdk_position_profit"
+            android:textSize="@dimen/mc_sdk_txt_title"
+            app:layout_constraintLeft_toLeftOf="@id/tv_leverage"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_profit_rate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/mc_sdk_share_profit_rate"
+            android:textSize="@dimen/mc_sdk_txt_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_profit_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{position.profitRate}"
+            android:textSize="@dimen/mc_sdk_txt_position_title"
+            app:is_up="@{position.isHaveProfit}"
+            app:layout_constraintRight_toRightOf="@id/tv_profit_rate_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_profit_rate_title"
+            tools:text="-100.28%"
+            tools:textColor="?up_color" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="10dp"
+            android:background="?divider_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_direction" />
+
+        <TextView
+            android:id="@+id/tv_margins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@{@string/mc_sdk_hold_position_unit(position.getTradeUnitStr(tradeUnit, context))}"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            tools:text="@string/mc_sdk_hold_position_unit"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="@id/tv_product_name"
+            app:layout_constraintRight_toLeftOf="@id/tv_add_position_margin"
+            app:layout_constraintTop_toBottomOf="@id/tv_profit_rate"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <ImageView
+            android:id="@+id/iv_add_position_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mc_sdk_ic_add_margin"
+            android:layout_marginRight="5dp"
+            app:layout_constraintRight_toLeftOf="@id/tv_add_position_margin"
+            app:layout_constraintBottom_toBottomOf="@id/tv_add_position_margin"
+            app:layout_constraintTop_toTopOf="@id/tv_add_position_margin"/>
+
+        <TextView
+            android:id="@+id/tv_add_position_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mc_sdk_margin_usdt"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintLeft_toRightOf="@id/tv_margins"
+            app:layout_constraintRight_toLeftOf="@id/tv_force_close_price"
+            app:layout_constraintTop_toTopOf="@id/tv_margins"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <View
+            android:id="@+id/view_add_position_margin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="@id/iv_add_position_margin"
+            app:layout_constraintRight_toRightOf="@id/tv_add_position_margin"
+            app:layout_constraintBottom_toBottomOf="@id/tv_open_position_price_value"
+            app:layout_constraintTop_toTopOf="@id/tv_add_position_margin"/>
+
+        <TextView
+            android:id="@+id/tv_force_close_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mc_sdk_force_close_price"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintLeft_toRightOf="@id/tv_add_position_margin"
+            app:layout_constraintRight_toRightOf="@id/tv_profit_rate_title"
+            app:layout_constraintTop_toTopOf="@id/tv_margins"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_margins_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{position.getHoldPosition(tradeUnit.unit)}"
+            android:textSize="@dimen/mc_sdk_txt_sub_title"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="@id/tv_margins"
+            app:layout_constraintTop_toBottomOf="@id/tv_margins"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="20"
+            tools:textColor="?col_text_title" />
+
+        <TextView
+            android:id="@+id/tv_open_position_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{position.margin}"
+            android:textSize="@dimen/mc_sdk_txt_sub_title"
+            app:layout_constraintLeft_toLeftOf="@id/tv_add_position_margin"
+            app:layout_constraintRight_toRightOf="@id/tv_add_position_margin"
+            app:layout_constraintTop_toBottomOf="@id/tv_margins"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="26078.29"
+            tools:textColor="?col_text_title" />
+
+        <TextView
+            android:id="@+id/tv_force_close_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{position.liquidationPrice}"
+            android:textSize="@dimen/mc_sdk_txt_sub_title"
+            app:layout_constraintRight_toRightOf="@id/tv_force_close_price"
+            app:layout_constraintTop_toBottomOf="@id/tv_margins"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="26078.29"
+            tools:textColor="?col_text_title" />
+
+
+        <TextView
+            android:id="@+id/tv_hold_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/mc_sdk_risk"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="@id/tv_margins"
+            app:layout_constraintTop_toBottomOf="@id/tv_margins_value"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_risk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mc_sdk_open_position_price"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintLeft_toLeftOf="@id/tv_add_position_margin"
+            app:layout_constraintRight_toRightOf="@id/tv_add_position_margin"
+            app:layout_constraintTop_toTopOf="@id/tv_hold_position"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_take_profit_stop_loss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mc_sdk_p_l"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintRight_toRightOf="@id/tv_force_close_price"
+            app:layout_constraintTop_toTopOf="@id/tv_hold_position"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:textColor="?col_text_content" />
+
+
+        <TextView
+            android:id="@+id/tv_hold_position_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{position.riskFormat}"
+            android:textSize="@dimen/mc_sdk_txt_sub_title"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="@id/tv_hold_position"
+            app:layout_constraintTop_toBottomOf="@id/tv_hold_position"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="20.34"
+            tools:textColor="?col_text_title" />
+
+        <TextView
+            android:id="@+id/tv_risk_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{position.open}"
+            android:textSize="@dimen/mc_sdk_txt_sub_title"
+            app:layout_constraintLeft_toLeftOf="@id/tv_risk"
+            app:layout_constraintRight_toRightOf="@id/tv_risk"
+            app:layout_constraintTop_toBottomOf="@id/tv_hold_position"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="26078.29"
+            tools:textColor="?col_text_title" />
+
+        <TextView
+            android:id="@+id/tv_take_profit_stop_loss_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@{position.takeProfitStopLoss}"
+            android:textSize="@dimen/mc_sdk_txt_sub_title"
+            app:layout_constraintRight_toRightOf="@id/tv_take_profit_stop_loss"
+            app:layout_constraintTop_toBottomOf="@id/tv_hold_position"
+            app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:text="26078.29/--"
+            tools:textColor="?col_text_title" />
+
+        <LinearLayout
+            android:id="@+id/ll_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_product_name"
+            app:layout_constraintRight_toRightOf="@id/tv_profit_rate_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_take_profit_stop_loss_value">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_reverse_open_position"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:enabled="@{!position.expGold}"
+                android:padding="0dp"
+                android:text="@string/mc_sdk_reverse_open_position"
+                app:theme_background="@{R.attr.bg_action_btn_normal}"
+                app:theme_textColor="@{position.expGold ? R.attr.col_text_hint : R.attr.col_text_accent}"
+                tools:background="?bg_action_btn_normal"
+                tools:textColor="?col_text_hint" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_change_take_profit_stop_loss"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/mc_sdk_p_l2"
+                app:theme_background="@{R.attr.bg_action_btn_normal}"
+                app:theme_textColor="@{R.attr.col_text_accent}"
+                tools:background="?bg_action_btn_normal"
+                tools:textColor="?col_text_accent" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_close_part_position"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:enabled="@{!position.expGold}"
+                android:padding="0dp"
+                android:text="@string/mc_sdk_close_position"
+                app:theme_background="@{R.attr.bg_action_btn_normal}"
+                app:theme_textColor="@{position.expGold ? R.attr.col_text_hint : R.attr.col_text_accent}"
+                tools:background="?bg_action_btn_normal"
+                tools:textColor="?col_text_hint" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_close_position"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/mc_sdk_one_key_close_position"
+                app:theme_background="@{R.attr.bg_action_btn_normal}"
+                app:theme_textColor="@{R.attr.col_text_accent}"
+                tools:background="?bg_action_btn_normal"
+                tools:textColor="?col_text_accent" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_create_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{@string/mc_sdk_create_date(position.createDate)}"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ll_option"
+            app:layout_constraintTop_toBottomOf="@id/ll_option"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:text="创建时间  2021-02-18 08:25:60"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{@string/mc_sdk_position_id(position.position.mId)}"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            android:drawableLeft="?ic_copy"
+            android:drawablePadding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/ll_option"
+            app:layout_constraintTop_toBottomOf="@id/ll_option"
+            app:theme_textColor="@{R.attr.col_text_content}"
+            tools:text="仓位ID   XXXXXXX"
+            tools:textColor="?col_text_content" />
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="15dp"
+            android:drawableLeft="@drawable/mc_sdk_ic_share"
+            android:drawablePadding="5dp"
+            android:text="@string/mc_sdk_share"
+            android:textSize="@dimen/mc_sdk_txt_depth"
+            app:layout_constraintBottom_toBottomOf="@id/tv_direction"
+            app:layout_constraintRight_toRightOf="parent"
+            app:theme_textColor="@{R.attr.col_text_title}"
+            tools:textColor="?col_text_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

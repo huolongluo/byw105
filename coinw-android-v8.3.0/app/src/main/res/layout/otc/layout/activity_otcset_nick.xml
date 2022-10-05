@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/base_col"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="-1dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/base_title"></include>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="21dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/login_bg">
+
+            <LinearLayout
+
+                android:id="@+id/rl_now_psw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="22.5dp"
+                    android:text="@string/l1"
+                    android:textColor="@color/ff222222"
+                    android:textSize="13sp" />
+
+
+                <EditText
+                    android:id="@+id/et_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="16.5dp"
+                    android:layout_marginRight="16.5dp"
+                    android:background="@drawable/set_trade_psw_"
+                    android:hint="@string/l2"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="10"
+                    android:paddingLeft="4.5dp"
+                    android:paddingTop="11dp"
+                    android:text=""
+                    android:textColor="@color/ff222222"
+                    android:textColorHint="@color/ffafafaf"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/btn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/confirm_jb_bg"
+                    android:gravity="center"
+                    android:text="@string/l3"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/l4"
+                    android:textColor="@color/ff3b3b3b"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

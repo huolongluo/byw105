@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="huolongluo.byw">
+    
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 危险权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 危险权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 危险权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 危险权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 危险权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 使用OkHttp联网框架，断网之后，很容易再也请求不到网络 -->
+    <uses-permission android:name="android.permission.NETWORK_PROVIDER" />
+    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- 8.0 系统需要 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
+    <permission
+        android:name="huolongluo.byw.permission.RECEIVE_MSG"
+        android:protectionLevel="signature" /> <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <uses-permission android:name="huolongluo.byw.permission.RECEIVE_MSG" />
+    <application
+        android:name=".byw.base.BaseApp"
+        android:allowBackup="false"
+        android:icon="@drawable/launch_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/launch_icon"
+        android:supportsRtl="true"
+        android:theme="@style/mAppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup,android:supportsRtl">
+        <activity android:name="com.android.legend.ui.home.notice.MailDetailsActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity
+            android:name="com.android.legend.ui.mine.safe.ModifyLoginPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.legend.ui.share.ShareActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.android.legend.ui.taskcenter.TaskCenterMoreActivity" />
+        <activity android:name="com.android.legend.ui.taskcenter.MyTaskActivity" />
+        <activity android:name="com.android.legend.ui.taskcenter.TaskCenterActivity" />
+        <activity
+            android:name="com.android.legend.ui.finance.ZjRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.legend.ui.home.newCoin.NewCoinsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.legend.ui.login.ResetLoginPwdThirdActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.login.LoginSmsVerifyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.login.RegisterSmsVerifyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.login.LoginSmsGoogleVerifyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.login.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.login.ResetLoginPwdActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.market.MarketSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".byw.ui.activity.ThirdLaunchActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <!-- 接收外部跳转 -->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- 表示该页面可以被隐式调用，必须加上该项 -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 如果希望该应用可以通过浏览器的连接启动，则添加该项 -->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="coinw" />
+            </intent-filter>
+        </activity>
+        
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        
+        <activity
+            android:name=".byw.ui.activity.stop_service.StopServiceActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/mAppTheme.NoActionBar" />
+
+       <!-- 多渠道参数 -->
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${CHANNEL_NAME_VALUE}" />
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+        
+        <activity android:name=".byw.ui.fragment.contractTab.ContractCoinDetailActivity" />
+        <service
+            android:name=".byw.ui.redEnvelope.RedEnvelopeService"
+            android:enabled="true"
+            android:exported="false" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcUnpaidActivity"
+            android:label="@string/title_activity_otc_unpaid"
+            android:theme="@style/mAppTheme.NoActionBar" /> <!-- 配置APP版本号 -->
+        <activity
+            android:name=".heyue.ui.HYCoinDetailActivity"
+            android:theme="@style/mAppTheme.NoActionBar" />
+        <meta-data
+            android:name="BUGLY_APP_VERSION"
+            android:value="${VERSION_CODE}" /> <!-- 配置APP渠道号 -->
+        <meta-data
+            android:name="BUGLY_APP_CHANNEL"
+            android:value="main1" /> <!-- 配置Bugly调试模式（true或者false） -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="29e034bf383e3" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="c96826ba589c14c669c53d0b9ce44ff6" /> <!-- ShareSDK的activity -->
+        <meta-data
+            android:name="com.netease.nim.appKey"
+            android:value="3e14f638993b6e11849d6713a9fc657a" />
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="61a2c3ca023967fc79abae409475937b" />
+        
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- 微信分享回调 -->
+        <activity
+            android:name="cn.sharesdk.demo.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- QQ分享回调 -->
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+    
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+    
+                <data android:scheme="tencent1108149982" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".byw.ui.activity.StartUpActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/LaunchTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+    
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lzy.imagepicker.ui.ImagePreviewDelActivity"
+            android:theme="@style/ImagePickerThemeFullScreen" />
+        <activity
+            android:name=".byw.ui.activity.main.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"> <!-- android:theme="@style/mAppTran_Theme" -->
+        </activity>
+        <activity
+            android:name=".reform.home.activity.kline2.KLineActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.home.activity.kline2.KLineFullScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.c2c.oct.activity.SellerInfoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.mine.activity.GradeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.mine.activity.UpgradeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.coinw.test.TestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name="com.android.coinw.test.log.HttpLogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name="com.android.coinw.test.log.WsLogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".byw.ui.fragment.maintab04.NetworkDetectActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".byw.ui.activity.AdvertActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.rmbtixian.RmbTiXianActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.bancard.BankCardListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.addbankcard.AddBankCardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.banklist.BankListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.ChangeLanguageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.PricingMethodActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.RenZhengInfoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.UpVersionActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.AboutUsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.ShiMingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.safe_centre.SafeCentreActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.setchangepsw.SetChangePswActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".byw.ui.activity.bindemail.BindEmailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.bindphone.BindPhoneActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.safecenter.BindGoogleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.mine.activity.FinanceRecordActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".byw.ui.fragment.search.SearchCoinActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.cthistory.CTHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.address.AdressManageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.addaddress.AddAddressNewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.cointixian.CoinTXNewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.walletlist.NewWalletListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.bindgoogle.BindGoogleOneActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.bindgoogle.BindGoogleTwoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.bindgoogle.BindGoogleThreeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.scan.ScanActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".util.zxing.MipcaActivityCapture"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.feedback.FeedBackActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".byw.ui.activity.feedback.FeedHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.fragment.search.SearchActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.coindetail.CoinDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.coindetail.BbCoinDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.fragment.maintab05.OrderDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.fragment.maintab05.cnycthis.CnyCTHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.countryselect.CountryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.ZhengJianActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.CountryActiivty"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.cthistory.CHistoryDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.HppRecordDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" /> <!-- 二维码登录 -->
+        <activity
+            android:name=".byw.ui.fragment.maintab05.ScanQRLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" /> <!-- 通知界面 -->
+        <activity
+            android:name=".byw.inform.activity.NoticeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".byw.inform.activity.MailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".byw.inform.activity.ScrollNoticeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" /> <!-- 提现列表 -->
+        <activity
+            android:name=".reform.market.activity.ChongzhiListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" /> <!-- hpp充值列表 -->
+        <activity
+            android:name=".reform.market.activity.HppChongzhiListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" /> <!-- hpp提现 -->
+        <activity
+            android:name=".byw.ui.activity.cointixian.HppTXActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" /> <!-- 公告详情界面 -->
+        <activity
+            android:name=".byw.inform.activity.NoticeDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.c2c.oct.activity.C2cSellSuccessActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.login_regist.AreaCodeChoiceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.login_regist.AreaCodeChoiceActivity2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.FinanceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.OtcFinanceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.TradeOrderListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.ReturnFeeMoneyActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.safecenter.RenzhengActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.NormanWebviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.RenZhengBeforeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.RenZhengGetTokenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.safecenter.ReserTradePswActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.home.activity.NewsWebviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".reform.home.activity.WelfareWebviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.home.activity.RedEnvelopeWebviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.home.activity.ShareActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.BindHPayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.BindHPaySuccessActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.hPPRecordActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".reform.mine.activity.MoneyManagerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".byw.ui.fragment.maintab04.WebViewActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.RebateActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.PyramidActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.PyramidSaleActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.mine.activity.PyramidSaleWebViewActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reform.home.activity.WelfareCenterShareActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.WebviewActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcBuyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.dialog.VersionDialogActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Themeo" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcBuyConfirmActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcFiltrateActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcOrderManagerActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcAppealActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcCancleAppealActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name="com.android.legend.ui.transfer.AccountTransferActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.android.legend.ui.transfer.AccountTransferRecordActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcPaymentActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.sellactivity.OtcUserSellPaymentActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.sellactivity.OtcUserSellOtherPayedActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.sellactivity.OtcOrderShopsManagerActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTheme_c" />
+        <activity
+            android:name=".reform.c2c.oct.activity.sellactivity.OtcUserSellWaitOtherPayActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" /> <!-- otc购买未支付订单详情页 -->
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcOrderNopayActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcSetNickActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcSetUserInfoActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcAddBankActivityNew"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcAddZhifubActivityNew"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcAddWechartActivityNew"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.PaymentAccountActivityNew"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme1" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcPrepaidActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcAppealDetailActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcOrderCancleDetailActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcTradeCompleteActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".reform.c2c.oct.activity.OtcTradeStatusActivity"
+            android:clipToPadding="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" /> <!-- 实名认证需要的 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="huolongluo.byw.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- 极光的消息广播接收器 -->
+        <!-- <receiver -->
+        <!-- android:name=".byw.receive.JPushReceiver" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="false"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="cn.jpush.android.intent.REGISTRATION"/> &lt;!&ndash;Required  用户注册SDK的intent&ndash;&gt; -->
+        <!-- <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/> &lt;!&ndash;Required  用户接收SDK消息的intent&ndash;&gt; -->
+        <!-- <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/> &lt;!&ndash;Required  用户接收SDK通知栏信息的intent&ndash;&gt; -->
+        <!-- &lt;!&ndash;  <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />&ndash;&gt; &lt;!&ndash;Required  用户打开自定义通知栏的intent&ndash;&gt; -->
+        <!-- <action android:name="cn.jpush.android.intent.CONNECTION"/>&lt;!&ndash; 接收网络变化 连接/断开 since 1.6.3 &ndash;&gt; -->
+        <!-- <category android:name="huolongluo.byw"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <service
+            android:name="com.android.coinw.service.CoreService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="com.android.coinw.service"
+            android:process=":remote" /> <!-- android:permission="com.android.coinw.service"  android:process=":remote" -->
+        <!-- <receiver android:name="com.android.coinw.CoinwReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <meta-data
+            android:name="com.netease.nim.uikit.support.glide.NIMGlideModule"
+            android:value="GlideModule" /> <!-- 会话窗口 -->
+        <!--
+ UI组件中包含了语音选文字功能，该界面是全屏显示，为了视觉上的美观，该界面主题ActionBar使用Overlay模式。
+             如果开发者不需要该功能或效果，使用普通主题即可。 同时，还需要将message_activity.xml这个layout中的根节点的paddingTop去掉。
+        -->
+        <activity
+            android:name="com.netease.nim.uikit.business.session.activity.P2PMessageActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTranslucentTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.session.activity.TeamMessageActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- 群聊 -->
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.NormalTeamInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.AdvancedTeamInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.AdvancedTeamMemberActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.AdvancedTeamAnnounceActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.AdvancedTeamMemberInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.AdvancedTeamNicknameActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.AdvancedTeamCreateAnnounceActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.netease.nim.uikit.business.team.activity.TeamPropertySettingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- 联系人选择器 -->
+        <activity
+            android:name="com.netease.nim.uikit.business.contact.selector.activity.ContactSelectActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/contact_selector"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".reform.mine.activity.RechargeActivity"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- 云信后台服务，请使用独立进程。 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService"
+            android:process=":core" /> <!-- 云信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService$Aux"
+            android:process=":core" /> <!-- 云信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.job.NIMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":core" /> <!-- 云信监视系统启动和网络变化的广播接收器，保持和 NimService 同一进程 -->
+        <receiver
+            android:name="com.netease.nimlib.service.NimReceiver"
+            android:exported="false"
+            android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver> <!-- 云信进程间通信 Receiver -->
+        <receiver android:name="com.netease.nimlib.service.ResponseReceiver" /> <!-- 云信进程间通信service -->
+        <service android:name="com.netease.nimlib.service.ResponseService" /> <!-- 云信进程间通信provider -->
+        <provider
+            android:name="com.netease.nimlib.ipc.NIMContentProvider"
+            android:authorities="huolongluo.byw.ipc.provider"
+            android:exported="false"
+            android:process=":core" />
+        
+        <activity
+            android:name="com.liuzhongjun.videorecorddemo.activity.CustomRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name="com.liuzhongjun.videorecorddemo.activity.UploadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.AuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name="com.liuzhongjun.videorecorddemo.activity.UploadSuccessfulActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.BaseAuthSuccessActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity
+            android:name=".byw.ui.activity.renzheng.AuthFailureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity android:name="com.liuzhongjun.videorecorddemo.activity.PlayVideoActivity" /> <!-- 合约相关界面 -->
+        <!-- <activity android:name=".heyue.ui.OpenHYActivity" /> -->
+        <activity
+            android:name=".heyue.ui.OpenHYActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/mAppTran_Theme" />
+        <activity android:name="com.android.legend.ui.mine.MineActivity" />
+        <activity android:name="com.android.legend.ui.mine.settings.SettingsActivity" />
+        <activity android:name="com.android.legend.ui.mine.settings.TickerColorSwitchActivity" />
+        <activity android:name=".reform.c2c.oct.fragment.OtcActivity" />
+        <activity android:name=".byw.ui.fragment.maintab05.C2CActivity" />
+        <activity android:name="com.android.legend.ui.earn.EarnActivity" />
+        <activity android:name="com.android.legend.ui.earn.buy.EarnBuySuccessActivity" />
+        <activity android:name="com.android.legend.ui.earn.bill.EarnBillActivity" />
+        <activity android:name="com.android.legend.ui.earn.buy.EarnBuyActivity" />
+        <activity android:name="com.android.legend.ui.earn.finance.MyEarnProductActivity" />
+        
+        <meta-data
+            android:name="exchange"
+            android:value="%e5%b8%81%e8%b5%a2" />
+        <receiver
+            android:name=".util.jpush.JPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+    
+                <category android:name="huolongluo.byw" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".util.jpush.JPushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service> <!-- User defined. 用户自定义的广播接收器 -->
+        <!--
+ 这是3.3.0之前版本的接收方式，3.3.0开始是通过继承 JPushMessageReceiver并配置来接收所有事件回调。>
+        <!- 如果仍然需要在这个Receiver里接收，需要在JPushMessageReceiver 的子类里不重写对应的回调方法，或者重写方法且调用super
+        -->
+        <receiver
+            android:name=".util.jpush.JPushServiceMessage"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+    
+                <category android:name="huolongluo.byw" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

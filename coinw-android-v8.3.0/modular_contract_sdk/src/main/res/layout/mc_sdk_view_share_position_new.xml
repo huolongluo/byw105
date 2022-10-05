@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="com.legend.modular_contract_sdk.repository.model.wrap.PositionWrap" />
+
+        <variable
+            name="isHistoryOrder"
+            type="java.lang.Boolean" />
+
+        <import type="com.legend.modular_contract_sdk.utils.McTypefaceUtil"/>
+        <import type="com.legend.modular_contract_sdk.R"/>
+
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="375dp"
+        android:layout_height="375dp"
+        android:background="@drawable/mc_sdk_position_share_bg_new">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="375dp"
+            android:layout_height="375dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_logo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="38dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/mc_sdk_share_logo_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="1dp"
+                android:layout_height="19dp"
+                android:layout_marginLeft="6dp"
+                android:background="@color/mc_sdk_white"
+                app:layout_constraintBottom_toBottomOf="@id/iv_logo1"
+                app:layout_constraintLeft_toRightOf="@id/iv_logo1"
+                app:layout_constraintTop_toTopOf="@id/iv_logo1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/mc_sdk_white_r8"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:gravity="center"
+                android:text="@string/mc_sdk_contract"
+                android:textColor="#24223A"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_logo1"
+                app:layout_constraintLeft_toRightOf="@id/view_line"
+                app:layout_constraintTop_toTopOf="@id/iv_logo1" />
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                android:background="@{position.directionIsLong ? @drawable/mc_sdk_bg_stroke_buy_r3 : @drawable/mc_sdk_bg_stroke_sell_r3}"
+                android:paddingLeft="6dp"
+                android:paddingTop="3dp"
+                android:paddingRight="6dp"
+                android:paddingBottom="3dp"
+                android:text="@{position.directionShare}"
+                app:theme_textColor="@{position.directionIsLong ? R.attr.up_color : R.attr.drop_color}"
+                android:textSize="@dimen/mc_sdk_txt_depth"
+                app:layout_constraintLeft_toLeftOf="@id/iv_logo1"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo1"
+                tools:background="@drawable/mc_sdk_bg_stroke_buy_r3"
+                tools:text="做多"
+                tools:textColor="?up_color" />
+
+            <View
+                android:id="@+id/view_line2"
+                android:layout_width="1dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/mc_sdk_txt_ABACB7"
+                app:layout_constraintLeft_toRightOf="@id/tv_direction"
+                app:layout_constraintTop_toTopOf="@id/tv_direction" />
+
+            <TextView
+                android:id="@+id/tv_position_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="@{position.getPositionModeAndLeverage(context)}"
+                android:textColor="@color/mc_sdk_txt_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/view_line2"
+                app:layout_constraintTop_toTopOf="@id/tv_direction"
+                tools:text="全仓 100X" />
+
+            <TextView
+                android:id="@+id/tv_position_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@{position.contractName}"
+                android:textColor="@color/mc_sdk_txt_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/tv_position_mode"
+                app:layout_constraintTop_toTopOf="@id/tv_direction"
+                tools:text="BTC/USDT" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/mc_sdk_contract_permanent"
+                android:textColor="@color/mc_sdk_txt_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/tv_position_name"
+                app:layout_constraintTop_toTopOf="@id/tv_direction" />
+
+
+            <TextView
+                android:id="@+id/tv_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:text="@{isHistoryOrder ? position.profitRateOfHistoryOrderNoPercent : position.profitRateNoPercent}"
+                app:theme_textColor="@{position.haveProfit(isHistoryOrder) ? R.attr.up_color : R.attr.drop_color}"
+                android:textSize="50sp"
+                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:layout_constraintLeft_toLeftOf="@id/tv_direction"
+                app:layout_constraintTop_toBottomOf="@id/tv_direction"
+                tools:text="+100"
+                tools:textColor="?up_color" />
+
+            <TextView
+                android:id="@+id/tv_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="7dp"
+                android:text="%"
+                app:theme_textColor="@{position.haveProfit(isHistoryOrder) ? R.attr.up_color : R.attr.drop_color}"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_change"
+                app:layout_constraintLeft_toRightOf="@id/tv_change"
+                tools:textColor="?up_color" />
+
+            <TextView
+                android:id="@+id/tv_open_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/mc_sdk_contract_position_open_price"
+                android:textColor="@color/mc_sdk_txt_ABACB7"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:layout_constraintLeft_toLeftOf="@id/iv_logo1"
+                app:layout_constraintTop_toBottomOf="@id/tv_change" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{'$'+position.open}"
+                android:textColor="@color/mc_sdk_txt_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:layout_constraintLeft_toRightOf="@id/tv_position_mode"
+                app:layout_constraintTop_toTopOf="@id/tv_open_price"
+                tools:text="$1234.4321" />
+
+            <TextView
+                android:id="@+id/tv_last_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{isHistoryOrder ? @string/mc_sdk_share_close_price : @string/mc_sdk_share_last_price}"
+                android:textColor="@color/mc_sdk_txt_ABACB7"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                tools:text="@string/mc_sdk_share_last_price"
+                app:layout_constraintLeft_toLeftOf="@id/iv_logo1"
+                app:layout_constraintTop_toBottomOf="@id/tv_open_price" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{'$' + (isHistoryOrder ? position.closePrice : position.last)}"
+                android:textColor="@color/mc_sdk_txt_title"
+                android:textSize="@dimen/mc_sdk_txt_title"
+                app:localTypeface="@{McTypefaceUtil.INSTANCE.TYPEFACE_DINPRO_BOLD}"
+                app:layout_constraintLeft_toRightOf="@id/tv_position_mode"
+                app:layout_constraintTop_toTopOf="@id/tv_last_price"
+                tools:text="$1234.4321" />
+
+                        <ImageView
+                            android:id="@+id/view_download"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/mc_sdk_position_share_bottom_bar"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/iv_qrcode"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="53dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/mc_sdk_white"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toBottomOf="@id/view_download"
+                            app:layout_constraintLeft_toLeftOf="@id/view_download"
+                            app:layout_constraintTop_toTopOf="@id/view_download" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_share_desc1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginRight="13dp"
+                            android:maxLines="1"
+                            android:text="@string/mc_sdk_share_desc3"
+                            android:textColor="@color/mc_sdk_txt_title"
+                            android:textSize="@dimen/mc_sdk_txt_sub_menu"
+                            app:layout_constraintBottom_toTopOf="@id/tv_share_desc2"
+                            app:layout_constraintLeft_toRightOf="@id/iv_qrcode"
+                            app:layout_constraintTop_toTopOf="@id/view_download"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_share_desc2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginRight="6dp"
+                            android:maxLines="2"
+                            android:text="@string/mc_sdk_share_desc1"
+                            android:textColor="@color/mc_sdk_txt_ABACB7"
+                            android:textSize="@dimen/mc_sdk_txt_depth"
+                            app:layout_constraintBottom_toBottomOf="@id/view_download"
+                            app:layout_constraintLeft_toRightOf="@id/iv_qrcode"
+                            app:layout_constraintTop_toBottomOf="@id/tv_share_desc1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

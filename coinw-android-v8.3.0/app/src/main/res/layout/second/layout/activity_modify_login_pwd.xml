@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    tools:context="com.android.legend.ui.mine.safe.ModifyLoginPwdActivity">
+    <include layout="@layout/inc_toolbar"
+        android:id="@+id/toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvTips"
+            style="@style/TextView_12_E65261"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@drawable/bg_cor5_fff5f5"
+            android:drawableStart="@mipmap/ic_warning"
+            android:padding="@dimen/dp_4"
+            android:text="@string/notice_change_pwd" />
+        <TextView
+            style="@style/TextView_14_main"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/old_login_pwd" />
+        <com.android.legend.view.edittext.CommonEditText
+            android:id="@+id/cetOldPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:widget_hint="@string/input_old_login_pwd"
+            app:widget_textSize="@dimen/sp_14" />
+        <View
+            android:id="@+id/vOldPwd"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@drawable/sl_color_normal_e0e0e0_selected_accent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16">
+            <TextView
+                style="@style/TextView_14_main"
+                android:text="@string/new_login_pwd" />
+            <include
+                layout="@layout/inc_pwd_intensity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <com.android.legend.view.edittext.CommonEditText
+            android:id="@+id/cetNewPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:widget_hint="@string/input_new_login_pwd"
+            app:widget_textSize="@dimen/sp_14" />
+        <View
+            android:id="@+id/vNewPwd"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@drawable/sl_color_normal_e0e0e0_selected_accent" />
+        
+        <TextView
+            style="@style/TextView_14_main"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/con_newpwd" />
+        <com.android.legend.view.edittext.CommonEditText
+            android:id="@+id/cetNewPwd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:widget_hint="@string/con_psw"
+            app:widget_textSize="@dimen/sp_14" />
+        <View
+            android:id="@+id/vNewPwd2"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@drawable/sl_color_normal_e0e0e0_selected_accent" />
+        <TextView
+            android:id="@+id/tvNewPwdError2"
+            style="@style/TextView_12_E65261"
+            android:layout_marginTop="@dimen/dp_8"
+            android:visibility="gone"
+            tools:text="@string/two_pwd_different" />
+        <TextView style="@style/TextView_12_main2"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/pwd_rule"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvSubmit"
+        style="@style/TextView_14_white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_btn_height"
+        android:text="@string/confirm"
+        android:background="@drawable/sl_cor5_d4cfe6_enable_accent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:enabled="false"
+        android:gravity="center"
+        />
+</RelativeLayout>

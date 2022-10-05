@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <include layout="@layout/base_title"></include>
+    <RelativeLayout
+        android:id="@+id/rl_item_bind_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_18"
+        android:clickable="true">
+        <TextView style="@style/TextView_16_main"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:text="@string/phone" />
+        <ImageView
+            android:id="@+id/back1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:src="@drawable/ic_arrow_right" />
+        <TextView
+            android:id="@+id/tv_bing_phone"
+            style="@style/TextView_12_main3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/back1"
+            android:text="@string/unbind"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_item_bind_email"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:clickable="true">
+        <TextView style="@style/TextView_16_main"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:text="@string/emails" />
+        <ImageView
+            android:id="@+id/back2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:src="@drawable/ic_arrow_right"/>
+        <TextView
+            android:id="@+id/tv_bing_email"
+            style="@style/TextView_12_main3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/back2"
+            android:text="@string/unbind" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_item_bind_google"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:clickable="true">
+        <TextView style="@style/TextView_16_main"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:text="@string/gooapp" />
+        <ImageView
+            android:id="@+id/back3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:src="@drawable/ic_arrow_right" />
+        <TextView
+            android:id="@+id/tv_bind_google"
+            style="@style/TextView_12_main3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/back3"
+            android:text="@string/unbind" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_item_bind_trade_psw"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:clickable="true">
+        <TextView style="@style/TextView_16_main"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:text="@string/trade_psw"/>
+        <ImageView
+            android:id="@+id/back4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:src="@drawable/ic_arrow_right" />
+        <TextView
+            android:id="@+id/tv_bind_trade_psw"
+            style="@style/TextView_12_main3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/back4"
+            android:text="@string/unbind" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/rltLoginPwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:clickable="true">
+        <TextView style="@style/TextView_16_main"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:text="@string/psw_login"/>
+        <ImageView android:id="@+id/ivBack6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:src="@drawable/ic_arrow_right" />
+        <TextView
+            android:id="@+id/tvLoginPwd"
+            style="@style/TextView_12_main3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/ivBack6"
+            android:text="@string/bb12" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_8"
+        android:background="@color/background_gray"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingBottom="@dimen/dp_16">
+        <LinearLayout
+            android:id="@+id/swipe_menu_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/chain_name_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView style="@style/TextView_12_main2"
+                    android:text="@string/chainName" />
+                <com.legend.common.view.textview.DinproMediumTextView
+                    android:id="@+id/chain_name"
+                    style="@style/TextView_12_accent"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_width="wrap_content"
+                    android:minWidth="@dimen/dp_80"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:ellipsize="end"
+                    android:background="@drawable/bg_withdraw_chain_selected"
+                    android:text="TRC20"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center_vertical">
+                <TextView style="@style/TextView_12_main2"
+                    android:text="@string/beizu"/>
+                <ImageView
+                    android:id="@+id/ll_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_10"
+                    android:src="@mipmap/ic_pencil" />
+            </LinearLayout>
+            
+            <com.legend.common.view.textview.DinproMediumTextView
+                android:id="@+id/tv_title"
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_4"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="50"
+                android:text="***************************"/>
+            <TextView style="@style/TextView_12_main2"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/addre" />
+            <com.legend.common.view.textview.DinproMediumTextView
+                android:id="@+id/tv_add"
+                style="@style/TextView_14_main"
+                android:layout_marginTop="@dimen/dp_4"
+                android:ellipsize="end"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:text="***************************"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/delete_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:src="@mipmap/close" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/dialog_shap_etf_tip"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <ImageView
+            android:id="@+id/iv_status_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="2dp"
+            android:src="@mipmap/ic_status_close" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_status_close"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_risk_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_status_success" />
+            <TextView
+                android:id="@+id/tv_risk_status_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_disclaimer_desc"
+                android:layout_marginTop="15dp"
+                android:gravity="fill_vertical"
+                android:lineSpacingExtra="3dp"
+                android:lineSpacingMultiplier='1.2'
+                android:text="@string/str_risk_verify_succeed"
+                android:textColor="#383736"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_click"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_bg_pressed"
+                android:gravity="center"
+                android:minWidth="120dp"
+                android:paddingStart="6dp"
+                android:paddingRight="6dp"
+                android:text="@string/str_continue_trading"
+                android:textColor="#F8F9FC"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

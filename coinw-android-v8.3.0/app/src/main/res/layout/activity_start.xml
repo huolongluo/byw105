@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@+id/iv_welcome"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:background="@color/white">-->
+<!--<ImageView-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:scaleType="fitXY"-->
+<!--android:src="@drawable/start_bg"/>-->
+<!--<ImageView-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerInParent="true"-->
+<!--android:scaleType="centerInside"-->
+<!--android:src="@drawable/launch_bg"/>-->
+<!--<ImageView-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerInParent="true"-->
+<!--android:scaleType="centerInside"-->
+<!--android:src="@drawable/coinw_logo"/>-->
+<!--</RelativeLayout>-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="huolongluo.byw.byw.ui.activity.StartUpActivity">
+
+    <ImageView
+        android:id="@+id/iv_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
+</FrameLayout>

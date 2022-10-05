@@ -1,0 +1,53 @@
+project.ext {
+    mainModuleType = "mainModule"//主module
+    debugLibraryModuleType = "debugLibraryModule"//可单独运行的library module
+    libraryModuleType = "libraryModule"
+
+    //根据module类型动态添加对应的配置
+    configModuleGradleScript = { moduleType ->
+        applyPlugin(moduleType)
+        applyAndroidDefaultConfig()
+        applyApplicationId(moduleType)
+    }
+
+    //配置module的编译版本相关配置
+    applyAndroidDefaultConfig = {
+        project.android.compileSdkVersion compileSdkVersion
+        project.android.buildToolsVersion buildToolsVersion
+        project.android.defaultConfig.targetSdkVersion targetSdkVersion
+        project.android.defaultConfig.minSdkVersion minSdkVersion
+    }
+
+    //根据module类型动态添加对应plugin
+    applyPlugin = { moduleType ->
+        if(moduleType == libraryModuleType) {
+            project.apply plugin: 'com.android.library'
+            project.description "library"
+        } else {
+            project.apply plugin: 'com.android.application'
+            project.description "app"
+        }
+        project.apply plugin: 'kotlin-android'
+        project.apply plugin: 'kotlin-android-extensions'
+        project.apply plugin: 'kotlin-kapt'
+        project.apply plugin: 'maven'
+        project.apply plugin: 'com.github.dcendents.android-maven'
+
+    }
+
+    //根据module类型动态添加对应的applicationId
+    applyApplicationId = { moduleType ->
+        if(moduleType == mainModuleType) {
+            project.android.defaultConfig.applicationId applicationId
+        } else if(moduleType == debugLibraryModuleType) {
+            project.android.defaultConfig.applicationId applicationId + "." + project.name
+        }
+    }
+
+    isDebugLibraryModule = { projectName ->
+        def debugLibraryModuleList = debugLibraryModules
+        return project.hasProperty('debugLibraryModules') && debugLibraryModuleList.indexOf(projectName) != -1
+    }
+
+
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.legend.common.util.TypefaceUtil" />
+        <import type="huolongluo.byw.R" />
+        <variable
+            name="pageIndex"
+            type="Integer" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_tab_parent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:theme_background="@{R.attr.window_background}"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp">
+
+        <LinearLayout
+            android:id="@+id/transfer_bb_trans_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="17dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/transfer_bb_trans_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bb_tab"
+                android:textStyle="bold"
+                app:theme_textColor="@{pageIndex == 0 ? R.attr.col_text_title : R.attr.col_text_content}"
+                tools:textColor="?col_text_title"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/transfer_bb_etf_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/transfer_bb_trans_ll"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
+            android:visibility="gone">
+            <!-- 标题 -->
+            <TextView
+                android:id="@+id/transfer_bb_etf_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_size_4"
+                android:text="ETF"
+                android:textColor="@color/market_header_not_choosed"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:theme_textColor="@{pageIndex == 1 ? R.attr.col_text_title : R.attr.col_text_content}"
+                tools:textColor="?col_text_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 倍数 -->
+            <TextView
+                android:id="@+id/tv_etf_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_size_13"
+                android:background="@drawable/bg_etf_tag"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_size_20"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:text="3X"
+                android:textColor="#fff"
+                android:textSize="@dimen/textsize_9sp"
+                android:visibility="visible"
+                app:layout_constraintLeft_toRightOf="@id/transfer_bb_etf_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/transfer_otc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="17dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_transfer_otc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/x3"
+                android:textStyle="bold"
+                tools:textColor="?col_text_content"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/iv_experience_gold"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/mc_sdk_ic_experience_gold"/>
+    </LinearLayout>
+
+    <huolongluo.byw.view.NoScrollViewPager
+        android:id="@+id/transation_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_tab_parent" />
+
+    <TextView
+        android:id="@+id/freeze"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="#D8000000"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/freeze_info"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+</RelativeLayout>
+</layout>

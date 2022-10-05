@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/base_title"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:id="@+id/rl_share_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_share_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_share_welfare_novalue" />
+            <TextView
+                android:id="@+id/tv_award"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#FFC101"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/share_dot_0" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4.5dp"
+                android:src="@drawable/share_dot_1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/share_image"
+                android:layout_width="wrap_content"
+                android:layout_height="36.5dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/confirm_jb_bg"
+                android:gravity="center"
+                android:text="@string/invite_friend"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/share_url"
+                android:layout_width="wrap_content"
+                android:layout_height="36.5dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/share_act_bg1"
+                android:gravity="center"
+                android:text="@string/share_link"
+                android:textColor="@color/ff8881a6"
+                android:textSize="14dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

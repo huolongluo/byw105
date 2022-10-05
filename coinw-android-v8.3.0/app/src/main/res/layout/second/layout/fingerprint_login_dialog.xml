@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/llSuccessBoard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/edit_add_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPromptMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="@string/please_inpsw2"
+            android:textColor="@color/ff222222"
+            android:textSize="18.5sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPromptMsg"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_info"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/text_google2_bg"
+                android:gravity="center_vertical"
+                android:hint="@string/ple_inp_loginpsw"
+             android:maxLength="50"
+                 android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/ff222222"
+                android:textColorHint="@color/ffb5b2c7"
+                android:textSize="15sp"
+
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <TextView
+                    android:id="@+id/cancle_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="36.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cancle_gray_bg"
+                    android:gravity="center"
+                    android:text="@string/cancle"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+
+
+                <TextView
+                    android:id="@+id/btnSure"
+                    android:layout_width="0dp"
+                    android:layout_height="36.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/confirm_jb_bg"
+                    android:gravity="center"
+                    android:text="@string/confirm"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="20dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

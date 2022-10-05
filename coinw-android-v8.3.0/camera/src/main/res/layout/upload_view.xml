@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/camera_base_title_01" />
+
+    <TextView
+        android:id="@+id/totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="视频总时长：00：45"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#DFDDDD" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:id="@+id/time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一段：00：08"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/status1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/camera_e1"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#DFDDDD" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第二段：00：37"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/status2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/camera_e1"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/bt_next"
+        android:layout_width="300.33dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:height="30dp"
+        android:background="#504c6b"
+        android:padding="5dp"
+        android:text="@string/camera_e2"
+        android:textColor="#ffffff"
+        android:textSize="10sp" />
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  TextView  -->
+    <style name="BaseTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">@color/text_main</item>
+    </style>
+    <style name="TextView_10_main2" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main2</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+    </style>
+    <style name="TextView_10_E65261" parent="BaseTextView">
+        <item name="android:textColor">@color/color_E65261</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+    </style>
+    <style name="TextView_10_8085889B" parent="BaseTextView">
+        <item name="android:textColor">@color/color_8085889B</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+    </style>
+    <style name="TextView_10_accent" parent="BaseTextView">
+        <item name="android:textColor">@color/accent_main</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+    </style>
+    <style name="TextView_12_main" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main</item>
+    </style>
+    <style name="TextView_12_accent" parent="BaseTextView">
+        <item name="android:textColor">@color/accent_main</item>
+    </style>
+    <style name="TextView_12_main_bold" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_12_main2" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main2</item>
+    </style>
+    <style name="TextView_12_main3" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main3</item>
+    </style>
+    <style name="TextView_12_up" parent="BaseTextView">
+        <item name="android:textColor">@color/up</item>
+    </style>
+    <style name="TextView_12_E65261" parent="BaseTextView">
+        <item name="android:textColor">@color/color_E65261</item>
+    </style>
+    <style name="TextView_14_main" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="TextView_14_white" parent="BaseTextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="TextView_14_accent" parent="BaseTextView">
+        <item name="android:textColor">@color/accent_main</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="TextView_14_main_bold" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_14_main2" parent="BaseTextView">
+        <item name="android:textColor">@color/text_main2</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="TextView_16_main" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/text_main</item>
+    </style>
+    <style name="TextView_16_main_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_16_main2" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/text_main2</item>
+    </style>
+    <style name="TextView_16_main3" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/text_main3</item>
+    </style>
+    <style name="TextView_16_main2_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/text_main2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_18_main" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/text_main</item>
+    </style>
+    <style name="TextView_18_up_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/up</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextView_22_main" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_22</item>
+        <item name="android:textColor">@color/text_main</item>
+    </style>
+    <style name="TextView_28_white_bold" parent="BaseTextView">
+        <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--  View  -->
+    <style name="BaseView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Line_main" parent="BaseView">
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/line_main</item>
+    </style>
+    <style name="Space" parent="BaseView">
+        <item name="android:layout_height">@dimen/dp_10</item>
+        <item name="android:background">@color/light_btn_normal</item>
+    </style>
+</resources>

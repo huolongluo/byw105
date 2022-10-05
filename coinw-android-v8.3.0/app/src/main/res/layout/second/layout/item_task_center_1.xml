@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_size_15"
+    android:layout_marginTop="@dimen/dp_12"
+    android:layout_marginEnd="@dimen/dp_size_15"
+    android:background="@drawable/bg_task_center_item">
+
+    <TextView
+        android:id="@+id/tvTaskTypeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dp_size_15"
+        android:background="@mipmap/ic_task_tyro" />
+
+    <TextView
+        android:id="@+id/tvTaskType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dp_size_8"
+        android:layout_toEndOf="@+id/tvTaskTypeIcon"
+        android:textColor="@color/color_primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="新手任务" />
+
+    <LinearLayout
+        android:id="@+id/llTaskMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_size_14"
+        tools:ignore="RelativeOverlap">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_size_4"
+            android:text="@string/task_center_more"
+            android:textColor="@color/color_8085889B"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_arrow_right_more" />
+
+    </LinearLayout>
+</RelativeLayout>

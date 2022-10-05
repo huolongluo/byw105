@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/pulltolistview_footer_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ProgressBar
+                android:id="@+id/pulltolistview_footer_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDuration="500"
+                android:layout_marginRight="10dp"
+                android:indeterminateOnly="true"
+                style="@style/progress_bar"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/pulltolistview_footer_image"
+                android:layout_width="22dip"
+                android:layout_height="22dip"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/pulltolistview_footer_hint_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/F666666"
+            android:text="@string/pull_to_refresh_load_normal" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_40"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@+id/tvPhoneEmail1"
+        style="@style/TextView_16_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_2"
+        tools:text="手机"/>
+    <TextView android:id="@+id/tvPhoneEmail2"
+        style="@style/TextView_14_accent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_alignParentRight="true"
+        android:drawableStart="@mipmap/ic_login_email"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center_vertical"
+        tools:text="邮箱找回"/>
+    <LinearLayout
+        android:id="@+id/llPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhoneEmail1"
+        android:gravity="center_vertical">
+        
+        <com.legend.common.view.textview.DinproMediumTextView
+            android:id="@+id/tvAreaCode"
+            style="@style/TextView_14_main"
+            android:drawableRight="@mipmap/ic_triangle_down_gray"
+            android:drawablePadding="@dimen/dp_8"
+            android:gravity="center_vertical"
+            tools:text="+86" />
+        
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="@dimen/dp_14"
+            android:layout_marginLeft="@dimen/dp_size_8"
+            android:background="@color/color_C2C3CD" />
+        
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/TextView_14_main"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:background="@null"
+            android:digits="0123456789"
+            android:hint="@string/ple_in_pho"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:textColorHint="@color/text_main2" />
+    </LinearLayout>
+    
+    <!--  手机号和email共用该textview  -->
+    <TextView
+        android:id="@+id/tvPhoneOrEmailError"
+        style="@style/TextView_12_main2"
+        android:layout_marginTop="@dimen/dp_size_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vPhone"
+        tools:text="手机号位数不足11位" />
+    
+    <EditText
+        android:id="@+id/etEmail"
+        style="@style/TextView_14_main"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@null"
+        android:hint="@string/ple_in_email_addr"
+        android:inputType="textEmailAddress"
+        android:maxLength="64"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_size_8"
+        android:textColorHint="@color/text_main2"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhoneEmail1"/>
+    
+    <View
+        android:id="@+id/vPhone"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/sl_color_normal_e0e0e0_selected_accent"
+        app:layout_constraintTop_toBottomOf="@+id/llPhone" />
+    
+    <include layout="@layout/inc_pwd_intensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cetPwd"
+        android:layout_marginBottom="@dimen/dp_4"/>
+    <com.android.legend.view.edittext.CommonEditText
+        android:id="@+id/cetPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vPhone"
+        app:widget_hint="@string/please_inpsw1"
+        app:widget_margin_horizontal="@dimen/dp_2"
+        app:widget_textSize="@dimen/sp_14"
+        android:visibility="gone"/>
+    <View
+        android:id="@+id/vPwd"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/sl_color_normal_e0e0e0_selected_accent"
+        app:layout_constraintTop_toBottomOf="@+id/cetPwd" />
+    <TextView
+        android:id="@+id/tvPwdError"
+        style="@style/TextView_12_main2"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cetPwd"
+        tools:text="密码8-16位，数字和字母组成" />
+    <TextView android:id="@+id/tvResetPwd"
+        style="@style/TextView_12_accent"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cetPwd"
+        android:text="@string/v1"
+        android:visibility="gone"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
