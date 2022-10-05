@@ -10,9 +10,13 @@ allprojects {
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
 
         maven { url "https://jitpack.io" }
-        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+//        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+        maven { url 'https://repos.spark-packages.org' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
-        maven { url 'https://dl.bintray.com/umsdk/release' }
+//        maven { url 'https://dl.bintray.com/umsdk/release' }
+//        maven { url 'https://status.bintray.com/umsdk/release'}
+        maven { url 'https://repo1.maven.org/maven2/' }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }

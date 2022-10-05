@@ -265,7 +265,9 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    maven { url "https://dl.bintray.com/onfido/maven" }
+    mavenCentral()
+    jcenter()
+//    maven { url "https://dl.bintray.com/onfido/maven" }
     maven { url 'https://maven.fabric.io/public' }
 }
 
